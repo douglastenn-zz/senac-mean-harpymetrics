@@ -8,7 +8,5 @@ angular.module('index').config(['$stateProvider', '$urlRouterProvider',
             url: '/',
             templateUrl: '/src/js/modules/index/views/index.client.view.html'
         });
-
-        $urlRouterProvider.otherwise('/');
 	}
 ]);

@@ -1,0 +1,22 @@
+/*----Top navigation----*/
+/*---- Site Navigation / header ---*/
+header{
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  padding: 20px 0px;
+  box-shadow: 2px 2px 2px #ccc;
+  top:0;
+  background-color: rgba(255,255,255,0.8);
+  nav{
+    a.logo-top-menu{
+      font-size: 2rem;
+      padding-left: 55px;
+      max-width: 220px;
+      background: url(../images/li_35x35.png) no-repeat left center;
+      margin: auto;
+    }
+  }
+}
