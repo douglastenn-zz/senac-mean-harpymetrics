@@ -119,6 +119,21 @@ img {
 body {
   box-sizing: border-box; }
 
+.btn {
+  margin-bottom: 15px; }
+
+form label {
+  font-weight: bold;
+  width: 160px;
+  display: inline-block;
+  text-align: right;
+  padding: 10px; }
+
+form input {
+  padding: 5px;
+  min-width: 50%;
+  border: 1px solid #c3c3c3; }
+
 /*----Top navigation----*/
 /*---- Site Navigation / header ---*/
 header {
@@ -130,7 +145,8 @@ header {
   padding: 20px 0px;
   box-shadow: 2px 2px 2px #ccc;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.8); }
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 5; }
   header nav a.logo-top-menu {
     font-size: 2rem;
     padding-left: 55px;

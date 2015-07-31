@@ -1,18 +1,46 @@
 <div ng-controller="CustomerController" class="main-content-view">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-md-8">
-				Olá HarpyMetrics
-				<br>
-				View do HarpyMetrics (customer.client.view.html)
-				<br><br>
+			<div class="col-xs-12 col-md-6">
+				<p>Olá, <br>Para começar as configurações e poder criar o seu HarpyID, preencha os dados para criação da sua conta, ou se preferer utilize uma conta do Google.</p>
+				<button class="mdl-button mdl-js-button mdl-button--primary btn">
+				  Fazer login com o Google
+				</button>
 
-				<label>Nome</label>
-				<input type="text" ng-model="formData.primeiroNome"/>
+				<p>Esses dados são necessários para que só você controle e consulte suas metrícas.
+				Se quiser compartilhar ou distribuir com outros membros é bem simples, crie um grupo e autorize os membros a acessar.</p>
+				<p>Nós te damos as dicas e informações detalhadas e você escolhe com o que seu time irá trabalhar.</p>
+
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<form name="" ng-controller="CustomerController" class="">
+					<label>Primeiro Nome*</label>
+					<input type="text" ng-model="formData.primeiroNome"/>
+					<br/>
+					<label>Sobrenome*</label>
+					<input type="text" ng-model="formData.sobreNome"/>
+					<br/>
+					<label>E-mail*</label>
+					<input type="text" ng-model="formData.email"/>
+					<br/>
+					<label>Senha*</label>
+					<input type="text" ng-model="formData.senha"/>
+					<br/>
+					<label>Confirme sua senha*</label>
+					<input type="text" ng-model="formData.confirmSenha"/>
+					<br/>
+					<p>confirme os dados digitados abaixo</p>
+						Nome: {{formData.sobreNome}}<br/>
+						Sobrenome: {{formData.primeiroNome}}<br/>
+						E-mail: {{formData.email}}<br/>
+				</form>
 				<br/>
-				<br/>
-				<p>confirme os dados digitados abaixo<br/>
-					Nome {{formData.primeiroNome}}</p>
+
+					<!-- Colored raised button -->
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn">
+				  Confirmar Dados
+				</button>
+
 			</div>
 		</div>
 	</div>

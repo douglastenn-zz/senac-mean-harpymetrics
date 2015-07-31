@@ -21,11 +21,11 @@ var app = express(db);
 var passport = passport();
 
 // set our port
-var port = process.env.PORT || 8080; 
+var port = process.env.PORT || 8080;
 
 // start app ===============================================
-app.listen(port);               
-                  
+app.listen(port);
+
 console.log('Harpymetrics running on port ' + port);
-       
-exports = module.exports = app;  
+
+exports = module.exports = app;
