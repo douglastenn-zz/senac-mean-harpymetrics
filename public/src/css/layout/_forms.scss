@@ -1,12 +1,12 @@
-form label {
-  font-weight: bold;
-  width: 160px;
-  display: inline-block;
-  text-align: right;
-  padding: 10px;
+
+div.mdl-textfield.form-textfield {
+	min-width: 300px;
+	width: 80%;
 }
-form input {
-  padding: 5px;
-  min-width: 50%;
-  border: 1px solid #c3c3c3;
+
+div.sucess-msg{
+	color:rgb(76, 175, 80);
+	background:rgba(76, 175, 80,0.2);
+	padding: 15px 0px;
+	text-align:center;
 }

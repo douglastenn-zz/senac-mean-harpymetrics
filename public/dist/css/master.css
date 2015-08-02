@@ -126,17 +126,15 @@ body {
   text-align: center;
   margin: auto; }
 
-form label {
-  font-weight: bold;
-  width: 160px;
-  display: inline-block;
-  text-align: right;
-  padding: 10px; }
+div.mdl-textfield.form-textfield {
+  min-width: 300px;
+  width: 80%; }
 
-form input {
-  padding: 5px;
-  min-width: 50%;
-  border: 1px solid #c3c3c3; }
+div.sucess-msg {
+  color: #4caf50;
+  background: rgba(76, 175, 80, 0.2);
+  padding: 15px 0px;
+  text-align: center; }
 
 .section-page-title {
   background: rgba(0, 0, 0, 0.1);
@@ -192,7 +190,6 @@ header {
     font-size: 2rem;
     padding-left: 55px;
     max-width: 220px;
-    background: url(../images/li_35x35.png) no-repeat left center;
     margin: auto; }
 
 /*!

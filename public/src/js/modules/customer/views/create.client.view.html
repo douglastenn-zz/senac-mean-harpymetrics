@@ -1,7 +1,7 @@
 <div ng-controller="CustomerController" class="main-content-view">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-md-6">
+			<div class="col-xs-12 col-md-4">
 				<p>Olá, <br>Para começar as configurações e poder criar o seu HarpyID, preencha os dados para criação da sua conta, ou se preferer utilize uma conta do Google.</p>
 				<button class="mdl-button mdl-js-button mdl-button--primary btn">
 				  Fazer login com o Google
@@ -12,35 +12,46 @@
 				<p>Nós te damos as dicas e informações detalhadas e você escolhe com o que seu time irá trabalhar.</p>
 
 			</div>
-			<div class="col-xs-12 col-md-6">
-				<form name="" ng-controller="CustomerController" class="">
-					<label>Primeiro Nome*</label>
-					<input type="text" ng-model="formData.primeiroNome"/>
-					<br/>
-					<label>Sobrenome*</label>
-					<input type="text" ng-model="formData.sobreNome"/>
-					<br/>
-					<label>E-mail*</label>
-					<input type="text" ng-model="formData.email"/>
-					<br/>
-					<label>Senha*</label>
-					<input type="text" ng-model="formData.senha"/>
-					<br/>
-					<label>Confirme sua senha*</label>
-					<input type="text" ng-model="formData.confirmSenha"/>
-					<br/>
-					<p>confirme os dados digitados abaixo</p>
-						Nome: {{formData.sobreNome}}<br/>
-						Sobrenome: {{formData.primeiroNome}}<br/>
-						E-mail: {{formData.email}}<br/>
+			<div class="col-xs-12 col-md-8">
+				<form name="customerForm" ng-submit="createCustomer(this)" novalidate>
+
+					  <div class="mdl-textfield mdl-js-textfield form-textfield">
+					    <input class="mdl-textfield__input" type="text" name="firstName" ng-model="formData.firstName" required/>
+					    <label class="mdl-textfield__label" for="Nome">Nome</label>
+					  </div>
+
+					  <div class="mdl-textfield mdl-js-textfield form-textfield">
+					    <input class="mdl-textfield__input" type="text" name="lastName" ng-model="formData.lastName"/>
+					    <label class="mdl-textfield__label" for="Sobrenome">Sobrenome</label>
+					  </div>
+
+					   <div class="mdl-textfield mdl-js-textfield form-textfield">
+					    <input class="mdl-textfield__input" type="text" name="username" ng-model="formData.username" />
+					    <label class="mdl-textfield__label" for="E-mail">Nome do Usuário</label>
+					  </div>
+
+					  <div class="mdl-textfield mdl-js-textfield form-textfield">
+					    <input class="mdl-textfield__input" type="email" name="email" ng-model="formData.email" />
+					    <label class="mdl-textfield__label" for="E-mail">E-mail*</label>
+					  </div>
+
+					  <div class="mdl-textfield mdl-js-textfield">
+					    <input class="mdl-textfield__input" type="password" name="password" ng-model="formData.password" />
+					    <label class="mdl-textfield__label" for="senha">Senha</label>
+					  </div>
+
+					  <div class="mdl-textfield mdl-js-textfield">
+					    <input class="mdl-textfield__input" type="password" name="confirmPassword" ng-model="formData.confirmPassword" />
+					    <label class="mdl-textfield__label" for="Confirmar Senha">Confirmar Senha</label>
+					  </div>
+
+					<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn" 
+					value="Confirmar dados"/>
 				</form>
-				<br/>
 
-					<!-- Colored raised button -->
-				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn">
-				  Confirmar Dados
-				</button>
-
+				<div ng-show="success" class="sucess-msg">
+					<i class="fa fa-check"></i> Cadastrado com sucesso
+				</div>
 			</div>
 		</div>
 	</div>
