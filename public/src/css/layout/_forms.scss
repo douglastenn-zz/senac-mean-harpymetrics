@@ -4,9 +4,18 @@ div.mdl-textfield.form-textfield {
 	width: 80%;
 }
 
-div.sucess-msg{
-	color:rgb(76, 175, 80);
-	background:rgba(76, 175, 80,0.2);
-	padding: 15px 0px;
-	text-align:center;
+div.sucess-msg {
+    color: #4caf50;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 15px 0px;
+    text-align: center;
+    border: 1px solid #4caf50;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.main-form-content{
+	padding: 20px 0px;
+	width: 100%;
+	min-height: 450px;
+	box-sizing: border-box;
 }

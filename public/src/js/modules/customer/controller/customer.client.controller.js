@@ -5,7 +5,7 @@ angular.module('customer').controller('CustomerController', ['$scope', '$http',
 
 	$scope._ = _;
     $scope.formData = {};
-    $scope.success = true;
+    $scope.success = false;
 
     $scope.createCustomer = function(form) {
     	console.info('formData', $scope.formData);
