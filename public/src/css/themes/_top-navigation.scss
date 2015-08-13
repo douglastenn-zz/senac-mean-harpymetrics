@@ -40,9 +40,49 @@ header{
       a{
         width: 100%;
         display: inline-block;
+        vertical-align: middle;
+        padding: 13px 10px;
+        font-size: 1.1rem;
+        height: 50px;
+        box-sizing: border-box;
+        color: #555;
+        font-family: "caviar-dreams", arial;
+      }
+      li.mdl-menu__item {
+        display: block;
+        border: none;
+        color: rgba(0,0,0,.87);
+        background-color: transparent;
+        text-align: left;
+        margin: 0;
+        padding: 0px;
+        outline-color: #bdbdbd;
+        position: relative;
+        overflow: hidden;
+        letter-spacing: 0;
+        text-decoration: none;
+        cursor: pointer;
+        height: 50px;
+        line-height: 100%;
+        white-space: nowrap;
+        -webkit-transition: opacity .2s cubic-bezier(.4,0,.2,1);
+        transition: opacity .2s cubic-bezier(.4,0,.2,1);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        a{
+          height: 50px;
+          vertical-align: middle;
+        }
       }
     }
   }
+}
+.main-menu ul.top-nav-links li a:hover{
+  background: rgba(158, 158, 158, 0.2);
+  text-decoration: none;
+  color:#000;
 }
 .mdl-button.mdl-js-button.mdl-button--icon.button-access{
     font-size: 1.3em;

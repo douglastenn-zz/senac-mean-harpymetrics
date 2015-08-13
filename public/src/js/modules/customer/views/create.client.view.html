@@ -2,15 +2,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-4">
-				<p>Olá, <br>Para começar as configurações e poder criar o seu HarpyID, preencha os dados para criação da sua conta, ou se preferer utilize uma conta do Google.</p>
-				<button class="mdl-button mdl-js-button mdl-button--primary btn">
+				<div class="text-column-info">
+					<p>Olá, para começar as configurações e poder criar o seu HarpyID, preencha os dados para criação da sua conta, ou se preferer utilize uma conta do Google.</p>
+					<button class="mdl-button mdl-js-button mdl-button--primary btn">
 				  Fazer login com o Google
-				</button>
-
-				<p>Esses dados são necessários para que só você controle e consulte suas metrícas.
-				Se quiser compartilhar ou distribuir com outros membros é bem simples, crie um grupo e autorize os membros a acessar.</p>
-				<p>Nós te damos as dicas e informações detalhadas e você escolhe com o que seu time irá trabalhar.</p>
-
+					</button>
+					<p>Esses dados são necessários para que só você controle e consulte suas metrícas.
+						Se quiser compartilhar ou distribuir com outros membros é bem simples, crie um grupo e autorize os membros a acessar.</p>
+					<p>Nós te damos as dicas e informações detalhadas e você escolhe com o que seu time irá trabalhar.</p>
+			</div>
 			</div>
 			<div class="col-xs-12 col-md-8">
 				<div class="main-form-content">
@@ -31,17 +31,22 @@
 						    <label class="mdl-textfield__label" for="E-mail">Nome do Usuário</label>
 						  </div>
 
-						  <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="email" name="email" ng-model="formData.email" />
-						    <label class="mdl-textfield__label" for="E-mail">E-mail*</label>
+							<div class="mdl-textfield mdl-js-textfield form-textfield">
+						    <input class="mdl-textfield__input" type="number" name="cpf" ng-model="formData.cpf" />
+						    <label class="mdl-textfield__label" for="CPF">CPF</label>
 						  </div>
 
-						  <div class="mdl-textfield mdl-js-textfield">
+						  <div class="mdl-textfield mdl-js-textfield form-textfield">
+						    <input class="mdl-textfield__input" type="email" name="email" ng-model="formData.email" />
+						    <label class="mdl-textfield__label" for="E-mail">E-mail</label>
+						  </div>
+
+						  <div class="mdl-textfield mdl-js-textfield small">
 						    <input class="mdl-textfield__input" type="password" name="password" ng-model="formData.password" />
 						    <label class="mdl-textfield__label" for="senha">Senha</label>
 						  </div>
 
-						  <div class="mdl-textfield mdl-js-textfield">
+						  <div class="mdl-textfield mdl-js-textfield small">
 						    <input class="mdl-textfield__input" type="password" name="confirmPassword" ng-model="formData.confirmPassword" />
 						    <label class="mdl-textfield__label" for="Confirmar Senha">Confirmar Senha</label>
 						  </div>

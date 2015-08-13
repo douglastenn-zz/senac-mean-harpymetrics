@@ -16,6 +16,15 @@ div.sucess-msg {
 .main-form-content{
 	padding: 20px 0px;
 	width: 100%;
-	min-height: 450px;
+	min-height: 550px;
 	box-sizing: border-box;
+	text-align: center;
+}
+div.main-form-content form .mdl-textfield.small {
+    width: 285px;
+    margin: 0 15px;
+    padding: 20px 0;
+}
+div.main-form-content form input.mdl-button{
+	margin: 15px 0px
 }

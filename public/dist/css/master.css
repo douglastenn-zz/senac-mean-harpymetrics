@@ -120,7 +120,7 @@ img {
 @include font-face('caviar-dreams', 'CaviarDreams_Italic-webfont', 'caviar-dreams', 'italic');
 @include font-face('caviar-dreams', 'CaviarDreams-webfont', 'caviar-dreams', 'regular');*/
 .main-content-view {
-  margin-top: 60px;
+  margin-top: 70px;
   min-height: 400px; }
 
 body {
@@ -132,6 +132,29 @@ body {
 .center {
   text-align: center;
   margin: auto; }
+
+h3.topic-title {
+  font-size: 1.6em;
+  line-height: 100%; }
+
+footer.mdl-mega-footer {
+  padding: 16px 40px;
+  color: #ccc;
+  background-color: #221740; }
+
+.text-column-info {
+  padding: 30px 0px;
+  text-align: justify; }
+  .text-column-info button {
+    margin: auto;
+    text-align: center;
+    display: block;
+    margin-bottom: 16px;
+    width: 90%;
+    border: 1px solid #3f51b5; }
+
+.text-column-info button:hover {
+  border: 1px solid #fff; }
 
 div.mdl-textfield.form-textfield {
   min-width: 300px;
@@ -149,34 +172,38 @@ div.sucess-msg {
 .main-form-content {
   padding: 20px 0px;
   width: 100%;
-  min-height: 450px;
-  box-sizing: border-box; }
+  min-height: 550px;
+  box-sizing: border-box;
+  text-align: center; }
+
+div.main-form-content form .mdl-textfield.small {
+  width: 285px;
+  margin: 0 15px;
+  padding: 20px 0; }
+
+div.main-form-content form input.mdl-button {
+  margin: 15px 0px; }
 
 .section-page-title {
-  background: rgba(0, 0, 0, 0.1);
+  background: url("../../dist/images/background_image.png") center 100% no-repeat #d4c4ff;
   min-height: 200px;
   padding: 20px 0px; }
-
-.box-placeholder {
-  width: 90%;
-  margin: auto;
-  height: 210px;
-  background: rgba(255, 255, 255, 0.8); }
 
 .mdl-card {
   width: 320px;
   height: 320px; }
 
 .product-card-01 > .mdl-card__title {
-  background: url("../../dist/images/stock-img-placeholder-01.jpg") center 15% no-repeat #46B6AC;
+  background: url("../../dist/images/card_code_presentation_image.jpg") center 20% no-repeat #46B6AC;
   background-size: 100% auto; }
 
 .product-card-02 > .mdl-card__title {
-  background: url("../../dist/images/stock-img-placeholder-02.jpg") center 15% no-repeat #46B6AC;
-  background-size: 100% auto; }
+  background: url("../../dist/images/card_business_presentation_image.jpg") center 20% no-repeat #46B6AC;
+  background-size: 100% auto;
+  color: #fff; }
 
 .product-card-03 > .mdl-card__title {
-  background: url("../../dist/images/stock-img-placeholder-03.jpg") center 15% no-repeat #46B6AC;
+  background: url("../../dist/images/card_grafic_bar_illustration.jpg") center 20% no-repeat #46B6AC;
   background-size: 100% auto; }
 
 .mdl-card.mdl-shadow--2dp {
@@ -185,6 +212,9 @@ div.sucess-msg {
 .section-cards-product-info, .section-social-signup {
   padding: 20px 0px;
   border-bottom: 1px solid #c3c3c3; }
+
+.section-cards-product-info {
+  background: #f5f5f5; }
 
 .section-related-content {
   padding: 20px 0px; }
@@ -227,7 +257,45 @@ header {
     padding: 0px; }
     .main-menu ul.top-nav-links li a {
       width: 100%;
-      display: inline-block; }
+      display: inline-block;
+      vertical-align: middle;
+      padding: 13px 10px;
+      font-size: 1.1rem;
+      height: 50px;
+      box-sizing: border-box;
+      color: #555;
+      font-family: "caviar-dreams", arial; }
+    .main-menu ul.top-nav-links li li.mdl-menu__item {
+      display: block;
+      border: none;
+      color: rgba(0, 0, 0, 0.87);
+      background-color: transparent;
+      text-align: left;
+      margin: 0;
+      padding: 0px;
+      outline-color: #bdbdbd;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0;
+      text-decoration: none;
+      cursor: pointer;
+      height: 50px;
+      line-height: 100%;
+      white-space: nowrap;
+      -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+      .main-menu ul.top-nav-links li li.mdl-menu__item a {
+        height: 50px;
+        vertical-align: middle; }
+
+.main-menu ul.top-nav-links li a:hover {
+  background: rgba(158, 158, 158, 0.2);
+  text-decoration: none;
+  color: #000; }
 
 .mdl-button.mdl-js-button.mdl-button--icon.button-access {
   font-size: 1.3em;

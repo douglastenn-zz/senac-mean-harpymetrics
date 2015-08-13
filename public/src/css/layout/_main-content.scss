@@ -1,5 +1,5 @@
 .main-content-view{
-  margin-top:60px;
+  margin-top:70px;
   min-height: 400px;
 }
 body{
@@ -11,4 +11,28 @@ body{
 .center{
   text-align: center;
   margin: auto;
+}
+h3.topic-title{
+  font-size: 1.6em;
+  line-height: 100%;
+}
+footer.mdl-mega-footer {
+  padding: 16px 40px;
+  color: #ccc;
+  background-color: #221740;
+}
+.text-column-info{
+  padding: 30px 0px;
+  text-align: justify;
+  button{
+    margin: auto;
+    text-align: center;
+    display: block;
+    margin-bottom: 16px;
+    width: 90%;
+    border: 1px solid #3f51b5;
+  }
+}
+.text-column-info button:hover{
+  border:1px solid #fff;
 }
