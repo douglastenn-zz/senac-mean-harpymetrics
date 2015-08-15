@@ -13,6 +13,7 @@ angular.module('customer').controller('CustomerController', ['$scope', '$http',
     	$http.post('/customer/create', $scope.formData )
           .success(function(data) {
           	  $scope.success = true;
+              $scope.formData = {};
           })
           .error(function(data) {
               console.log('Error: ' + data);
