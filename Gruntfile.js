@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     // JS TASKS ================================================================
 
     // jshint: {
-    //   all: ['public/src/js/**/*.js'] 
+    //   all: ['public/src/js/**/*.js']
     // },
 
     uglify: {
@@ -49,26 +49,40 @@ module.exports = function(grunt) {
             options: {
                 proxy: "localhost:8080",
                 files: ['master.css', 'js/**/*.js', '**/*.html'],
-                watchTask: true, 
+                watchTask: true,
             }
         }
     },
 
     watch: {
       css: {
-        files: ['public/src/css/**/*.scss'],
+        files: ['public/src/css/**/*.scss', 'public/src/css/*.scss'],
         tasks: ['sass', 'cssmin']
       },
       js: {
-        files: ['public/src/js/**/*.js'],
+        files: ['public/src/js/**/*.js', 'public/src/js/*.js'],
         tasks: ['jshint', 'uglify']
       }
     },
 
     nodemon: {
-      dev: {
-        script: 'server.js'
-      }
+      nodemon: {
+    			dev: {
+    				script: 'server.js',
+    				options: {
+    					ext: 'js,html',
+    					watch: ['server.js', 'config/**/*.js', 'app/**/*.js']
+    				}
+    			},
+    			debug: {
+    				script: 'server.js',
+    				options: {
+    					nodeArgs: ['--debug'],
+    					ext: 'js,html',
+    					watch: ['server.js', 'config/**/*.js', 'app/**/*.js']
+    				}
+    			}
+		    },
     },
 
     concurrent: {
@@ -76,7 +90,7 @@ module.exports = function(grunt) {
         logConcurrentOutput: true
       },
       tasks: ['nodemon', 'watch']
-    }   
+    }
 
   });
 
@@ -91,6 +105,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('default', ['browserSync', 'bower','sass', 'cssmin', 'uglify', 'concurrent','watch']);
+  grunt.registerTask('default', ['browserSync', 'bower','sass', 'cssmin', 'uglify', 'concurrent','watch', 'nodemon']);
 
 };

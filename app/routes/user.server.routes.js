@@ -7,12 +7,12 @@ var users = require('../../app/controllers/user.server.controller'),
 
 // Define the routes module' method
 module.exports = function(app) {
-	// Set up the 'signup' routes 
+	// Set up the 'signup' routes
 	app.route('/signup')
 	   .get(users.renderSignup)
 	   .post(users.signup);
 
-	// Set up the 'signin' routes 
+	// Set up the 'signin' routes
 	app.route('/signin')
 	   .get(users.renderSignin)
 	   .post(passport.authenticate('local', {
@@ -21,7 +21,7 @@ module.exports = function(app) {
 			failureFlash: true
 	   }));
 
-	// Set up the Facebook OAuth routes 
+	// Set up the Facebook OAuth routes
 	app.get('/oauth/facebook', passport.authenticate('facebook', {
 		failureRedirect: '/signin'
 	}));
@@ -30,7 +30,7 @@ module.exports = function(app) {
 		successRedirect: '/'
 	}));
 
-	// Set up the Twitter OAuth routes 
+	// Set up the Twitter OAuth routes
 	app.get('/oauth/twitter', passport.authenticate('twitter', {
 		failureRedirect: '/signin'
 	}));
@@ -39,7 +39,7 @@ module.exports = function(app) {
 		successRedirect: '/'
 	}));
 
-	// Set up the Google OAuth routes 
+	// Set up the Google OAuth routes
 	app.get('/oauth/google', passport.authenticate('google', {
 		scope: [
 			'https://www.googleapis.com/auth/userinfo.profile',

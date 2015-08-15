@@ -1,6 +1,7 @@
 {
   "name": "HarpyMetrics",
   "main": "server.js",
+  "private": true,
   "dependencies": {
     "archiver": "~0.14.4",
     "body-parser": "~1.8.0",
