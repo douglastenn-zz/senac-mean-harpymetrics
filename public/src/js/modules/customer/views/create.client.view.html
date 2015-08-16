@@ -19,16 +19,19 @@
 						  <div class="mdl-textfield mdl-js-textfield form-textfield">
 						    <input class="mdl-textfield__input" type="text" name="firstName" ng-model="formData.firstName" required/>
 						    <label class="mdl-textfield__label" for="Nome">Nome</label>
+						    <span ng-class="error" ng-show="customerForm.firstName.$dirty && customerForm.firstName.$error.required">Nome é obrigatório</span>
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="text" name="lastName" ng-model="formData.lastName"/>
+						    <input class="mdl-textfield__input" type="text" name="lastName" ng-model="formData.lastName" required/>
 						    <label class="mdl-textfield__label" for="Sobrenome">Sobrenome</label>
+						    <span ng-class="error" ng-show="customerForm.lastName.$dirty && customerForm.lastName.$error.required">Sobrenome é obrigatório</span>
 						  </div>
 
 						   <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="text" name="username" ng-model="formData.username" />
+						    <input class="mdl-textfield__input" type="text" name="username" ng-model="formData.username" required/>
 						    <label class="mdl-textfield__label" for="E-mail">Nome do Usuário</label>
+						    <span ng-class="error" ng-show="customerForm.username.$dirty && customerForm.username.$error.required">Nome do Usuário é obrigatório</span>
 						  </div>
 
 							<div class="mdl-textfield mdl-js-textfield form-textfield">
@@ -37,13 +40,16 @@
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="email" name="email" ng-model="formData.email" />
+						    <input class="mdl-textfield__input" type="email" name="email" ng-model="formData.email" required/>
 						    <label class="mdl-textfield__label" for="E-mail">E-mail</label>
+						    <span ng-class="error" ng-show="customerForm.email.$dirty && customerForm.email.$error.required">E-mail é obrigatório</span>
+							<span ng-class="error" ng-show="customerForm.email.$dirty && customerForm.email.$error.email"> Formato do e-mail é inválido</span>
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield small">
-						    <input class="mdl-textfield__input" type="password" name="password" ng-model="formData.password" />
+						    <input class="mdl-textfield__input" type="password" name="password" ng-model="formData.password" required/>
 						    <label class="mdl-textfield__label" for="senha">Senha</label>
+						    <span ng-class="error" ng-show="customerForm.password.$dirty && customerForm.password.$error.required">Senha é obrigatório</span>
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield small">
@@ -51,7 +57,7 @@
 						    <label class="mdl-textfield__label" for="Confirmar Senha">Confirmar Senha</label>
 						  </div>
 
-						<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn"
+						<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn" ng-disabled="customerForm.$invalid"
 						value="Confirmar dados"/>
 					</form>
 					<div ng-show="success" class="sucess-msg">
