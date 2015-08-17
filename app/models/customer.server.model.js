@@ -8,8 +8,15 @@ var mongoose = require('mongoose'),
 
 // Define a new 'CustomerSchema'
 var CustomerSchema = new Schema({
-	firstName: String,
-	lastName: String,
+	firstName: {
+		type: String,
+		required: true
+	},
+	lastName: {
+		type: String,
+		required: true
+	},
+	cpf: String,
 	email: {
 		type: String,
 		// Validate the email format
@@ -46,7 +53,8 @@ var CustomerSchema = new Schema({
 		type: Date,
 		// Create a default 'created' value
 		default: Date.now
-	}
+	},
+	token: String
 });
 
 // Set the 'fullname' virtual property

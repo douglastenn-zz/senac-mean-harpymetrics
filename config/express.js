@@ -12,7 +12,8 @@ var config = require('./config'),
 	session = require('express-session'),
 	MongoStore = require('connect-mongo')(session),
 	flash = require('connect-flash'),
-	passport = require('passport');
+	passport = require('passport'),
+	jwt = require("jsonwebtoken");;
 
 // Define the Express configuration method
 module.exports = function(db) {
@@ -60,6 +61,13 @@ module.exports = function(db) {
 	// Configure the Passport middleware
 	app.use(passport.initialize());
 	app.use(passport.session());
+
+	app.use(function(req, res, next) {
+		res.setHeader('Access-Control-Allow-Origin', '*');
+    	res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+    	next();
+	});
 
 	// Load the routing files
 	require('../app/routes/index.server.routes.js')(app);

@@ -1,0 +1,38 @@
+<div ng-controller="CustomerController" class="main-content-view">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-4">
+				<div class="text-column-info">
+					<p>Olá, para começar as configurações e poder criar o seu HarpyID, preencha os dados para criação da sua conta, ou se preferer utilize uma conta do Google.</p>
+					<button class="mdl-button mdl-js-button mdl-button--primary btn">
+				  Fazer login com o Google
+					</button>
+					<p>Esses dados são necessários para que só você controle e consulte suas metrícas.
+						Se quiser compartilhar ou distribuir com outros membros é bem simples, crie um grupo e autorize os membros a acessar.</p>
+					<p>Nós te damos as dicas e informações detalhadas e você escolhe com o que seu time irá trabalhar.</p>
+			</div>
+			</div>
+			<div class="col-xs-12 col-md-8">
+				<div class="main-form-content">
+					<form name="loginForm" ng-submit="signin(this)" novalidate>
+
+						   <div class="mdl-textfield mdl-js-textfield form-textfield">
+						    <input class="mdl-textfield__input" type="text" name="username" ng-model="formData.username" required/>
+						    <label class="mdl-textfield__label" for="E-mail">Nome do Usuário</label>
+						    <span ng-class="error" ng-show="loginForm.username.$dirty && loginForm.username.$error.required">Nome do Usuário é obrigatório</span>
+						  </div>
+
+						  <div class="mdl-textfield mdl-js-textfield form-textfield">
+						    <input class="mdl-textfield__input" type="password" name="password" ng-model="formData.password" required/>
+						    <label class="mdl-textfield__label" for="senha">Senha</label>
+						    <span ng-class="error" ng-show="loginForm.password.$dirty && loginForm.password.$error.required">Senha é obrigatório</span>
+						  </div>
+
+						<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn" ng-disabled="loginForm.$invalid"
+						value="Confirmar dados"/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
