@@ -222,6 +222,20 @@ div.main-form-content form input.mdl-button {
 div.mdl-textfield.login-textfield {
   display: block; }
 
+.login-content {
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px #c3c3c3; }
+  .login-content h4 {
+    text-align: center; }
+  .login-content .login-textfield {
+    width: 100%; }
+
+.section-login {
+  padding: 30px 0px; }
+
 /*----Top navigation----*/
 /*---- Site Navigation / header ---*/
 header {
