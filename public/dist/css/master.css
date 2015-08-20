@@ -219,6 +219,9 @@ div.main-form-content form input.mdl-button {
 .section-related-content {
   padding: 20px 0px; }
 
+div.mdl-textfield.login-textfield {
+  display: block; }
+
 /*----Top navigation----*/
 /*---- Site Navigation / header ---*/
 header {
