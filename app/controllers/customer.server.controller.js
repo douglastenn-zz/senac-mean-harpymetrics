@@ -2,6 +2,8 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+	jwt = require('jsonwebtoken'),
+    crypto = require('crypto'),
 	Customer = mongoose.model('Customer');
 
 // Create a new 'render' controller method
@@ -9,11 +11,14 @@ exports.create = function(req, res) {
 	var data = req.body;
 	var customer = new Customer(data);
 
+	console.log(customer);
+
 	customer.save(function(err, customerSaved) {
 		if (err) {
 			console.info('error',err);
 		} else {
-			customerSaved.token = jwt.sign(customerSaved, process.env.JWT_SECRET);
+			console.log("ID:" + customerSaved._id);
+			customerSaved.token = jwt.sign(customerSaved, 'shhhhhhhhh');
             customerSaved.save(function(err, customerWithToken) {
             	console.info('Usuário Salvo', customerWithToken.email);
                 res.json({
@@ -29,7 +34,8 @@ exports.create = function(req, res) {
 
 exports.signin = function(req, res) {
 	var login = new Customer(req.body);
-	Customer.findOne({username: user.username, password: user.password}, function(err, customer) {
+    
+	Customer.findOne({username: login.username}, function(err, customer) {
         if (err) {
             res.json({
                 type: false,
@@ -37,11 +43,21 @@ exports.signin = function(req, res) {
             });
         } else {
             if (customer) {
-               res.json({
-                    type: true,
-                    data: customer,
-                    token: customer.token
-                });
+                var password = crypto.pbkdf2Sync(login.password, customer.salt, 10000, 64).toString('base64');
+                console.log(password);
+                console.log(customer.password)
+                if(password == customer.password) {
+                    res.json({
+                        type: true,
+                        data: customer,
+                        token: customer.token
+                    });
+                } else {
+                    res.json({
+                        type: false,
+                        data: "Incorrect username/password"
+                    });
+                }
             } else {
                 res.json({
                     type: false,
