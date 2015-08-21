@@ -8,8 +8,15 @@ var mongoose = require('mongoose'),
 
 // Define a new 'CustomerSchema'
 var CustomerSchema = new Schema({
-	firstName: String,
-	lastName: String,
+	firstName: {
+		type: String,
+		required: true
+	},
+	lastName: {
+		type: String,
+		required: true
+	},
+	cpf: String,
 	email: {
 		type: String,
 		// Validate the email format
@@ -46,7 +53,8 @@ var CustomerSchema = new Schema({
 		type: Date,
 		// Create a default 'created' value
 		default: Date.now
-	}
+	},
+	token: String
 });
 
 // Set the 'fullname' virtual property
@@ -58,18 +66,5 @@ CustomerSchema.virtual('fullName').get(function() {
 	this.lastName = splitName[1] || '';
 });
 
-// Use a pre-save middleware to hash the password
-CustomerSchema.pre('save', function(next) {
-	if (this.password) {
-		this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
-		this.password = this.hashPassword(this.password);
-	}
-	next();
-});
-
-// Create an instance method for hashing a password
-CustomerSchema.methods.hashPassword = function(password) {
-	return crypto.pbkdf2Sync(password, this.salt, 10000, 64).toString('base64');
-};
 // Create the 'User' model out of the 'UserSchema'
 mongoose.model('Customer', CustomerSchema);

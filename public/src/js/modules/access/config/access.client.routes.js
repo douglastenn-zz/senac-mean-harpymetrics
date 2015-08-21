@@ -3,9 +3,9 @@
 angular.module('access').config(['$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
 	    $stateProvider
-
-        .state('login', {
-            url: '/login',
+        
+        .state('signin', {
+            url: '/signin',
             templateUrl: '/src/js/modules/access/views/access.client.view.html'
         });
 	}

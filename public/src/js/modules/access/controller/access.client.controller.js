@@ -1,10 +1,24 @@
 'use strict';
 
-angular.module('access').controller('AccessController', ['$scope', '$http',
-    function($scope, $http) {
+angular.module('access').controller('AccessController', ['$scope', '$http', '$location',
+    function($scope, $http, $location) {
 
 	$scope._ = _;
     $scope.formData = {};
-    $scope.variable = 'Variavél do controller do access.client.controller.js';
+    $scope.success = false;
+
+    $scope.signin = function(form) {
+    	console.info('formData', $scope.formData);
+
+    	$http.post('/signin', $scope.formData )
+          .success(function(data) {
+          	  $scope.success = true;
+              $scope.formData = {};
+              $location.path("/admin");                                            
+          })
+          .error(function(data) {
+              console.log('Error: ' + data);
+         });
+    }
   }
 ]);

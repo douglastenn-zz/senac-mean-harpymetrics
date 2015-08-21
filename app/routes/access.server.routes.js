@@ -1,7 +1,10 @@
 'use strict';
 
-var customer = require('../controllers/access.server.controller');
+var customer = require('../controllers/customer.server.controller'),
+    access = require('../controllers/access.server.controller');
 
 module.exports = function(app) {
-	app.post('/access/login', login.render);
+    app.route('/signin')
+	   .get(access.renderSignin)
+       .post(customer.signin);
 };
