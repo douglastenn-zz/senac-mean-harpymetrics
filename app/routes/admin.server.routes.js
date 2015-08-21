@@ -1,7 +1,7 @@
 'use strict';
 
-var customer = require('../controllers/admin.server.controller');
+var admin = require('../controllers/admin.server.controller');
 
 module.exports = function(app) {
-	app.post('/admin', admin.render);
+	app.get('/admin', admin.render);
 };

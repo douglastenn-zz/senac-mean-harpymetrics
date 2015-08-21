@@ -105,6 +105,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('default', ['browserSync', 'bower','sass', 'cssmin', 'uglify', 'concurrent','watch', 'nodemon']);
+  grunt.registerTask('default', ['browserSync','sass', 'cssmin', 'uglify', 'concurrent','watch', 'nodemon']);
 
 };
