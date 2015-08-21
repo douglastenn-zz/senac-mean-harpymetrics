@@ -10,14 +10,12 @@ var mongoose = require('mongoose'),
 exports.create = function(req, res) {
 	var data = req.body;
 	var customer = new Customer(data);
-
-	console.log(customer);
+    generatePassword(customer);
 
 	customer.save(function(err, customerSaved) {
 		if (err) {
 			console.info('error',err);
 		} else {
-			console.log("ID:" + customerSaved._id);
 			customerSaved.token = jwt.sign(customerSaved, 'shhhhhhhhh');
             customerSaved.save(function(err, customerWithToken) {
             	console.info('Usuário Salvo', customerWithToken.email);
@@ -44,8 +42,6 @@ exports.signin = function(req, res) {
         } else {
             if (customer) {
                 var password = crypto.pbkdf2Sync(login.password, customer.salt, 10000, 64).toString('base64');
-                console.log(password);
-                console.log(customer.password)
                 if(password == customer.password) {
                     res.json({
                         type: true,
@@ -66,5 +62,35 @@ exports.signin = function(req, res) {
             }
         }
     });
+};
+
+exports.getMe = function(req, res) {
+    Customer.findOne({token: req.token}, function(err, customer) {
+        if (err) {
+            res.json({
+                type: false,
+                data: "Error occured: " + err
+            });
+        } else {
+            console.log(customer);
+            res.json({
+                type: true,
+                data: customer
+            });
+        }
+    });
+};
+
+// Use a pre-save middleware to hash the password
+function generatePassword(customer) {
+	if (customer.password) {
+		customer.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
+		customer.password = encryptPassword(customer.password, customer.salt);
+	}
+};
+
+// Create an instance method for hashing a password
+function encryptPassword(password, salt) {
+	return crypto.pbkdf2Sync(password, salt, 10000, 64).toString('base64');
 };
 

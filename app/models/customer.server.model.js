@@ -66,18 +66,5 @@ CustomerSchema.virtual('fullName').get(function() {
 	this.lastName = splitName[1] || '';
 });
 
-// Use a pre-save middleware to hash the password
-CustomerSchema.pre('save', function(next) {
-	if (this.password) {
-		this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
-		this.password = this.hashPassword(this.password);
-	}
-	next();
-});
-
-// Create an instance method for hashing a password
-CustomerSchema.methods.hashPassword = function(password) {
-	return crypto.pbkdf2Sync(password, this.salt, 10000, 64).toString('base64');
-};
 // Create the 'User' model out of the 'UserSchema'
 mongoose.model('Customer', CustomerSchema);
