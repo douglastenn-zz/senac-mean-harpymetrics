@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('login').controller('LoginController', ['$scope', '$http',
-    function($scope, $http) {
+angular.module('access').controller('AccessController', ['$scope', '$http', '$location',
+    function($scope, $http, $location) {
 
 	$scope._ = _;
     $scope.formData = {};
@@ -10,10 +10,11 @@ angular.module('login').controller('LoginController', ['$scope', '$http',
     $scope.signin = function(form) {
     	console.info('formData', $scope.formData);
 
-    	$http.post('/customer/signin', $scope.formData )
+    	$http.post('/signin', $scope.formData )
           .success(function(data) {
           	  $scope.success = true;
               $scope.formData = {};
+              $location.path("/admin");                                            
           })
           .error(function(data) {
               console.log('Error: ' + data);
