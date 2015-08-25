@@ -119,6 +119,38 @@ img {
 /*@include font-face('caviar-dreams', 'CaviarDreams_BoldItalic-webfont', 'caviar-dreams', 'boldItalic');
 @include font-face('caviar-dreams', 'CaviarDreams_Italic-webfont', 'caviar-dreams', 'italic');
 @include font-face('caviar-dreams', 'CaviarDreams-webfont', 'caviar-dreams', 'regular');*/
+.form-admin-content-group {
+  max-width: 500px;
+  margin: auto; }
+
+div.mdl-textfield.form-textfield {
+  min-width: 300px;
+  width: 80%; }
+
+div.sucess-msg {
+  color: #4caf50;
+  background: rgba(76, 175, 80, 0.1);
+  padding: 15px 0px;
+  text-align: center;
+  border: 1px solid #4caf50;
+  box-sizing: border-box;
+  margin-bottom: 10px; }
+
+.main-form-content {
+  padding: 20px 0px;
+  width: 100%;
+  min-height: 550px;
+  box-sizing: border-box;
+  text-align: center; }
+
+div.main-form-content form .mdl-textfield.small {
+  width: 285px;
+  margin: 0 15px;
+  padding: 20px 0; }
+
+div.main-form-content form input.mdl-button {
+  margin: 15px 0px; }
+
 .main-content-view {
   margin-top: 70px;
   min-height: 400px; }
@@ -156,33 +188,8 @@ footer.mdl-mega-footer {
 .text-column-info button:hover {
   border: 1px solid #fff; }
 
-div.mdl-textfield.form-textfield {
-  min-width: 300px;
-  width: 80%; }
-
-div.sucess-msg {
-  color: #4caf50;
-  background: rgba(76, 175, 80, 0.1);
-  padding: 15px 0px;
-  text-align: center;
-  border: 1px solid #4caf50;
-  box-sizing: border-box;
-  margin-bottom: 10px; }
-
-.main-form-content {
-  padding: 20px 0px;
-  width: 100%;
-  min-height: 550px;
-  box-sizing: border-box;
-  text-align: center; }
-
-div.main-form-content form .mdl-textfield.small {
-  width: 285px;
-  margin: 0 15px;
-  padding: 20px 0; }
-
-div.main-form-content form input.mdl-button {
-  margin: 15px 0px; }
+h2.section-title {
+  font-size: 2em; }
 
 .section-page-title {
   background: url("../../dist/images/background_image.png") center 100% no-repeat #d4c4ff;

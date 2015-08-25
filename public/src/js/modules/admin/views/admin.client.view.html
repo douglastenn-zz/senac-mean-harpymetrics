@@ -1,3 +1,38 @@
 <div ng-controller="AdminController" class="main-content-view">
-
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-4">
+			</div>
+			<div class="col-xs-12 col-md-8">
+				<div class="main-form-content">
+					<h2 class="section-title">HarpyID - Comece o gerenciamento</h2>
+					<p>Cadastro do site / criação do HarpyID</p>
+					<form name="adminForm" ng-submit="createHarpyID(this)" novalidate>
+						<div class="form-admin-content-group">
+						  <div class="mdl-textfield mdl-js-textfield form-textfield">
+						    <input class="mdl-textfield__input" type="text" name="siteName" ng-model="formData.siteName" required/>
+						    <label class="mdl-textfield__label" for="siteName">Nome do site</label>
+						    <span ng-class="error" ng-show="adminForm.siteName.$dirty && adminForm.siteName.$error.required">Campo é obrigatório</span>
+						  </div>
+						  <div class="mdl-textfield mdl-js-textfield form-textfield">
+						    <input class="mdl-textfield__input" type="text" name="siteURL" ng-model="formData.siteURL" required/>
+						    <label class="mdl-textfield__label" for="siteURL">URL</label>
+						    <span ng-class="error" ng-show="customerForm.lastName.$dirty && customerForm.lastName.$error.required">Campo é obrigatório</span>
+						  </div>
+						   <div class="mdl-textfield mdl-js-textfield form-textfield">
+						    <input class="mdl-textfield__input" type="text" name="timeZone" ng-model="formData.timeZone" required/>
+						    <label class="mdl-textfield__label" for="timeZone">Time Zone</label>
+						    <span ng-class="error" ng-show="adminForm.timeZone.$dirty && adminForm.timeZone.$error.required">Campo é obrigatório</span>
+						  </div>
+						</div>
+						<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn" ng-disabled="adminForm.$invalid"
+						value="Confirmar dados"/>
+					</form>
+					<div ng-show="success" class="sucess-msg">
+						<i class="fa fa-check"></i> HarpyID Criado com Sucesso!
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
