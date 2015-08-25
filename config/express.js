@@ -74,6 +74,8 @@ module.exports = function(db) {
 	require('../app/routes/user.server.routes.js')(app);
 	require('../app/routes/customer.server.routes.js')(app);
     require('../app/routes/access.server.routes.js')(app);
+	require('../app/routes/admin.server.routes.js')(app);
+    require('../app/routes/website.server.routes.js')(app);
 	
 	// Configure static file serving
 	app.use(express.static('./public'));
