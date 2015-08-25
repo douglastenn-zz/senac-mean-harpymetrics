@@ -6,7 +6,7 @@ var customer = require('../controllers/customer.server.controller'),
 
 module.exports = function(app) {
     app.route('/signin')
-	   .get(isAuthenticated, access.renderSignin)
+	   .get(access.renderSignin)
        .post(passport.authenticate('login', {
 		    successRedirect: '/admin',
 		    failureRedirect: '/signin',

@@ -11,7 +11,7 @@ angular.module('admin').controller('AdminController', ['$scope', '$http',
     $scope.filterWebsite = '';
         
     function getWebsites() {
-        $Website.get()
+        $http.get('/websites')
             .success(function(websites) {
                 $scope.websites = websites;
                 $scope.message = {};
@@ -28,7 +28,7 @@ angular.module('admin').controller('AdminController', ['$scope', '$http',
     $scope.saveWebsite = function(form) {
     	console.info('formData', $scope.formData);
 
-    	Website.save($scope.formData )
+    	$http.post('/websites', $scope.formData)
           .success(function(data) {
           	  $scope.success = true;
               $scope.formData = {};
@@ -40,7 +40,7 @@ angular.module('admin').controller('AdminController', ['$scope', '$http',
     }
 
    $scope.removeWebsite = function(website) {
-       Website.delete(website._id),
+       Website.delete(website._id)
           .success(function(data) {
               getWebsites();
           })

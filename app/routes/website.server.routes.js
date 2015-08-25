@@ -4,12 +4,12 @@ var controller = require('../controllers/website.server.controller');
 
 module.exports = function(app) {
     app.route('/websites')
-        .get(ensureAuthorized, controller.list)
-        .post(ensureAuthorized, controller.save);
+        .get(isAuthenticated, controller.list)
+        .post(isAuthenticated, controller.save);
     
     app.route('/websites/:id')
 //        .get(ensureAuthorized, controller.getWebsite)
-        .delete(isAuthenticated, controller.remove);
+        .delete(isAuthenticated, controller.delete);
 };
 
 var isAuthenticated = function (req, res, next) {

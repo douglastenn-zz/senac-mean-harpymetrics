@@ -13,8 +13,7 @@ angular.module('access').controller('AccessController', ['$scope', '$http', '$lo
     	$http.post('/signin', $scope.formData )
           .success(function(data) {
           	  $scope.success = true;
-              $scope.formData = {};
-              $location.path("/admin");                                            
+              $scope.formData = {};                                            
           })
           .error(function(data) {
               console.log('Error: ' + data);

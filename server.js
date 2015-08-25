@@ -8,8 +8,8 @@ var methodOverride = require('method-override');
 // configuration ===========================================
 
 var mongoose = require('./config/mongoose'),
-	express  = require('./config/express'),
-	passport = require('./config/passport');
+	express  = require('./config/express');
+	//passport = require('./config/passport');
 
 // Create a new Mongoose connection instance
 var db = mongoose();
@@ -18,7 +18,7 @@ var db = mongoose();
 var app = express(db);
 
 // Configure the Passport middleware
-var passport = passport();
+//var passport = passport();
 
 // set our port
 var port = process.env.PORT || 8080;
