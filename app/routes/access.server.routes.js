@@ -1,10 +1,21 @@
 'use strict';
 
 var customer = require('../controllers/customer.server.controller'),
-    access = require('../controllers/access.server.controller');
+    access = require('../controllers/access.server.controller'),
+    passport = require('passport');
 
 module.exports = function(app) {
     app.route('/signin')
-	   .get(access.renderSignin)
-       .post(customer.signin);
+	   .get(isAuthenticated, access.renderSignin)
+       .post(passport.authenticate('login', {
+		    successRedirect: '/admin',
+		    failureRedirect: '/signin',
+		    failureFlash : true
+		}));
 };
+
+var isAuthenticated = function (req, res, next) {
+  if (req.isAuthenticated())
+    return next();
+  res.redirect('/signin');
+}

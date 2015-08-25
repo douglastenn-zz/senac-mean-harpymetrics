@@ -13,7 +13,7 @@ var config = require('./config'),
 	MongoStore = require('connect-mongo')(session),
 	flash = require('connect-flash'),
 	passport = require('passport'),
-	jwt = require("jsonwebtoken");;
+	expressSession = require('express-session');
 
 // Define the Express configuration method
 module.exports = function(db) {
@@ -59,15 +59,12 @@ module.exports = function(db) {
 	app.use(flash());
 
 	// Configure the Passport middleware
+	app.use(expressSession({secret: 'minhaChaveSecreta'}));
 	app.use(passport.initialize());
 	app.use(passport.session());
 
-	app.use(function(req, res, next) {
-		res.setHeader('Access-Control-Allow-Origin', '*');
-    	res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-    	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
-    	next();
-	});
+	var initPassport = require('./passport/init');
+	initPassport(passport);
 
 	// Load the routing files
 	require('../app/routes/index.server.routes.js')(app);
