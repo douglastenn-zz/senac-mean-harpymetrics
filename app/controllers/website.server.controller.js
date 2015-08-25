@@ -2,9 +2,22 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-	Website = mongoose.model('Website');
+	Website = mongoose.model('Website'),
+    sanitize = require('mongo-sanitize');
 
-// Create a new 'render' controller method
+exports.list = function(req, res) {
+    Website.find().exec()
+        .then(
+            function(websites) {
+                res.json(websites);
+            },
+            function(err) {
+                console.error(err);
+                res.status(500).json(err);
+            }
+         );
+};
+
 exports.save = function(req, res) {
 	var data = req.body;
 	var website = new Website(data);
@@ -19,15 +32,15 @@ exports.save = function(req, res) {
 	});
 };
 
-exports.listWebsites = function(req, res) {
-    Website.find().exec()
+exports.delete = function(req, res) {
+    var _id = sanitize(req.params.id);
+    website.remove({'_id' : _id}).exec()
         .then(
-            function(websites) {
-                res.json(websites);
+            function() {
+                res.end();
             },
-            function(err) {
-                console.error(err);
-                res.status(500).json(err);
+            function(erro) {
+                return console.error(erro);
             }
-         );
+        );
 };

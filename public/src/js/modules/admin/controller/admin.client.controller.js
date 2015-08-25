@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('admin').controller('AdminController', ['$scope', '$http',
-    function($scope, $http) {
+    function($scope, $http, Website) {
 
-	$scope._ = _;
+	  $scope._ = _;
     $scope.formData = {};
     $scope.variable = 'Variavél do controller do admin.client.controller.js';
     $scope.websites = [];
     $scope.success = false;
+    $scope.filterWebsite = '';
         
     function getWebsites() {
         $http.get('/websites')
@@ -27,7 +28,7 @@ angular.module('admin').controller('AdminController', ['$scope', '$http',
     $scope.saveWebsite = function(form) {
     	console.info('formData', $scope.formData);
 
-    	$http.post('/websites', $scope.formData )
+    	$http.post('/websites', $scope.formData)
           .success(function(data) {
           	  $scope.success = true;
               $scope.formData = {};
@@ -38,16 +39,17 @@ angular.module('admin').controller('AdminController', ['$scope', '$http',
          });
     }
 
-//    $scope.remove = function(website) {
-//        Website.delete({id: website._id}, 
-//            getWebsites, 
-//            function(erro) {
-//                $scope.mensagem = {
-//                    texto: 'Não foi possível remover o website.'
-//                };
-//                console.log(erro);
-//            }
-//        );
-//    }
+   $scope.removeWebsite = function(website) {
+       Website.delete(website._id)
+          .success(function(data) {
+              getWebsites();
+          })
+          .error(function(err) {
+              $scope.mensagem = {
+                   texto: 'Não foi possível remover o website.'
+               };
+               console.log(err);
+         }); 
+   }
   }
 ]);
