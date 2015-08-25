@@ -33,24 +33,33 @@
 					</div>
 				</div>
                 <div>
-                    <table>
-                        <thead>
-                            <tr>Site</tr>
-                            <tr>URL</tr>
-                            <tr>HarpyID</tr>
-                        </thead>
-                        <tr ng-repeat="website in websites">
-                            <td>
-                                {{website.name}}
-                            </td>
-                            <td>
-                                {{website.url}}
-                            </td>
-                            <td>
-                                {{website.harpyid}}
-                            </td>
-                        </tr>
-                    </table>
+                	<input ng-model="filterWebsite" type="search" placeholder="busca">
+                	<div class="table-responsive">
+	                    <table class="table table-hover">
+	                        <thead>
+	                            <tr>Site</tr>
+	                            <tr>URL</tr>
+	                            <tr>HarpyID</tr>
+	                            <th class="text-center">Ação</th>
+	                        </thead>
+	                        <tr ng-repeat="website in websites | filter: filterWebsite">
+	                            <td>
+	                                {{website.name}}
+	                            </td>
+	                            <td>
+	                                {{website.url}}
+	                            </td>
+	                            <td>
+	                                {{website.harpyid}}
+	                            </td>
+	                            <td class="text-center">
+	                            	<button ng-click="remove(website)" class="btn btn-warning">
+	                            		Remover
+									</button>
+				                </td>
+	                        </tr>
+	                    </table>
+	                </div>
                 </div>
 			</div>
 		</div>

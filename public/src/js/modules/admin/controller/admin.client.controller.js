@@ -3,11 +3,12 @@
 angular.module('admin').controller('AdminController', ['$scope', '$http',
     function($scope, $http, Website) {
 
-	$scope._ = _;
+	  $scope._ = _;
     $scope.formData = {};
     $scope.variable = 'Variavél do controller do admin.client.controller.js';
     $scope.websites = [];
     $scope.success = false;
+    $scope.filterWebsite = '';
         
     function getWebsites() {
         $Website.get()
