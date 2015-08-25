@@ -16,15 +16,17 @@ var WebsiteSchema = new Schema({
 		type: String,
 		required: true
 	},
-    harpyid: {
-		type: String,
-		required: true
-	},
+    timezone: String,
+    harpyid: String,
 	created: {
 		type: Date,
 		// Create a default 'created' value
 		default: Date.now
-	}
+	},
+    customer: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Customer'
+    }
 });
 
 // Use a pre-save middleware to generate a harpyid
@@ -39,7 +41,7 @@ WebsiteSchema.pre('save', function(next) {
 // Create an instance method for generate a harpyid
 WebsiteSchema.methods.generateHarpyid = function() {
     var LENGHT_HARPYID = 7;
-    return crypto.randomBytes(Math.ceil(LENGHT_HARPYID/2))
+    return "HID" + crypto.randomBytes(Math.ceil(LENGHT_HARPYID/2))
         .toString('hex')
         .slice(0,LENGHT_HARPYID);
 };

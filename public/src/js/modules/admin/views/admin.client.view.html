@@ -7,20 +7,20 @@
 				<div class="main-form-content">
 					<h2 class="section-title">HarpyID - Comece o gerenciamento</h2>
 					<p>Cadastro do site / criação do HarpyID</p>
-					<form name="adminForm" ng-submit="createHarpyID(this)" novalidate>
+					<form name="adminForm" ng-submit="saveWebsite(this)" novalidate>
 						<div class="form-admin-content-group">
 						  <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="text" name="siteName" ng-model="formData.siteName" required/>
+						    <input class="mdl-textfield__input" type="text" name="siteName" ng-model="formData.name" required/>
 						    <label class="mdl-textfield__label" for="siteName">Nome do site</label>
 						    <span ng-class="error" ng-show="adminForm.siteName.$dirty && adminForm.siteName.$error.required">Campo é obrigatório</span>
 						  </div>
 						  <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="text" name="siteURL" ng-model="formData.siteURL" required/>
+						    <input class="mdl-textfield__input" type="text" name="siteURL" ng-model="formData.url" required/>
 						    <label class="mdl-textfield__label" for="siteURL">URL</label>
 						    <span ng-class="error" ng-show="customerForm.lastName.$dirty && customerForm.lastName.$error.required">Campo é obrigatório</span>
 						  </div>
 						   <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="text" name="timeZone" ng-model="formData.timeZone" required/>
+						    <input class="mdl-textfield__input" type="text" name="timeZone" ng-model="formData.timezone" required/>
 						    <label class="mdl-textfield__label" for="timeZone">Time Zone</label>
 						    <span ng-class="error" ng-show="adminForm.timeZone.$dirty && adminForm.timeZone.$error.required">Campo é obrigatório</span>
 						  </div>
@@ -32,6 +32,26 @@
 						<i class="fa fa-check"></i> HarpyID Criado com Sucesso!
 					</div>
 				</div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>Site</tr>
+                            <tr>URL</tr>
+                            <tr>HarpyID</tr>
+                        </thead>
+                        <tr ng-repeat="website in websites">
+                            <td>
+                                {{website.name}}
+                            </td>
+                            <td>
+                                {{website.url}}
+                            </td>
+                            <td>
+                                {{website.harpyid}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
 			</div>
 		</div>
 	</div>
