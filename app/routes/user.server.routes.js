@@ -13,13 +13,13 @@ module.exports = function(app) {
 	   .post(users.signup);
 
 	// Set up the 'signin' routes
-	app.route('/signin')
-	   .get(users.renderSignin)
-	   .post(passport.authenticate('local', {
-			successRedirect: '/',
-			failureRedirect: '/signin',
-			failureFlash: true
-	   }));
+	//app.route('/signin')
+	  // .get(users.renderSignin)
+	   //.post(passport.authenticate('local', {
+		//	successRedirect: '/',
+		//	failureRedirect: '/signin',
+		//	failureFlash: true
+	   //}));
 
 	// Set up the Facebook OAuth routes
 	app.get('/oauth/facebook', passport.authenticate('facebook', {

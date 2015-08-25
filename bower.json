@@ -2,6 +2,7 @@
     "name": "HarpyMetrics",
     "version": "1.0.0",
     "dependencies": {
+        "font-awesome": "latest",
         "animate.css": "latest",
         "jquery": "latest",
         "material-design-lite": "latest",
