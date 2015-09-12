@@ -6,7 +6,7 @@
 					<!-- Simple Textfield -->
 					<div class="login-content">
 						<h4>Acesso ao painel administrativo</h4>
-						<form name="accessForm" ng-submit="signin(this)">
+						<form name="accessForm" action="/signin" method="post">
 						<div class="mdl-textfield mdl-js-textfield login-textfield">
 							<input class="mdl-textfield__input" type="text" name="username" ng-model="formData.username" required/>
 							<label class="mdl-textfield__label" for="sample1">Username...</label>
@@ -19,6 +19,7 @@
 						</div>
 						<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn" ng-disabled=""
 						value="login"/>
+                        <span>{{message}}</span>
 						</form>
 						<p><a href="#"><i class="fa fa-expeditedssl"></i> Esqueceu a senha?</a></p>
 					</div>

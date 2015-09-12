@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('admin').controller('AdminController', ['$scope', '$http',
-    function($scope, $http, Website) {
+angular.module('admin').controller('AdminController', ['$scope', '$window', '$http',
+    function($scope, $window, $http, Website) {
 
 	  $scope._ = _;
     $scope.formData = {};
@@ -32,7 +32,9 @@ angular.module('admin').controller('AdminController', ['$scope', '$http',
           .success(function(data) {
           	  $scope.success = true;
               $scope.formData = {};
+              $scope.adminForm.$setPristine();
               getWebsites();
+              $window.location.href = '/admin'
           })
           .error(function(data) {
               console.log('Error: ' + data);
