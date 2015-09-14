@@ -8,8 +8,8 @@ module.exports = function(app) {
     app.route('/signin')
 	   .get(access.renderSignin)
        .post(passport.authenticate('login', {
-		    successRedirect: '/admin',
-		    failureRedirect: '/signin',
+		    successRedirect: '#!/admin',
+		    failureRedirect: '#!/signin',
 		    failureFlash : true
 		}));
 };
@@ -17,5 +17,5 @@ module.exports = function(app) {
 var isAuthenticated = function (req, res, next) {
   if (req.isAuthenticated())
     return next();
-  res.redirect('/signin');
+  res.redirect('#!/signin');
 }

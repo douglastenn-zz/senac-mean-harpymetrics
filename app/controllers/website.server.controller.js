@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
     sanitize = require('mongo-sanitize');
 
 exports.list = function(req, res) {
-    Website.find().exec()
+    Website.find({customer: req.user._id}).exec()
         .then(
             function(websites) {
                 res.json(websites);
@@ -21,6 +21,7 @@ exports.list = function(req, res) {
 exports.save = function(req, res) {
 	var data = req.body;
 	var website = new Website(data);
+    website.customer = req.user._id;
 
 	website.save(function(err, website) {
 		if (err) {

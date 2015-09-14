@@ -13,7 +13,8 @@ angular.module('access').controller('AccessController', ['$scope', '$http', '$lo
     	$http.post('/signin', $scope.formData )
           .success(function(data) {
           	  $scope.success = true;
-              $scope.formData = {};                                            
+              $scope.formData = {};
+              $scope.accessForm.$setPristine();
           })
           .error(function(data) {
               console.log('Error: ' + data);
