@@ -1,9 +1,47 @@
+$primaryColor: #3498db;
+$dark-blue: #2c3e50;
+
 .section-page-title{
-  background: url('../../dist/images/background_image.png') center 100% no-repeat #d4c4ff;
-  min-height: 200px;
+  background: url("../../dist/images/background_image.jpg") 50% 25% no-repeat #2c3e50 fixed;
+  min-height: 400px;
+  width: 100%;
   padding: 20px 0px;
+  position: relative;
+  .fixed-page-title-content{
+    position: fixed;
+    width: 100%;
+    min-height: 400px;
+    .container{
+      h1.page-title{
+        color: #fff;
+        font-size: 2.8em;
+      }
+      p.page-title-description{
+        color: #fff;
+        font-size: 1em;
+      }
+    }
+  }
+
+}
+.intro-info-bar{
+  background: rgba(44, 62, 80, 0.9);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  h2{
+    color:#fff;
+    font-size: 16px; /*for IE*/
+    font-size: 1.2rem;
+    line-height: 20px;
+  }
 }
 
+.section-cards-product-info,
+.section-related-content, footer{
+  position: relative;
+  z-index: 1;
+}
 .mdl-card {
   width: 320px;
   height: 320px;
@@ -24,7 +62,7 @@
 .mdl-card.mdl-shadow--2dp{
   margin:20px 0px;
 }
-.section-cards-product-info, .section-social-signup{
+.section-cards-product-info{
   padding: 20px 0px;
   border-bottom: 1px solid #c3c3c3;
 }
@@ -33,4 +71,5 @@
 }
 .section-related-content{
   padding: 20px 0px;
+  background: #fff;
 }
