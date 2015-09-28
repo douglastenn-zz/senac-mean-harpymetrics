@@ -155,11 +155,20 @@ div.main-form-content form input.mdl-button {
   margin-top: 70px;
   min-height: 400px; }
 
+html {
+  height: auto !important;
+  line-height: 100%; }
+
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  line-height: 100%; }
+
+html object {
+  display: none; }
 
 .btn {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  min-width: 150px; }
 
 .mdl-button.mdl-button--raised.btn-white {
   background: rgba(255, 255, 255, 0.7);
@@ -278,6 +287,12 @@ div.mdl-textfield.login-textfield {
 .section-login {
   padding: 30px 0px; }
 
+section.admin-nav {
+  width: 100%;
+  min-height: 550px;
+  background: rgba(0, 0, 0, 0.1);
+  position: relative; }
+
 /*----Top navigation----*/
 /*---- Site Navigation / header ---*/
 header {
@@ -287,7 +302,7 @@ header {
   border-bottom: 1px solid #ccc;
   box-sizing: border-box;
   padding: 10px 0px;
-  box-shadow: 0px 0px 15px 0px #000;
+  box-shadow: 0px -2px 10px 0px #000;
   top: 0;
   background-color: #fff;
   z-index: 5; }

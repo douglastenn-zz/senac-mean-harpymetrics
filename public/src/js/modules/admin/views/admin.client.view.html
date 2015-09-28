@@ -1,76 +1,85 @@
-<div ng-controller="AdminController" class="main-content-view">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-6">
-				<div class="main-form-content">
-					<h2 class="section-title">HarpyID - Comece o gerenciamento</h2>
-					<p>Cadastro do site / criação do HarpyID</p>
-					<form name="adminForm" ng-submit="saveWebsite(this)" novalidate>
-						<div class="form-admin-content-group">
-						  <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="text" name="siteName" ng-model="formData.name" required/>
-						    <label class="mdl-textfield__label" for="siteName">Nome do site</label>
-						    <span ng-class="error" ng-show="adminForm.siteName.$dirty && adminForm.siteName.$error.required">Campo é obrigatório</span>
-						  </div>
-						  <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="text" name="siteURL" ng-model="formData.url" required/>
-						    <label class="mdl-textfield__label" for="siteURL">URL</label>
-						    <span ng-class="error" ng-show="customerForm.lastName.$dirty && customerForm.lastName.$error.required">Campo é obrigatório</span>
-						  </div>
-						   <div class="mdl-textfield mdl-js-textfield form-textfield">
-						    <input class="mdl-textfield__input" type="text" name="timeZone" ng-model="formData.timezone" required/>
-						    <label class="mdl-textfield__label" for="timeZone">Time Zone</label>
-						    <span ng-class="error" ng-show="adminForm.timeZone.$dirty && adminForm.timeZone.$error.required">Campo é obrigatório</span>
-						  </div>
+	<div ng-controller="AdminController" class="main-content-view">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-md-8">
+						<div class="row">
+							<div class="col-xs-12 col-md-4">
+								<section class="admin-left-nav">
+
+								</section>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div class="main-form-content">
+									<h2 class="section-title">HarpyID - Comece o gerenciamento</h2>
+									<p>Cadastro do site / criação do HarpyID</p>
+									<form name="adminForm" ng-submit="saveWebsite(this)" novalidate>
+										<div class="form-admin-content-group">
+											<div class="mdl-textfield mdl-js-textfield form-textfield">
+												<input class="mdl-textfield__input" type="text" name="siteName" ng-model="formData.name" required/>
+												<label class="mdl-textfield__label" for="siteName">Nome do site</label>
+												<span ng-class="error" ng-show="adminForm.siteName.$dirty && adminForm.siteName.$error.required">Campo é obrigatório</span>
+											</div>
+											<div class="mdl-textfield mdl-js-textfield form-textfield">
+												<input class="mdl-textfield__input" type="text" name="siteURL" ng-model="formData.url" required/>
+												<label class="mdl-textfield__label" for="siteURL">URL</label>
+												<span ng-class="error" ng-show="customerForm.lastName.$dirty && customerForm.lastName.$error.required">Campo é obrigatório</span>
+											</div>
+											<div class="mdl-textfield mdl-js-textfield form-textfield">
+												<input class="mdl-textfield__input" type="text" name="timeZone" ng-model="formData.timezone" required/>
+												<label class="mdl-textfield__label" for="timeZone">Time Zone</label>
+												<span ng-class="error" ng-show="adminForm.timeZone.$dirty && adminForm.timeZone.$error.required">Campo é obrigatório</span>
+											</div>
+										</div>
+									<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn" ng-disabled="adminForm.$invalid"
+									value="Confirmar dados"/>
+								</form>
+								<div ng-show="success" class="sucess-msg">
+									<i class="fa fa-check"></i> HarpyID Criado com Sucesso!
+								</div>
+							</div>
 						</div>
-						<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn" ng-disabled="adminForm.$invalid"
-						value="Confirmar dados"/>
-					</form>
-					<div ng-show="success" class="sucess-msg">
-						<i class="fa fa-check"></i> HarpyID Criado com Sucesso!
 					</div>
 				</div>
-			</div>
-			<div class="col-xs-12 col-md-6">
-				<div>
-					<form action="#">
-						<div class="mdl-textfield mdl-js-textfield">
-							<label class="mdl-button mdl-js-button mdl-button--icon" for="admin-search-site">
-								<i class="material-icons fa fa-search"></i>
-							</label>
-							<input class="mdl-textfield__input" id="admin-search-site" ng-model="filterWebsite" type="search" placeholder=""/>
-						</div>
-						<div class="table-responsive">
-							<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp table table-hover">
-								<thead>
-									<tr>
-										<th class="mdl-data-table__cell--non-numeric">Site</th>
-										<th>URL</th>
-										<th>HarpyID</th>
-										<th class="text-center">Ação</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr ng-repeat="website in websites | filter: filterWebsite">
-										<td>  {{website.name}}</td>
-										<td>  {{website.url}}</td>
-										<td>	{{website.harpyid}}</td>
-										<td class="text-center">
-											<button ng-click="remove(website)" class="btn btn-warning">Remover</button>
-										</td>
-									</tr>
-									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</form>
+				<div class="col-xs-12 col-md-4">
+					<div>
+						<form action="#">
+							<div class="mdl-textfield mdl-js-textfield">
+								<label class="mdl-button mdl-js-button mdl-button--icon" for="admin-search-site">
+									<i class="material-icons fa fa-search"></i>
+								</label>
+								<input class="mdl-textfield__input" id="admin-search-site" ng-model="filterWebsite" type="search" placeholder=""/>
+							</div>
+							<div class="table-responsive">
+								<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp table table-hover">
+									<thead>
+										<tr>
+											<th class="mdl-data-table__cell--non-numeric">Site</th>
+											<th>URL</th>
+											<th>HarpyID</th>
+											<th class="text-center">Ação</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="website in websites | filter: filterWebsite">
+											<td>  {{website.name}}</td>
+											<td>  {{website.url}}</td>
+											<td>	{{website.harpyid}}</td>
+											<td class="text-center">
+												<button ng-click="remove(website)" class="btn btn-warning">Remover</button>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>

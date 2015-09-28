@@ -11,5 +11,4 @@ exports.render = function(req, res) {
 		title: 'Harpymetrics',
 		user: JSON.stringify(req.user)
 	});
-};
-
+};	
