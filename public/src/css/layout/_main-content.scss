@@ -1,12 +1,28 @@
+$primaryColor: #3498db;
+$dark-blue: #2c3e50;
+
 .main-content-view{
   margin-top:70px;
   min-height: 400px;
 }
+html{
+  height: auto !important;
+  line-height: 100%;
+}
 body{
   box-sizing: border-box;
+  line-height: 100%;
+}
+html object {
+    display: none;
 }
 .btn{
   margin-bottom: 15px;
+  min-width: 150px;
+}
+.mdl-button.mdl-button--raised.btn-white{
+  background: rgba(255,255,255,0.7);
+  min-width: 150px;
 }
 .center{
   text-align: center;
@@ -16,10 +32,12 @@ h3.topic-title{
   font-size: 1.6em;
   line-height: 100%;
 }
+
+
 footer.mdl-mega-footer {
   padding: 16px 40px;
   color: #ccc;
-  background-color: #221740;
+  background-color: $dark-blue;
 }
 .text-column-info{
   padding: 30px 0px;
@@ -38,4 +56,5 @@ footer.mdl-mega-footer {
 }
 h2.section-title{
   font-size: 2em;
+  text-align: center;
 }

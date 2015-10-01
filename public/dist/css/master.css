@@ -155,11 +155,24 @@ div.main-form-content form input.mdl-button {
   margin-top: 70px;
   min-height: 400px; }
 
+html {
+  height: auto !important;
+  line-height: 100%; }
+
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  line-height: 100%; }
+
+html object {
+  display: none; }
 
 .btn {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  min-width: 150px; }
+
+.mdl-button.mdl-button--raised.btn-white {
+  background: rgba(255, 255, 255, 0.7);
+  min-width: 150px; }
 
 .center {
   text-align: center;
@@ -172,7 +185,7 @@ h3.topic-title {
 footer.mdl-mega-footer {
   padding: 16px 40px;
   color: #ccc;
-  background-color: #221740; }
+  background-color: #2c3e50; }
 
 .text-column-info {
   padding: 30px 0px;
@@ -189,12 +202,42 @@ footer.mdl-mega-footer {
   border: 1px solid #fff; }
 
 h2.section-title {
-  font-size: 2em; }
+  font-size: 2em;
+  text-align: center; }
 
 .section-page-title {
-  background: url("../../dist/images/background_image.png") center 100% no-repeat #d4c4ff;
-  min-height: 200px;
-  padding: 20px 0px; }
+  background: url("../../dist/images/background_image.jpg") 50% 25% no-repeat #2c3e50 fixed;
+  min-height: 400px;
+  width: 100%;
+  padding: 20px 0px;
+  position: relative; }
+  .section-page-title .fixed-page-title-content {
+    position: fixed;
+    width: 100%;
+    min-height: 400px; }
+    .section-page-title .fixed-page-title-content .container h1.page-title {
+      color: #fff;
+      font-size: 2.8em; }
+    .section-page-title .fixed-page-title-content .container p.page-title-description {
+      color: #fff;
+      font-size: 1em; }
+
+.intro-info-bar {
+  background: rgba(44, 62, 80, 0.9);
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  .intro-info-bar h2 {
+    color: #fff;
+    font-size: 16px;
+    /*for IE*/
+    font-size: 1.2rem;
+    line-height: 20px; }
+
+.section-cards-product-info,
+.section-related-content, footer {
+  position: relative;
+  z-index: 1; }
 
 .mdl-card {
   width: 320px;
@@ -216,7 +259,7 @@ h2.section-title {
 .mdl-card.mdl-shadow--2dp {
   margin: 20px 0px; }
 
-.section-cards-product-info, .section-social-signup {
+.section-cards-product-info {
   padding: 20px 0px;
   border-bottom: 1px solid #c3c3c3; }
 
@@ -224,7 +267,31 @@ h2.section-title {
   background: #f5f5f5; }
 
 .section-related-content {
-  padding: 20px 0px; }
+  padding: 20px 0px;
+  background: #fff; }
+
+div.mdl-textfield.login-textfield {
+  display: block; }
+
+.login-content {
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px #c3c3c3; }
+  .login-content h4 {
+    text-align: center; }
+  .login-content .login-textfield {
+    width: 100%; }
+
+.section-login {
+  padding: 30px 0px; }
+
+section.admin-nav {
+  width: 100%;
+  min-height: 550px;
+  background: rgba(0, 0, 0, 0.1);
+  position: relative; }
 
 /*----Top navigation----*/
 /*---- Site Navigation / header ---*/
@@ -235,9 +302,9 @@ header {
   border-bottom: 1px solid #ccc;
   box-sizing: border-box;
   padding: 10px 0px;
-  box-shadow: 2px 2px 2px #ccc;
+  box-shadow: 0px -2px 10px 0px #000;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #fff;
   z-index: 5; }
   header nav.home-top-navigation {
     height: 50px; }
