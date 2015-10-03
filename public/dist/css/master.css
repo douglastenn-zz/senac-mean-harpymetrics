@@ -167,12 +167,19 @@ html object {
   display: none; }
 
 .btn {
-  margin-bottom: 15px;
-  min-width: 150px; }
+  margin: 15px 0px;
+  min-width: 150px !important; }
 
 .mdl-button.mdl-button--raised.btn-white {
-  background: rgba(255, 255, 255, 0.7);
-  min-width: 150px; }
+  background: rgba(255, 255, 255, 0.8);
+  min-width: 200px;
+  color: #2980b9;
+  font-weight: bold; }
+
+a.mdl-button.mdl-js-button.mdl-button--raised.btn-white:hover {
+  text-decoration: none;
+  background: #ccc;
+  color: #34495e; }
 
 .center {
   text-align: center;
@@ -180,7 +187,26 @@ html object {
 
 h3.topic-title {
   font-size: 1.6em;
-  line-height: 100%; }
+  line-height: 100%;
+  text-align: center;
+  color: #2980b9; }
+
+.topic-icon {
+  font-size: 4em;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  margin: 30px  auto 10px;
+  text-align: center;
+  border: 3px solid #2980b9;
+  color: #fff;
+  border-radius: 50%;
+  background: #2980b9;
+  transition: all 0.5s ease; }
+  .topic-icon:hover {
+    border-shadow: 0px 0px 5px #2980b9;
+    text-shadow: 0px 5px 20px #2c3e50;
+    transition: all 0.5s ease; }
 
 footer.mdl-mega-footer {
   padding: 16px 40px;
@@ -217,10 +243,10 @@ h2.section-title {
     min-height: 400px; }
     .section-page-title .fixed-page-title-content .container h1.page-title {
       color: #fff;
-      font-size: 2.8em; }
-    .section-page-title .fixed-page-title-content .container p.page-title-description {
+      font-size: 2.3em; }
+    .section-page-title .fixed-page-title-content .container span.page-title-description {
       color: #fff;
-      font-size: 1em; }
+      font-size: 0.7em; }
 
 .intro-info-bar {
   background: rgba(44, 62, 80, 0.9);
@@ -287,11 +313,16 @@ div.mdl-textfield.login-textfield {
 .section-login {
   padding: 30px 0px; }
 
-section.admin-nav {
-  width: 100%;
-  min-height: 550px;
-  background: rgba(0, 0, 0, 0.1);
-  position: relative; }
+section.admin-left-nav {
+  position: fixed;
+  background-color: #34495e;
+  width: 260px;
+  z-index: 2;
+  height: 100%; }
+
+section.admin-content {
+  max-width: 80%;
+  min-height: 500px; }
 
 /*----Top navigation----*/
 /*---- Site Navigation / header ---*/
@@ -308,7 +339,7 @@ header {
   z-index: 5; }
   header nav.home-top-navigation {
     height: 50px; }
-    header nav.home-top-navigation a.logo-top-menu {
+    header nav.home-top-navigation a.logo-top-menu, header nav.home-top-navigation a.logo-top-menu:visited {
       font-size: 2rem;
       padding-left: 60px;
       max-width: 240px;
@@ -320,7 +351,12 @@ header {
       vertical-align: middle;
       line-height: 50px;
       box-sizing: border-box;
-      color: #000; }
+      color: #000;
+      transition: all 0.5s ease; }
+      header nav.home-top-navigation a.logo-top-menu:hover, header nav.home-top-navigation a.logo-top-menu:active, header nav.home-top-navigation a.logo-top-menu:visited:hover, header nav.home-top-navigation a.logo-top-menu:visited:active {
+        text-decoration: none !important;
+        color: #34495e;
+        transition: all 0.5s ease; }
 
 .main-menu ul.top-nav-links {
   text-align: right; }

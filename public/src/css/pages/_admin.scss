@@ -1,6 +1,11 @@
-section.admin-nav {
-    width: 100%;
-    min-height: 550px;
-    background: rgba(0,0,0,0.1);
-    position: relative;
+section.admin-left-nav {
+    position: fixed;
+    background-color: #34495e;
+    width: 260px;
+    z-index: 2;
+    height: 100%;
+}
+section.admin-content {
+    max-width: 80%;
+    min-height: 500px;
 }
