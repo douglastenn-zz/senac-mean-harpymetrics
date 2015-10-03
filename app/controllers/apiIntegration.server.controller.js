@@ -7,7 +7,10 @@ var mongoose = require('mongoose'),
     Category = mongoose.model('Category'),
     Search = mongoose.model('Search'),
     Checkout = mongoose.model('Checkout'),
-    Relationship = mongoose.model('Relationship');
+    ElementProduct = mongoose.model('ElementProduct'),
+    ElementCategory = mongoose.model('ElementCategory'),
+    ElementSearch = mongoose.model('ElementSearch'),
+    ElementCheckout = mongoose.model('ElementCheckout');
 
 exports.save = function(req, res) {
     var data = getData(req);
@@ -38,7 +41,6 @@ function saveProducts(products, element) {
                 function(productSaved) {
                     if(!productSaved) {
                         productSaved = new Product(product);
-                        console.log(productSaved);
                         productSaved.save(function(err, productSaved) {
                             if (err) {
                                 console.info('error', err);
@@ -47,7 +49,11 @@ function saveProducts(products, element) {
                             }
                         });
                     }
-                    saveRelationship(element, productSaved, 'Product');
+                    var relationship = new ElementProduct({
+                        element: element,
+                        product: productSaved
+                    });
+                    saveRelationship(relationship);
                 },
                 function(err) {
                     console.error(err);
@@ -73,7 +79,11 @@ function saveCategories(categories, element) {
                             }
                         });
                     }
-                    saveRelationship(element, categorySaved, 'Category');
+                    var relationship = new ElementCategory({
+                        element: element,
+                        category: productSaved
+                    });
+                    saveRelationship(relationship);
                 },
                 function(err) {
                     res.status(500).json(err);
@@ -90,7 +100,11 @@ function saveSearchs(searchs, element) {
             console.info('error', err);
         } else {
             console.info('Objeto Search Salvo');
-            saveRelationship(element, search, 'Search');
+            var relationship = new ElementSearch({
+                element: element,
+                search: search
+            });
+            saveRelationship(relationship);
         }
     });
 }
@@ -103,17 +117,16 @@ function saveCheckouts(checkouts, element) {
             console.info('error', err);
         } else {
             console.info('Objeto Checkout Salvo');
-            saveRelationship(element, checkout, 'Checkout');
+            var relationship = new ElementCheckout({
+                element: element,
+                checkout: checkout
+            });
+            saveRelationship(relationship);
         }
     });
 }
 
-function saveRelationship(element, object, type) {
-    var relationship = new Relationship({
-        element: element,
-        relatedId: object._id,
-        relatedType: type
-    });
+function saveRelationship(relationship) {
     saveObject(relationship, 'Relationship');
 }
 

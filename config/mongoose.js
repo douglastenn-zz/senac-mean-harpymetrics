@@ -20,7 +20,10 @@ module.exports = function() {
     require('../app/models/category.server.model');
     require('../app/models/search.server.model');
     require('../app/models/checkout.server.model');
-    require('../app/models/relationship.server.model');
+    require('../app/models/elementProduct.server.model');
+    require('../app/models/elementCategory.server.model');
+    require('../app/models/elementSearch.server.model');
+    require('../app/models/elementCheckout.server.model');
 
 	// Return the Mongoose connection instance
 	return db;
