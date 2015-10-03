@@ -17,8 +17,8 @@ html object {
     display: none;
 }
 .btn{
-  margin-bottom: 15px;
-  min-width: 150px;
+  margin: 15px 0px;
+  min-width: 150px !important;
 }
 .mdl-button.mdl-button--raised.btn-white {
     background: rgba(255, 255, 255, 0.8);
@@ -42,11 +42,11 @@ h3.topic-title {
     color: #2980b9;
 }
 .topic-icon {
-    font-size: 5em;
+    font-size: 4em;
     width: 120px;
     height: 120px;
     line-height: 120px;
-    margin: 30px auto 10px;
+    margin: 30px  auto 10px;
     text-align: center;
     border: 3px solid #2980b9;
     color:#fff;
