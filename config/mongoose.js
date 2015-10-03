@@ -15,6 +15,12 @@ module.exports = function() {
 	require('../app/models/user.server.model');
 	require('../app/models/customer.server.model');
     require('../app/models/website.server.model');
+    require('../app/models/element.server.model');
+    require('../app/models/product.server.model');
+    require('../app/models/category.server.model');
+    require('../app/models/search.server.model');
+    require('../app/models/checkout.server.model');
+    require('../app/models/relationship.server.model');
 
 	// Return the Mongoose connection instance
 	return db;
