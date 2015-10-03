@@ -19,10 +19,10 @@ var config = require('./config'),
 module.exports = function(db) {
 	// Create a new Express application instance
 	var app = express();
-	
+
 	// Create a new HTTP server
     var server = http.createServer(app);
-    
+
 	// Use the 'NDOE_ENV' variable to activate the 'morgan' logger or 'compress' middleware
 	if (process.env.NODE_ENV === 'development') {
 		app.use(morgan('dev'));
@@ -73,7 +73,7 @@ module.exports = function(db) {
     require('../app/routes/access.server.routes.js')(app);
 	require('../app/routes/admin.server.routes.js')(app);
     require('../app/routes/website.server.routes.js')(app);
-	
+
 	// Configure static file serving
 	app.use(express.static('./public'));
 
