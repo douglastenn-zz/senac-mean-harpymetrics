@@ -4,16 +4,17 @@
 var mongoose = require('mongoose'),
 	Element = mongoose.model('Element'),
     Product = mongoose.model('Product'),
-    Relationship = mongoose.model('Relationship');
+    ElementProduct = mongoose.model('ElementProduct');
 
 exports.listMoreAcessed = function(req, res) {
     
-    ElementProduct.find().populate('element').populate('product').exec()
+    ElementProduct.find().populate('element product').exec()
             .then(
                 function(relationships) {
                     if(relationships) {
                         var productAcesseds = [];
-                        for(relationship in relationships) {
+                        for (var i = 0, len = relationships.length; i < len; i++) {
+                            var relationship = relationships[i];
                             var element = relationship.element;
                             var product = relationship.product;
                             if(element.hitType == 'detail') {
@@ -25,7 +26,10 @@ exports.listMoreAcessed = function(req, res) {
                                 }
                             }
                         }
+                        productAcesseds = cleanArray(productAcesseds);
                         productAcesseds.sort(sortQuantity);
+                        console.log(productAcesseds);
+                        res.json(productAcesseds);
                     }
                 },
                 function(err) {
@@ -37,5 +41,15 @@ exports.listMoreAcessed = function(req, res) {
 };
 
 function sortQuantity(a,b) {
-    return a.quantity - b.quantity;
+    return b.quantity - a.quantity;
+}
+
+function cleanArray(actual){
+  var newArray = new Array();
+  for(var i = 0; i<actual.length; i++){
+      if (actual[i]){
+        newArray.push(actual[i]);
+    }
+  }
+  return newArray;
 }
