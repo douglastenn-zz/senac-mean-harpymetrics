@@ -9,6 +9,20 @@ angular.module('harpyid').controller('HarpyidController', ['$scope', '$window', 
     $scope.websites = [];
     $scope.success = false;
     $scope.filterWebsite = '';
+        
+    function getMoreAcessed() {
+        $http.get('/product/most-acessed/')
+            .success(function(products) {
+                console.log(products);
+            })
+            .error(function(err) {
+                console.log('Error: ' + err);
+                $scope.message = {
+                   texto: 'Não foi possível obter a lista.'
+                };
+            });
+    }
+    getMoreAcessed();
 
     function getWebsites() {
         $http.get('/websites')
