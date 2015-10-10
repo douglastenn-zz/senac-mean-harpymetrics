@@ -14,8 +14,16 @@ var mongoose = require('mongoose'),
 
 exports.save = function(req, res) {
     var data = getData(req);
-	var element = saveObject(new Element(data), 'Element');
-    saveProps(data.props, element);
+    var element = new Element(data);
+    element.save(function(err, elementSaved) {
+        if (err) {
+            console.info('error', err);
+        } else {
+            console.info('Objeto Elemento Salvo');
+            saveProps(data.props, elementSaved);
+        }
+    }); 
+    
 };
 
 function saveProps(props, element) {
@@ -81,7 +89,7 @@ function saveCategories(categories, element) {
                     }
                     var relationship = new ElementCategory({
                         element: element,
-                        category: productSaved
+                        category: categorySaved
                     });
                     saveRelationship(relationship);
                 },
