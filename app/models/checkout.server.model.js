@@ -4,7 +4,15 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
-var CheckoutSchema = new Schema({
+var CheckoutSchema = new Schema({    
+    transactionId: {
+        type: String,
+        required: true
+    },
+    revenue: String,
+    tax: String,
+    shipping: String,
+    coupon: String,
     product: [{
         id: {
             type: String,

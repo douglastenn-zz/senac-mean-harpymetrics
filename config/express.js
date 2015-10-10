@@ -75,6 +75,8 @@ module.exports = function(db) {
     require('../app/routes/website.server.routes.js')(app);
     require('../app/routes/apiIntegration.server.routes.js')(app);
     require('../app/routes/product.server.routes.js')(app);
+    require('../app/routes/category.server.routes.js')(app);
+    require('../app/routes/page.server.routes.js')(app);
 	
 	// Configure static file serving
 	app.use(express.static('./public'));

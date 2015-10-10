@@ -17,7 +17,7 @@ exports.listMostAcessed = function(req, res) {
                             var relationship = relationships[i];
                             var element = relationship.element;
                             var product = relationship.product;
-                            if(element.hitType == 'detail') {
+                            if(element.hitType.toLowerCase() == 'detail') {
                                 if(productAcesseds[product.id]) {
                                     productAcesseds[product.id] = 
                                         {product: product, quantity: productAcesseds[product.id].quantity + 1};
@@ -51,7 +51,7 @@ exports.listMostViewed = function(req, res) {
                             var relationship = relationships[i];
                             var element = relationship.element;
                             var product = relationship.product;
-                            if(element.hitType == 'view') {
+                            if(element.hitType.toLowerCase() == 'view') {
                                 if(productAcesseds[product.id]) {
                                     productAcesseds[product.id] = 
                                         {product: product, quantity: productAcesseds[product.id].quantity + 1};
@@ -85,7 +85,7 @@ exports.listMostClicked = function(req, res) {
                             var relationship = relationships[i];
                             var element = relationship.element;
                             var product = relationship.product;
-                            if(element.hitType == 'click') {
+                            if(element.hitType.toLowerCase() == 'click') {
                                 if(productAcesseds[product.id]) {
                                     productAcesseds[product.id] = 
                                         {product: product, quantity: productAcesseds[product.id].quantity + 1};
