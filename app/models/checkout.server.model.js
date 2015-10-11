@@ -13,16 +13,9 @@ var CheckoutSchema = new Schema({
     tax: String,
     shipping: String,
     coupon: String,
-    product: [{
-        id: {
-            type: String,
-            required: true
-        },
-        quantity: {
-            type: Number,
-            required: true
-        }
-    }]
+    id: String,
+    price: String,
+    quantity: Number
 });
 
 
