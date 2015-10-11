@@ -43,11 +43,11 @@
 												</tr>
 											</thead>
 											<tbody>
-                        <tr ng-repeat="website in websites">
+                                                <tr ng-repeat="website in websites">
 													<td scope="row">{{$index+1}}</td>
 													<td>{{website.name}}</td>
 													<td class="details">
-														<a href='/#!/admin/details'><i class="fa fa-plus-square"></i></a>
+														<a href='/#!/admin/details/{{website._id}}'><i class="fa fa-plus-square"></i></a>
 													</td>
 												</tr>
 											</tbody>

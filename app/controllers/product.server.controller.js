@@ -7,6 +7,7 @@ var mongoose = require('mongoose'),
     ElementProduct = mongoose.model('ElementProduct');
 
 exports.listMostAcessed = function(req, res) {
+    var harpyid = req.params.harpyid;
     
     ElementProduct.find().populate('element product').exec()
             .then(
@@ -17,14 +18,17 @@ exports.listMostAcessed = function(req, res) {
                             var relationship = relationships[i];
                             var element = relationship.element;
                             var product = relationship.product;
-                            if(element.hitType.toLowerCase() == 'detail') {
-                                if(productAcesseds[product.id]) {
-                                    productAcesseds[product.id] = 
-                                        {product: product, quantity: productAcesseds[product.id].quantity + 1};
-                                } else {
-                                    productAcesseds[product.id] = {product: product, quantity: 1};
+                            if(element.harpyId == harpyid) {
+                                if(element.hitType.toLowerCase() == 'detail') {
+                                    if(productAcesseds[product.id]) {
+                                        productAcesseds[product.id] = 
+                                            {product: product, quantity: productAcesseds[product.id].quantity + 1};
+                                    } else {
+                                        productAcesseds[product.id] = {product: product, quantity: 1};
+                                    }
                                 }
                             }
+                            
                         }
                         productAcesseds = cleanArray(productAcesseds);
                         productAcesseds.sort(sortQuantity);
@@ -41,6 +45,7 @@ exports.listMostAcessed = function(req, res) {
 };
 
 exports.listMostViewed = function(req, res) {
+    var harpyid = req.params.harpyid;
     
     ElementProduct.find().populate('element product').exec()
             .then(
@@ -51,12 +56,14 @@ exports.listMostViewed = function(req, res) {
                             var relationship = relationships[i];
                             var element = relationship.element;
                             var product = relationship.product;
-                            if(element.hitType.toLowerCase() == 'view') {
-                                if(productAcesseds[product.id]) {
-                                    productAcesseds[product.id] = 
-                                        {product: product, quantity: productAcesseds[product.id].quantity + 1};
-                                } else {
-                                    productAcesseds[product.id] = {product: product, quantity: 1};
+                            if(element.harpyId == harpyid) {
+                                if(element.hitType.toLowerCase() == 'view') {
+                                    if(productAcesseds[product.id]) {
+                                        productAcesseds[product.id] = 
+                                            {product: product, quantity: productAcesseds[product.id].quantity + 1};
+                                    } else {
+                                        productAcesseds[product.id] = {product: product, quantity: 1};
+                                    }
                                 }
                             }
                         }
@@ -75,6 +82,7 @@ exports.listMostViewed = function(req, res) {
 };
 
 exports.listMostClicked = function(req, res) {
+    var harpyid = req.params.harpyid;
     
     ElementProduct.find().populate('element product').exec()
             .then(
@@ -85,12 +93,14 @@ exports.listMostClicked = function(req, res) {
                             var relationship = relationships[i];
                             var element = relationship.element;
                             var product = relationship.product;
-                            if(element.hitType.toLowerCase() == 'click') {
-                                if(productAcesseds[product.id]) {
-                                    productAcesseds[product.id] = 
-                                        {product: product, quantity: productAcesseds[product.id].quantity + 1};
-                                } else {
-                                    productAcesseds[product.id] = {product: product, quantity: 1};
+                            if(element.harpyId == harpyid) {
+                                if(element.hitType.toLowerCase() == 'click') {
+                                    if(productAcesseds[product.id]) {
+                                        productAcesseds[product.id] = 
+                                            {product: product, quantity: productAcesseds[product.id].quantity + 1};
+                                    } else {
+                                        productAcesseds[product.id] = {product: product, quantity: 1};
+                                    }
                                 }
                             }
                         }

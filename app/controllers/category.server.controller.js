@@ -7,6 +7,7 @@ var mongoose = require('mongoose'),
     ElementCategory = mongoose.model('ElementCategory');
 
 exports.listMostAcessed = function(req, res) {
+    var harpyid = req.params.harpyid;
     
     ElementCategory.find().populate('element category').exec()
             .then(
@@ -17,12 +18,14 @@ exports.listMostAcessed = function(req, res) {
                             var relationship = relationships[i];
                             var element = relationship.element;
                             var category = relationship.category;
-                            if(element.hitType == 'detail') {
-                                if(categoryAcesseds[category.id]) {
-                                    categoryAcesseds[category.id] = 
-                                        {category: category, quantity: categoryAcesseds[category.id].quantity + 1};
-                                } else {
-                                    categoryAcesseds[category.id] = {category: category, quantity: 1};
+                            if(element.harpyId == harpyid) {
+                                if(element.hitType == 'detail') {
+                                    if(categoryAcesseds[category.id]) {
+                                        categoryAcesseds[category.id] = 
+                                            {category: category, quantity: categoryAcesseds[category.id].quantity + 1};
+                                    } else {
+                                        categoryAcesseds[category.id] = {category: category, quantity: 1};
+                                    }
                                 }
                             }
                         }

@@ -8,7 +8,7 @@ module.exports = function(app) {
         .post(isAuthenticated, controller.save);
     
     app.route('/websites/:id')
-//        .get(ensureAuthorized, controller.getWebsite)
+        .get(isAuthenticated, controller.getWebsite)
         .delete(isAuthenticated, controller.delete);
 };
 
