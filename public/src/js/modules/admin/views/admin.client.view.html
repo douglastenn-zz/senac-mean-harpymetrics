@@ -1,11 +1,161 @@
-<div ng-controller="AdminController" class="main-content-view">
+<div ng-controller="AdminController" class="main-content-view admin-portal-site">
 	<div class="container-fluid">
 		<div class="row">
 			<section class="admin-left-nav">
-
+				<div class="portal-user-loged">
+					<p class="display-user"><i class="fa fa-user"></i> User Name</p>
+				</div>
+				<ul class="left-nav-list">
+					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
+					<li><a href="/#!/admin/details"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
+					<li class="left-nav-submenu">
+						<a href="/#!/admin"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
+						<ul class="left-nav-submenu-list">
+							<li><a href="/#!/admin">Relatório 001</a></li>
+							<li><a href="/#!/admin">Relatório 002</a></li>
+							<li><a href="/#!/admin">Relatório 003</a></li>
+							<li><a href="/#!/admin">Relatório 003</a></li>
+						</ul>
+					</li>
+					<li><a href="/#!/admin"><i class="fa fa-book"></i> Documentação</a></li>
+					<li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
+					<li><a href="/#!/admin"><i class="fa fa-question"></i> Suporte</a></li>
+				</ul>
 			</section>
 			<section class="admin-content">
-				
+				<div class="admin-painel-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<h4 class="pull-left page-title">Bem vindo!</h4>
+								<ol class="breadcrumb pull-right">
+									<li><a href="/#!/">HarpyMetrics Site</a></li>
+									<li class="active"><a href="/#!/admin">Dashboard</a></li>
+								</ol>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="admin-top-tool-bar">
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/harpyid">
+										HarpyID
+									</a>
+								</div>
+								<div class="admin-intro-site-info">
+									<h3>Meus Sites</h3>
+									<div class="table-responsive">
+										<table class="table">
+											<thead>
+												<tr>
+													<th class="list-num">#</th>
+													<th>Nome</th>
+													<th>Detalhes</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">1</th>
+													<td>Site 001</td>
+													<td class="details">
+														<a href='/#!/admin/details'><i class="fa fa-plus-square"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Site 002</td>
+													<td class="details">
+														<a href='/#!/admin/details'><i class="fa fa-plus-square"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Site 003</td>
+													<td class="details">
+														<a href='/#!/admin/details'><i class="fa fa-plus-square"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Site 004</td>
+													<td class="details">
+														<a href='/#!/admin/details'><i class="fa fa-plus-square"></i></a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<h3>Status</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-lg-3">
+								<div class="mini-stat blue-content bx-shadow bg-info">
+									<span class="mini-stat-icon"><i class="ion-social-usd"></i></span>
+									<div class="mini-stat-info text-right">
+										<span class="counter">Visitas no ano 15852</span> Site 1
+									</div>
+									<div class="tiles-progress">
+										<div class="m-t-20">
+											<h5 class="text-uppercase text-white m-0">Sessões nos últimos 30 dias
+												<span class="pull-right">235</span>
+											</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 col-lg-3">
+								<div class="mini-stat blue-content bx-shadow bg-info">
+									<span class="mini-stat-icon"><i class="ion-social-usd"></i></span>
+									<div class="mini-stat-info text-right">
+										<span class="counter">Visitas no ano 15852</span> Site 2
+									</div>
+									<div class="tiles-progress">
+										<div class="m-t-20">
+											<h5 class="text-uppercase text-white m-0">Sessões nos últimos 30 dias
+												<span class="pull-right">235</span>
+											</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 col-lg-3">
+								<div class="mini-stat blue-content bx-shadow bg-info">
+									<span class="mini-stat-icon"><i class="ion-social-usd"></i></span>
+									<div class="mini-stat-info text-right">
+										<span class="counter">Visitas no ano 15852</span> Site 3
+									</div>
+									<div class="tiles-progress">
+										<div class="m-t-20">
+											<h5 class="text-uppercase text-white m-0">Sessões nos últimos 30 dias
+												<span class="pull-right">235</span>
+											</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 col-lg-3">
+								<div class="mini-stat blue-content bx-shadow bg-info">
+									<span class="mini-stat-icon"><i class="ion-social-usd"></i></span>
+									<div class="mini-stat-info text-right">
+										<span class="counter">Visitas no ano 15852</span> Site 4
+									</div>
+									<div class="tiles-progress">
+										<div class="m-t-20">
+											<h5 class="text-uppercase text-white m-0">Sessões nos últimos 30 dias
+												<span class="pull-right">235</span>
+											</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</div>
 	</div>
