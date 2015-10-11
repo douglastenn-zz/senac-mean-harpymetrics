@@ -3,7 +3,8 @@ section.admin-left-nav {
     background-color: #34495e;
     width: 260px;
     z-index: 2;
-    height: 100%;
+    min-height: 100%;
+    height: auto;
     div.portal-user-loged{
       width: 100%;
       box-sizing: border-box;
