@@ -217,8 +217,6 @@ h3.topic-title {
     text-shadow: 0px 5px 20px #2c3e50;
     transition: all 0.5s ease; }
 
-<<<<<<< HEAD
-=======
 footer.mdl-mega-footer {
   padding: 16px 40px;
   color: #ccc;
@@ -227,7 +225,6 @@ footer.mdl-mega-footer {
   width: 100%;
   /* bottom: 0; */ }
 
->>>>>>> master
 .text-column-info {
   padding: 30px 0px;
   text-align: justify; }
@@ -475,12 +472,6 @@ header {
   border-radius: 0px;
   text-transform: none; }
 
-<<<<<<< HEAD
-footer.mdl-mega-footer {
-  padding: 16px 40px;
-  color: #ccc;
-  background-color: #2c3e50; }
-=======
 section.admin-left-nav {
   position: absolute;
   background-color: #34495e;
@@ -529,7 +520,7 @@ section.admin-content {
 ul.left-nav-list li.left-nav-submenu:hover a,
 ul.left-nav-list li.left-nav-submenu.active a {
   background: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.6); }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 ul.left-nav-list li.left-nav-submenu:hover ul.left-nav-submenu-list,
 ul.left-nav-list li.left-nav-submenu.active ul.left-nav-submenu-list {
   display: block;
@@ -591,7 +582,6 @@ ul.left-nav-list li {
       float: right;
       margin: 0px 30px 0px 0px;
       font-size: 1rem; }
->>>>>>> master
 
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
