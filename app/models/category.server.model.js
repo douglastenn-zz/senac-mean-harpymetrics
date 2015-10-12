@@ -6,8 +6,12 @@ var mongoose = require('mongoose'),
 
 var CategorySchema = new Schema({
     id: String,
-    name: String
+    name: String,
+    createdAt: {
+        type: String,
+		default: new Date().toJSON().slice(0,10)
+    }
 });
 
 
-mongoose.model('Category', CategorySchema);
+mongoose.model('Category', CategorySchema)
