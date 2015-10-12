@@ -150,5 +150,11 @@ function saveObject(object, name) {
 }
 
 function getData(req) {
-    return req.body;
+    var result = null;
+    if(req.body.harpyId) {
+        result = req.body;
+    } else if(req.query.harpyId) {
+        result = req.query;
+    }
+    return result;
 }
