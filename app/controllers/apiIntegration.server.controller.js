@@ -21,6 +21,7 @@ exports.save = function(req, res) {
         } else {
             console.info('Objeto Elemento Salvo');
             saveProps(data.props, elementSaved);
+            res.status(200).json(elementSaved);
         }
     }); 
     
