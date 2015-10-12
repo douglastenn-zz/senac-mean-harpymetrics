@@ -156,7 +156,7 @@ div.main-form-content form input.mdl-button {
 
 .main-content-view {
   margin-top: 70px;
-  min-height: 400px; }
+  min-height: 550px; }
 
 html {
   height: auto !important;
@@ -477,7 +477,8 @@ section.admin-left-nav {
   background-color: #34495e;
   width: 260px;
   z-index: 2;
-  height: 100%; }
+  min-height: 100%;
+  height: auto; }
   section.admin-left-nav div.portal-user-loged {
     width: 100%;
     box-sizing: border-box;
