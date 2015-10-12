@@ -5,6 +5,7 @@ var product = require('../controllers/product.server.controller'),
 
 module.exports = function(app) {
     app.get('/:harpyid/product/most-acessed', isAuthenticated, product.listMostAcessed);
+    app.get('/:harpyid/product/most-acessed-of-day', isAuthenticated, product.listMostAcessedOfDay);
     app.get('/:harpyid/product/most-viewed', isAuthenticated, product.listMostViewed);
     app.get('/:harpyid/product/most-clicked', isAuthenticated, product.listMostClicked);
 };

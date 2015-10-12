@@ -31,7 +31,7 @@ exports.listMostAcessed = function(req, res) {
                         }
                         categoryAcesseds = cleanArray(categoryAcesseds);
                         categoryAcesseds.sort(sortQuantity);
-                        console.log(categoryAcesseds);
+                        console.log('categoryAcesseds', categoryAcesseds);
                         res.json(categoryAcesseds);
                     }
                 },
@@ -69,7 +69,7 @@ exports.listMostAcessedOfDay = function(req, res) {
                         }
                         categoryAcesseds = cleanArray(categoryAcesseds);
                         categoryAcesseds.sort(sortQuantity);
-                        console.log(categoryAcesseds);
+                        console.log('categoryAcesseds', categoryAcesseds);
                         res.json(categoryAcesseds);
                     }
                 },

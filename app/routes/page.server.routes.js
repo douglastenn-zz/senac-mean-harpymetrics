@@ -5,6 +5,7 @@ var page = require('../controllers/page.server.controller'),
 
 module.exports = function(app) {
     app.get('/:harpyid/page/most-acessed', isAuthenticated, page.listMostAcessed);
+    app.get('/:harpyid/page/most-acessed-of-day', isAuthenticated, page.listMostAcessedOfDay);
 };
 
 var isAuthenticated = function (req, res, next) {
