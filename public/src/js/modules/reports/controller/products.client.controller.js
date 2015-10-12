@@ -7,20 +7,5 @@ angular.module('products').controller('ProductsController', ['$scope', '$http', 
     $scope.formData = {};
     $scope.variable = 'Variavél do controller do products.client.controller.js';
 
-    function getWebsite() {
-        if($stateParams.websiteId) {
-            $http.get('/websites/' + $stateParams.websiteId)
-            .success(function(website) {
-                $scope.website = website;
-            })
-            .error(function(err) {
-                console.log('Error: ' + err);
-                $scope.message = {
-                   texto: 'Não foi possível obter a lista.'
-                };
-            });
-        }
-    }
-    getWebsite();
   }
 ]);
