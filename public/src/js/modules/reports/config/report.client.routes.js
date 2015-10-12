@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('report').config(['$stateProvider', '$urlRouterProvider',
+angular.module('reports').config(['$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
 	    $stateProvider
 
-        .state('report', {
-            url: '/admin/report/:websiteId',
+        .state('reports', {
+            url: '/admin/reports',
             templateUrl: '/src/js/modules/reports/views/report.client.view.html'
         });
 	}

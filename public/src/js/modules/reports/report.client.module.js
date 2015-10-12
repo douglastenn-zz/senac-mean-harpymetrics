@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('report', []);
+angular.module('reports', []);
