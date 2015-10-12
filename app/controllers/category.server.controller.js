@@ -43,6 +43,44 @@ exports.listMostAcessed = function(req, res) {
     
 };
 
+exports.listMostAcessedOfDay = function(req, res) {
+    var harpyid = req.params.harpyid;
+    var today = new Date().toJSON().slice(0,10);
+    
+    ElementCategory.find({createdAt: today}).populate('element category').exec()
+            .then(
+                function(relationships) {
+                    if(relationships) {
+                        var categoryAcesseds = [];
+                        for (var i = 0, len = relationships.length; i < len; i++) {
+                            var relationship = relationships[i];
+                            var element = relationship.element;
+                            var category = relationship.category;
+                            if(element.harpyId == harpyid) {
+                                if(element.hitType == 'detail') {
+                                    if(categoryAcesseds[category.id]) {
+                                        categoryAcesseds[category.id] = 
+                                            {category: category, quantity: categoryAcesseds[category.id].quantity + 1};
+                                    } else {
+                                        categoryAcesseds[category.id] = {category: category, quantity: 1};
+                                    }
+                                }
+                            }
+                        }
+                        categoryAcesseds = cleanArray(categoryAcesseds);
+                        categoryAcesseds.sort(sortQuantity);
+                        console.log(categoryAcesseds);
+                        res.json(categoryAcesseds);
+                    }
+                },
+                function(err) {
+                    console.error(err);
+                    res.status(500).json(err);
+                }
+             ); 
+    
+};
+
 function sortQuantity(a,b) {
     return b.quantity - a.quantity;
 }
