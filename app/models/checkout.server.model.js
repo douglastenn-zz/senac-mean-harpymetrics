@@ -15,7 +15,11 @@ var CheckoutSchema = new Schema({
     coupon: String,
     id: String,
     price: String,
-    quantity: Number
+    quantity: Number,
+    createdAt: {
+        type: String,
+		default: new Date().toJSON().slice(0,10)
+    }
 });
 
 

@@ -12,6 +12,10 @@ var ElementCheckoutSchema = new Schema({
     checkout: {
         type: mongoose.Schema.ObjectId,
         ref: 'Checkout'
+    },
+    createdAt: {
+        type: String,
+		default: new Date().toJSON().slice(0,10)
     }
 });
 

@@ -32,7 +32,45 @@ exports.listMostAcessed = function(req, res) {
                         }
                         productAcesseds = cleanArray(productAcesseds);
                         productAcesseds.sort(sortQuantity);
-                        console.log(productAcesseds);
+                        console.log('productAcesseds', productAcesseds);
+                        res.json(productAcesseds);
+                    }
+                },
+                function(err) {
+                    console.error(err);
+                    res.status(500).json(err);
+                }
+             ); 
+    
+};
+
+exports.listMostAcessedOfDay = function(req, res) {
+    var harpyid = req.params.harpyid;
+    var today = new Date().toJSON().slice(0,10);
+    
+    ElementProduct.find({createdAt: today}).populate('element product').exec()
+            .then(
+                function(relationships) {
+                    if(relationships) {
+                        var productAcesseds = [];
+                        for (var i = 0, len = relationships.length; i < len; i++) {
+                            var relationship = relationships[i];
+                            var element = relationship.element;
+                            var product = relationship.product;
+                            if(element.harpyId == harpyid) {
+                                if(element.hitType.toLowerCase() == 'detail') {
+                                    if(productAcesseds[product.id]) {
+                                        productAcesseds[product.id] = 
+                                            {product: product, quantity: productAcesseds[product.id].quantity + 1};
+                                    } else {
+                                        productAcesseds[product.id] = {product: product, quantity: 1};
+                                    }
+                                }
+                            }
+                        }
+                        productAcesseds = cleanArray(productAcesseds);
+                        productAcesseds.sort(sortQuantity);
+                        console.log('productAcessedsOfDay', productAcesseds);
                         res.json(productAcesseds);
                     }
                 },

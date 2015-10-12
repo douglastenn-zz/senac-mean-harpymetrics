@@ -10,8 +10,8 @@ angular.module('harpyid').controller('HarpyidController', ['$scope', '$window', 
     $scope.success = false;
     $scope.filterWebsite = '';
         
-    function getMoreAcessed() {
-        $http.get('/product/most-acessed/')
+    function getMostAcessed() {
+        $http.get('HID15b2330/product/most-acessed/')
             .success(function(products) {
                 console.log(products);
             })
@@ -22,7 +22,7 @@ angular.module('harpyid').controller('HarpyidController', ['$scope', '$window', 
                 };
             });
     }
-    getMoreAcessed();
+    getMostAcessed();
 
     function getWebsites() {
         $http.get('/websites')

@@ -12,6 +12,10 @@ var ElementSearchSchema = new Schema({
     search: {
         type: mongoose.Schema.ObjectId,
         ref: 'Search'
+    },
+    createdAt: {
+        type: String,
+		default: new Date().toJSON().slice(0,10)
     }
 });
 

@@ -26,6 +26,10 @@ var WebsiteSchema = new Schema({
     customer: {
         type: mongoose.Schema.ObjectId,
         ref: 'Customer'
+    },
+    createdAt: {
+        type: String,
+		default: new Date().toJSON().slice(0,10)
     }
 });
 
