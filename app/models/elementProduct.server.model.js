@@ -12,6 +12,10 @@ var ElementProductSchema = new Schema({
     product: {
         type: mongoose.Schema.ObjectId,
         ref: 'Product'
+    },
+    createdAt: {
+        type: String,
+		default: new Date().toJSON().slice(0,10)
     }
 });
 

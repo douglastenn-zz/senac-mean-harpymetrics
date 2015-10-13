@@ -12,6 +12,10 @@ var ElementCategorySchema = new Schema({
     category: {
         type: mongoose.Schema.ObjectId,
         ref: 'Category'
+    },
+    createdAt: {
+        type: String,
+		default: new Date().toJSON().slice(0,10)
     }
 });
 

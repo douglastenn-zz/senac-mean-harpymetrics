@@ -32,5 +32,4 @@ public/libs
 node_modules
 
 #dist
-public/dist/js
-public/dist/css
+public/dist

@@ -52,7 +52,11 @@ var ElementSchema = new Schema({
     userId: {
         type: Number,
 		required: true
-	}   
+	},
+    createdAt: {
+        type: String,
+		default: new Date().toJSON().slice(0,10)
+    }
 });
 
 

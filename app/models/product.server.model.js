@@ -18,7 +18,11 @@ var ProductSchema = new Schema({
     category: String,
     variant: String,
     brand: String,
-    position: Number
+    position: Number,
+    createdAt: {
+        type: String,
+		default: new Date().toJSON().slice(0,10)
+    }
 });
 
 
