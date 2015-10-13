@@ -1,6 +1,7 @@
 {
   "name": "HarpyMetrics",
   "main": "server.js",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "archiver": "~0.14.4",
