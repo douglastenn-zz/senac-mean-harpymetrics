@@ -31,7 +31,11 @@ exports.listMostAcessed = function(req, res) {
                         }
                         categoryAcesseds = cleanArray(categoryAcesseds);
                         categoryAcesseds.sort(sortQuantity);
+<<<<<<< HEAD
                         console.log(categoryAcesseds);
+=======
+                        console.log('categoryAcesseds', categoryAcesseds);
+>>>>>>> 147d057fcf7e83f682d1c7bdb5408eb31ec9564b
                         res.json(categoryAcesseds);
                     }
                 },
@@ -69,7 +73,11 @@ exports.listMostAcessedOfDay = function(req, res) {
                         }
                         categoryAcesseds = cleanArray(categoryAcesseds);
                         categoryAcesseds.sort(sortQuantity);
+<<<<<<< HEAD
                         console.log(categoryAcesseds);
+=======
+                        console.log('categoryAcesseds', categoryAcesseds);
+>>>>>>> 147d057fcf7e83f682d1c7bdb5408eb31ec9564b
                         res.json(categoryAcesseds);
                     }
                 },

@@ -3,7 +3,7 @@
 angular.module('sitedetails').controller('SiteDetailsController', ['$scope', '$http', '$stateParams',
     function($scope, $http, $stateParams) {
 
-	$scope._ = _;
+    $scope._ = _;
     $scope.formData = {};
     $scope.variable = 'Variavél do controller do sitedetails.client.controller.js';
     $scope.status = {};

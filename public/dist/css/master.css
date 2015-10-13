@@ -464,7 +464,10 @@ ul.left-nav-list li.left-nav-submenu:hover a,
 ul.left-nav-list li.left-nav-submenu.active a {
   background: rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 147d057fcf7e83f682d1c7bdb5408eb31ec9564b
 ul.left-nav-list li.left-nav-submenu:hover ul.left-nav-submenu-list,
 ul.left-nav-list li.left-nav-submenu.active ul.left-nav-submenu-list {
   display: block;
