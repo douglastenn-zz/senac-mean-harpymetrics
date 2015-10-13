@@ -6,7 +6,9 @@ angular.module('customer').config(['$stateProvider', '$urlRouterProvider',
 
         .state('signup', {
             url: '/signup',
-            templateUrl: '/src/js/modules/customer/views/create.client.view.html'
+            templateProvider: function($templateCache){
+				return $templateCache.get('create.client.view.html'); 
+			}
         });
 	}
 ]);
