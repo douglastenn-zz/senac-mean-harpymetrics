@@ -109,8 +109,8 @@ gulp.task('clean', function () {
 gulp.task('serve', ['watch'], function () {
 	browserSync({
 		files: [ 'app/**/*.html', 'public/dist/**', '!dist/**/*.map' ],
-		proxy: 'localhost:3000',
-		port: 3001,
+		proxy: 'localhost:8080',
+		port: 3000,
 		open: !$.util.env.no
 	});
 });
