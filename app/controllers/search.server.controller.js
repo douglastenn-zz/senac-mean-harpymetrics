@@ -2,6 +2,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    moment = require('moment'),
     Element = mongoose.model('Element'),
     Search = mongoose.model('Product'),
     ElementSearch = mongoose.model('ElementSearch');
@@ -48,7 +49,7 @@ exports.listMostSearched = function(req, res) {
 
 exports.listMostSearchedOfDay = function(req, res) {
     var harpyid = req.params.harpyid;
-    var today = new Date().toJSON().slice(0,10);
+    var today = moment(new Date()).format('YYYY-MM-DD');
     
     ElementSearch.find({createdAt: today}).populate('element search').exec()
             .then(

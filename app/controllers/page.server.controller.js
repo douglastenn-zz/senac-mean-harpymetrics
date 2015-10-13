@@ -2,6 +2,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    moment = require('moment'),
 	Element = mongoose.model('Element');
 
 exports.listMostAcessed = function(req, res) {
@@ -44,7 +45,7 @@ exports.listMostAcessed = function(req, res) {
 
 exports.listMostAcessedOfDay = function(req, res) {
     var harpyid = req.params.harpyid;
-    var today = new Date().toJSON().slice(0,10);
+    var today = moment(new Date()).format('YYYY-MM-DD');
     
     Element.find({hitType: 'detail', createdAt: today}).exec()
             .then(

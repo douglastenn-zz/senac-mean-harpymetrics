@@ -5,6 +5,7 @@ var category = require('../controllers/category.server.controller'),
 
 module.exports = function(app) {
     app.get('/:harpyid/category/most-acessed', isAuthenticated, category.listMostAcessed);
+    app.get('/:harpyid/category/most-acessed-of-day', isAuthenticated, category.listMostAcessedOfDay);
 };
 
 var isAuthenticated = function (req, res, next) {

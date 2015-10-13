@@ -2,6 +2,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    moment = require('moment'),
 	Schema = mongoose.Schema;
 
 var ElementSearchSchema = new Schema({
@@ -15,7 +16,7 @@ var ElementSearchSchema = new Schema({
     },
     createdAt: {
         type: String,
-		default: new Date().toJSON().slice(0,10)
+		default: moment(new Date()).format('YYYY-MM-DD')
     }
 });
 

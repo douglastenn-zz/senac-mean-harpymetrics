@@ -2,6 +2,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    moment = require('moment'),
 	Element = mongoose.model('Element'),
     Product = mongoose.model('Product'),
     ElementProduct = mongoose.model('ElementProduct');
@@ -46,7 +47,7 @@ exports.listMostAcessed = function(req, res) {
 
 exports.listMostAcessedOfDay = function(req, res) {
     var harpyid = req.params.harpyid;
-    var today = new Date().toJSON().slice(0,10);
+    var today = moment(new Date()).format('YYYY-MM-DD');
     
     ElementProduct.find({createdAt: today}).populate('element product').exec()
             .then(

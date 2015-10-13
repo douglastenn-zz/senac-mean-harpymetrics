@@ -2,6 +2,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    moment = require('moment'),
 	Element = mongoose.model('Element'),
     Category = mongoose.model('Category'),
     ElementCategory = mongoose.model('ElementCategory');
@@ -31,7 +32,7 @@ exports.listMostAcessed = function(req, res) {
                         }
                         categoryAcesseds = cleanArray(categoryAcesseds);
                         categoryAcesseds.sort(sortQuantity);
-                        console.log(categoryAcesseds);
+                        console.log('categoryAcesseds', categoryAcesseds);
                         res.json(categoryAcesseds);
                     }
                 },
@@ -45,7 +46,8 @@ exports.listMostAcessed = function(req, res) {
 
 exports.listMostAcessedOfDay = function(req, res) {
     var harpyid = req.params.harpyid;
-    var today = new Date().toJSON().slice(0,10);
+    var today = moment(new Date()).format('YYYY-MM-DD');
+    console.log('today', today);
     
     ElementCategory.find({createdAt: today}).populate('element category').exec()
             .then(
@@ -69,7 +71,7 @@ exports.listMostAcessedOfDay = function(req, res) {
                         }
                         categoryAcesseds = cleanArray(categoryAcesseds);
                         categoryAcesseds.sort(sortQuantity);
-                        console.log(categoryAcesseds);
+                        console.log('categoryAcesseds', categoryAcesseds);
                         res.json(categoryAcesseds);
                     }
                 },
