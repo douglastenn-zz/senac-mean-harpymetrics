@@ -57,7 +57,8 @@ var ElementSchema = new Schema({
     createdAt: {
         type: String,
 		default: moment(new Date()).format('YYYY-MM-DD')
-    }
+    },
+    userStep: Number
 });
 
 
