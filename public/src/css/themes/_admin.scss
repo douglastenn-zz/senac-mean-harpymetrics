@@ -11,6 +11,7 @@ section.admin-left-nav {
       min-height: 70px;
       padding: 20px 0px;
       background: rgba(0, 0, 0, 0.1);
+      color: #fff;
       i.fa.fa-user{
         color: #fff;
         background: rgba(255, 255, 255, 0.2);
@@ -21,10 +22,14 @@ section.admin-left-nav {
         line-height: 25px;
         text-align: center;
       }
+      p.welcome{
+        padding: 10px 0px 0px 70px;
+        margin: 0px;
+      }
       p.display-user{
         color: #fff;
         font-weight: 800;
-        /* text-align: center; */
+         text-align: left;
         line-height: 25px;
         margin: 0px;
       }

@@ -1,4 +1,4 @@
-<div ng-controller="ReportController" class="main-content-view admin-portal-site">
+<div ng-controller="CategoriesController" class="main-content-view admin-portal-site">
 	<div class="container-fluid">
 		<div class="row">
 			<section class="admin-left-nav">
@@ -24,7 +24,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<h4 class="pull-left page-title">Visão Geral - {{website.name}}</h4>
+								<h4 class="pull-left page-title">Categorias - {{website.name}}</h4>
 								<ol class="breadcrumb pull-right">
 									<li><a href="/#!/">HarpyMetrics Site</a></li>
 									<li class="active"><a href="/#!/admin">Dashboard</a></li>
@@ -34,30 +34,46 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="admin-top-tool-bar">
-									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/harpyid">
-										HarpyID
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/report/{{website.harpyid}}/product/most-acessed">
+										Mais acessados
+									</a>
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/reports">
+										Categorias
 									</a>
 								</div>
 								<div class="admin-intro-site-info">
 									<div class="row">
-										<div class="col-sm-12">
-											<h3>Relatórios</h3>
+										<div class="col-sm-12 col-md-8">
+											<h3 class="report-title">Categorias - mapeamento</h3>
+										</div>
+										<div class="col-sm-12 col-md-4">
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
-										</div>
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
-										</div>
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
-										</div>
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
+										<div class="col-sm-12">
+											<div class="table-responsive">
+												<table class="table">
+													<thead>
+														<tr>
+															<th class="list-num">N</th>
+															<th>Nome do produto</th>
+															<th>Modelo</th>
+															<th>Visualizações</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr ng-repeat="website in websites">
+															<td scope="row">{{$index+1}}</td>
+															<td>{{product.name}}</td>
+															<td>{{product.model.name}}</td>
+															<td>{{product.views}}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
 										</div>
 									</div>
+
 								</div>
 							</div>
 						</div>

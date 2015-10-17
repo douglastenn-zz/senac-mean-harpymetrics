@@ -28,6 +28,7 @@ var ElementSchema = new Schema({
         type: Date,
 		required: true
 	},
+    duration: Number,
 	pageType: {
         type: String,
 		required: true
@@ -59,6 +60,15 @@ var ElementSchema = new Schema({
 		default: moment(new Date()).format('YYYY-MM-DD')
     },
     userStep: Number
+});
+
+// Use a pre-save middleware to hash the duration
+ElementSchema.pre('save', function(next) { 
+    var start = moment(this.startTimestamp);
+    var end = moment(this.timestamp);
+    this.duration = moment.duration(end.diff(start)).asSeconds();;
+
+	next();
 });
 
 

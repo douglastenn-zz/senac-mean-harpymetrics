@@ -7,7 +7,7 @@ angular.module('products').config(['$stateProvider', '$urlRouterProvider',
         .state('products', {
             url: '/admin/reports/products',
             templateProvider: function($templateCache){
-				return $templateCache.get('products.client.view.html'); 
+				return $templateCache.get('products.client.view.html');
 			}
         });
 	}
