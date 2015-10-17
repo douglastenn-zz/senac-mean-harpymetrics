@@ -7,18 +7,17 @@
 				</div>
 				<ul class="left-nav-list">
 					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
-					<li><a href="/#!/admin/details/{{website.harpyid}}"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
+					<li><a href="/#!/admin/reports/{{website.harpyid}}"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
 					<li class="left-nav-submenu">
-						<a href="/#!/admin/reports"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
+						<a href="/#!/admin/reports/{{website.harpyid}}"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
 						<ul class="left-nav-submenu-list">
-							<li><a href="/#!/admin/reports/products">Produtos (Geral)</a></li>
-							<li><a href="/#!/admin/reports/{{website.harpyid}}">Relatório 002</a></li>
+							<li><a href="/#!/admin/reports/{{website.harpyid}}/products">Produtos (Geral)</a></li>
+							<li><a href="/#!/admin/reports/{{website.harpyid}}">Categorias</a></li>
 							<li><a href="/#!/admin/reports/{{website.harpyid}}">Relatório 003</a></li>
 						  <li><a href="/#!/admin/report/{{website.harpyid}}/product/most-acessed">Mais acessados</a></li>
 						</ul>
 					</li>
 					<li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
-					<li><a href="/#!/admin"><i class="fa fa-question"></i> Suporte</a></li>
 				</ul>
 			</section>
 			<section class="admin-content">
@@ -48,19 +47,27 @@
 									<div class="row">
 										<div class="col-sm-12">
 
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
-										</div>
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
-										</div>
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
-										</div>
-										<div class="col-md-6 col-sm-6 col-lg-3">
+												<h3 class="report-title">Produtos ordenados por visualização - ranking</h3>
+												<div class="table-responsive">
+													<table class="table">
+														<thead>
+															<tr>
+																<th class="list-num">N</th>
+																<th>Nome do produto</th>
+																<th>Modelo</th>
+																<th>Visualizações</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr ng-repeat="website in websites">
+																<td scope="row">{{$index+1}}</td>
+																<td>{{product.name}}</td>
+																<td>{{product.model.name}}</td>
+																<td>{{product.views}}</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
 
 										</div>
 									</div>

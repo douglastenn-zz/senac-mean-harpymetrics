@@ -4,11 +4,10 @@
 			<section class="admin-left-nav">
 				<div class="portal-user-loged">
 					<p class="display-user"><i class="fa fa-user"></i> User Name</p>
+					<p class="welcome">Bem vindo!</p>
 				</div>
 				<ul class="left-nav-list">
-					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
 				  <li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
-					<li><a href="/#!/admin/support"><i class="fa fa-question"></i> Suporte</a></li>
 				</ul>
 			</section>
 			<section class="admin-content">
@@ -16,10 +15,9 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<h4 class="pull-left page-title">Bem vindo!</h4>
+								<h4 class="pull-left page-title"></h4>
 								<ol class="breadcrumb pull-right">
-									<li><a href="/#!/">HarpyMetrics Site</a></li>
-									<li class="active"><a href="/#!/admin">Dashboard</a></li>
+									<li><a href="/#!/">HarpyMetrics</a></li>
 								</ol>
 							</div>
 						</div>
@@ -42,7 +40,7 @@
 												</tr>
 											</thead>
 											<tbody>
-                                                <tr ng-repeat="website in websites">
+                        <tr ng-repeat="website in websites">
 													<td scope="row">{{$index+1}}</td>
 													<td>{{website.name}}</td>
 													<td class="details">
