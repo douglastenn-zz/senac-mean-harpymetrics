@@ -7,14 +7,14 @@ angular.module('documents').config(['$stateProvider', '$urlRouterProvider',
         .state('documents', {
             url: '/documents',
             templateProvider: function($templateCache){
-				return $templateCache.get('documents.client.view.html'); 
+				return $templateCache.get('documents.client.view.html');
 			}
         })
 
-        .state('documents.events', {
-            url: 'events',
+        .state('events', {
+            url: '/documents/events',
             templateProvider: function($templateCache){
-				return $templateCache.get('events.documents.client.view.html'); 
+				return $templateCache.get('events.documents.client.view.html');
 			}
         });
 	}
