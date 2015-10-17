@@ -9,6 +9,13 @@ angular.module('documents').config(['$stateProvider', '$urlRouterProvider',
             templateProvider: function($templateCache){
 				return $templateCache.get('documents.client.view.html'); 
 			}
+        })
+
+        .state('documents.events', {
+            url: 'events',
+            templateProvider: function($templateCache){
+				return $templateCache.get('events.documents.client.view.html'); 
+			}
         });
 	}
 ]);

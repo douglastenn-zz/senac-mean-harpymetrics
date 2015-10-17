@@ -1,4 +1,20 @@
-.card-docs > .mdl-card__title {
-  color: #fff;
-  background: bottom right 15% no-repeat #46B6AC;
+.card-docs {
+
+	.mdl-card__title {
+	  color: #fff;
+	  background: bottom right 15% no-repeat #46B6AC;
+	}
+
+	.mdl-card__supporting-text {
+		min-height: 210px;
+	}
+
+	.mdl-card__menu {
+	  color: #fff;
+	}
+
+	.fa-ellipsis-v {
+		font-size: 18px;
+		color: #46B6AC;
+	}
 }
