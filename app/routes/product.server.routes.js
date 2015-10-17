@@ -4,7 +4,10 @@ var product = require('../controllers/product.server.controller'),
     passport = require('passport');
 
 module.exports = function(app) {
-    app.get('/product/more-acessed', isAuthenticated, product.listMoreAcessed);
+    app.get('/:harpyid/product/most-acessed', isAuthenticated, product.listMostAcessed);
+    app.get('/:harpyid/product/most-acessed-of-day', isAuthenticated, product.listMostAcessedOfDay);
+    app.get('/:harpyid/product/most-viewed', isAuthenticated, product.listMostViewed);
+    app.get('/:harpyid/product/most-clicked', isAuthenticated, product.listMostClicked);
 };
 
 var isAuthenticated = function (req, res, next) {

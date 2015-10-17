@@ -3,6 +3,7 @@
 
 // Load the module dependencies
 var mongoose = require('mongoose'),
+    moment = require('moment'),
 	Schema = mongoose.Schema;
 
 // Define a new 'CustomerSchema'
@@ -52,7 +53,12 @@ var ElementSchema = new Schema({
     userId: {
         type: Number,
 		required: true
-	}   
+	},
+    createdAt: {
+        type: String,
+		default: moment(new Date()).format('YYYY-MM-DD')
+    },
+    userStep: Number
 });
 
 

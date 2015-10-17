@@ -18,6 +18,23 @@ exports.list = function(req, res) {
          );
 };
 
+exports.getWebsite = function(req, res) {
+    var _id = req.params.id;
+    
+    Website.findById(_id).exec()
+        .then(
+            function(website) {
+                if(!website) throw new Error('Website não encontrado.');
+                console.log('website', website);
+                res.json(website);
+            },
+            function(err) {
+                console.error(err);
+                res.status(500).json(err);
+            }
+         );
+};
+
 exports.save = function(req, res) {
 	var data = req.body;
 	var website = new Website(data);

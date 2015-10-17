@@ -1,0 +1,114 @@
+<div ng-controller="HarpyidController" class="main-content-view admin-portal-site">
+	<div class="container-fluid">
+		<div class="row">
+			<section class="admin-left-nav">
+				<div class="portal-user-loged">
+					<p class="display-user"><i class="fa fa-user"></i> User Name</p>
+				</div>
+				<ul class="left-nav-list">
+					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
+					<li><a href="/#!/admin"><i class="fa fa-book"></i> Documentação</a></li>
+					<li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
+					<li><a href="/#!/admin"><i class="fa fa-question"></i> Suporte</a></li>
+				</ul>
+			</section>
+			<section class="admin-content">
+				<div class="admin-painel-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<h4 class="pull-left page-title">Gerenciar HarpyID</h4>
+								<ol class="breadcrumb pull-right">
+									<li><a href="/#!/">HarpyMetrics Site</a></li>
+									<li class="active"><a href="/#!/admin">Dashboard</a></li>
+								</ol>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="admin-top-tool-bar">
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details">
+										Visão Geral
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<h4>Cadastrar novo site - Criar HarpyID</h4>
+								<div class="main-form-content">
+									<form name="adminForm" ng-submit="saveWebsite(this)" novalidate>
+										<div class="form-admin-content-group">
+											<div class="mdl-textfield mdl-js-textfield form-textfield">
+												<input class="mdl-textfield__input" type="text" name="siteName" ng-model="formData.name" required/>
+												<label class="mdl-textfield__label" for="siteName">Nome do site</label>
+												<span ng-class="error" ng-show="adminForm.siteName.$dirty && adminForm.siteName.$error.required">Campo é obrigatório</span>
+											</div>
+											<div class="mdl-textfield mdl-js-textfield form-textfield">
+												<input class="mdl-textfield__input" type="text" name="siteURL" ng-model="formData.url" required/>
+												<label class="mdl-textfield__label" for="siteURL">URL</label>
+												<span ng-class="error" ng-show="customerForm.lastName.$dirty && customerForm.lastName.$error.required">Campo é obrigatório</span>
+											</div>
+											<div class="mdl-textfield mdl-js-textfield form-textfield">
+												<input class="mdl-textfield__input" type="text" name="timeZone" ng-model="formData.timezone" required/>
+												<label class="mdl-textfield__label" for="timeZone">Time Zone</label>
+												<span ng-class="error" ng-show="adminForm.timeZone.$dirty && adminForm.timeZone.$error.required">Campo é obrigatório</span>
+											</div>
+										</div>
+										<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn" ng-disabled="adminForm.$invalid"
+										value="Confirmar dados"/>
+									</form>
+									<div ng-show="success" class="sucess-msg">
+										<i class="fa fa-check"></i> HarpyID Criado com Sucesso!
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div>
+									<h4>Editar / Excluir Sites - Gerenciar HarpyID</h4>
+									<form action="#">
+										<div class="mdl-textfield mdl-js-textfield">
+											<label class="mdl-button mdl-js-button mdl-button--icon" for="admin-search-site">
+												<i class="material-icons fa fa-search"></i>
+											</label>
+											<input class="mdl-textfield__input" id="admin-search-site" ng-model="filterWebsite" type="search" placeholder=""/>
+										</div>
+
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Site</th>
+														<th>URL</th>
+														<th>HarpyID</th>
+														<th class="text-center">Ação</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr ng-repeat="website in websites | filter: filterWebsite">
+														<td>  {{website.name}}</td>
+														<td>  {{website.url}}</td>
+														<td>	{{website.harpyid}}</td>
+														<td class="text-center">
+															<button ng-click="remove(website)" class="btn btn-warning">Remover</button>
+														</td>
+													</tr>
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

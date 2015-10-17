@@ -2,6 +2,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    moment = require('moment'),
 	Schema = mongoose.Schema;
 
 var ElementCheckoutSchema = new Schema({
@@ -12,6 +13,10 @@ var ElementCheckoutSchema = new Schema({
     checkout: {
         type: mongoose.Schema.ObjectId,
         ref: 'Checkout'
+    },
+    createdAt: {
+        type: String,
+		default: moment(new Date()).format('YYYY-MM-DD')
     }
 });
 

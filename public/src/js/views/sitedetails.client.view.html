@@ -1,0 +1,119 @@
+<div ng-controller="SiteDetailsController" class="main-content-view admin-portal-site">
+	<div class="container-fluid">
+		<div class="row">
+			<section class="admin-left-nav">
+				<div class="portal-user-loged">
+					<p class="display-user"><i class="fa fa-user"></i> User Name</p>
+				</div>
+				<ul class="left-nav-list">
+					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
+					<li><a href="/#!/admin/details/{{website.harpyid}}"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
+					<li class="left-nav-submenu">
+						<a href="/#!/admin/reports"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
+						<ul class="left-nav-submenu-list">
+							<li><a href="/#!/admin/reports/products">Produtos (Geral)</a></li>
+							<li><a href="/#!/admin/reports/{{website.harpyid}}">Relatório 002</a></li>
+							<li><a href="/#!/admin/reports/{{website.harpyid}}">Relatório 003</a></li>
+              <li><a href="/#!/admin/report/{{website.harpyid}}/product/most-acessed">Mais acessados</a></li>
+						</ul>
+					</li>
+					<li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
+					<li><a href="/#!/admin"><i class="fa fa-question"></i> Suporte</a></li>
+				</ul>
+			</section>
+			<section class="admin-content">
+				<div class="admin-painel-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<h4 class="pull-left page-title">Visão Geral - {{website.name}}</h4>
+								<ol class="breadcrumb pull-right">
+									<li><a href="/#!/">HarpyMetrics Site</a></li>
+									<li class="active"><a href="/#!/admin">Dashboard</a></li>
+								</ol>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="admin-top-tool-bar">
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/harpyid">
+										HarpyID
+									</a>
+								</div>
+								<div class="admin-intro-site-info">
+									<div class="row">
+										<div class="col-sm-12">
+											<h3>Status</h3>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-6 col-lg-3">
+											<div class="mini-stat blue-content bx-shadow bg-info">
+												<span class="mini-stat-icon"><i class="ion-social-usd"></i></span>
+												<div class="mini-stat-info text-right">
+													<span class="counter">Produto mais acessado:</span> {{status.product.name}}
+												</div>
+												<div class="tiles-progress">
+													<div class="m-t-20">
+														<h5 class="text-uppercase text-white m-0">Acessos:
+															<span class="pull-right">{{status.product.quantity}}</span>
+														</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6 col-lg-3">
+											<div class="mini-stat blue-content bx-shadow bg-info">
+												<span class="mini-stat-icon"><i class="ion-social-usd"></i></span>
+												<div class="mini-stat-info text-right">
+													<span class="counter">Categoria mais acessada:</span> {{status.category.name}}
+												</div>
+												<div class="tiles-progress">
+													<div class="m-t-20">
+														<h5 class="text-uppercase text-white m-0">Acessos:
+															<span class="pull-right">{{status.category.quantity}}</span>
+														</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6 col-lg-3">
+											<div class="mini-stat blue-content bx-shadow bg-info">
+												<span class="mini-stat-icon"><i class="ion-social-usd"></i></span>
+												<div class="mini-stat-info text-right">
+													<span class="counter">Página mais acessada:</span> {{status.page.name}}
+												</div>
+												<div class="tiles-progress">
+													<div class="m-t-20">
+														<h5 class="text-uppercase text-white m-0">Acessos:
+															<span class="pull-right">{{status.page.quantity}}</span>
+														</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6 col-lg-3">
+											<div class="mini-stat blue-content bx-shadow bg-info">
+												<span class="mini-stat-icon"><i class="ion-social-usd"></i></span>
+												<div class="mini-stat-info text-right">
+													<span class="counter">Termo mais buscado:</span> {{status.search.name}}
+												</div>
+												<div class="tiles-progress">
+													<div class="m-t-20">
+														<h5 class="text-uppercase text-white m-0">Quantidade:
+															<span class="pull-right">{{status.search.quantity}}</span>
+														</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

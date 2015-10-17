@@ -2,6 +2,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    moment = require('moment'),
 	Schema = mongoose.Schema;
 
 var ProductSchema = new Schema({
@@ -18,7 +19,11 @@ var ProductSchema = new Schema({
     category: String,
     variant: String,
     brand: String,
-    position: Number
+    position: Number,
+    createdAt: {
+        type: String,
+		default: moment(new Date()).format('YYYY-MM-DD')
+    }
 });
 
 

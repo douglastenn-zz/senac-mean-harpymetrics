@@ -3,6 +3,7 @@
 
 // Load the module dependencies
 var mongoose = require('mongoose'),
+    moment = require('moment'),
     crypto = require('crypto'),
 	Schema = mongoose.Schema;
 
@@ -26,6 +27,10 @@ var WebsiteSchema = new Schema({
     customer: {
         type: mongoose.Schema.ObjectId,
         ref: 'Customer'
+    },
+    createdAt: {
+        type: String,
+		default: moment(new Date()).format('YYYY-MM-DD')
     }
 });
 

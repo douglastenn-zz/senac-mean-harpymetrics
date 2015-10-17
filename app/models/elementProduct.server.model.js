@@ -2,6 +2,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    moment = require('moment'),
 	Schema = mongoose.Schema;
 
 var ElementProductSchema = new Schema({
@@ -12,6 +13,10 @@ var ElementProductSchema = new Schema({
     product: {
         type: mongoose.Schema.ObjectId,
         ref: 'Product'
+    },
+    createdAt: {
+        type: String,
+		default: moment(new Date()).format('YYYY-MM-DD')
     }
 });
 
