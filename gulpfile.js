@@ -14,9 +14,9 @@ var gulp		= require('gulp'),
 //require('dotenv').load();
 	
 var paths = {
-	scripts: 'public/src/js/*.js',
+	scripts: ['public/src/js/**/*.js', 'public/src/js/*.js'],
 	templates: 'public/src/js/views/*.html',
-	styles: 'public/src/css/*.scss',
+	styles: ['public/src/css/**/*.scss', 'public/src/css/*.scss'],
 	images: 'public/src/images/**/*.{png,jpeg,jpg,svg,gif}',
 	extras: ['public/src/*.*', 'public/src/fonts/**/*'],
 	dest: {
