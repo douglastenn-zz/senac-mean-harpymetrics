@@ -46,8 +46,8 @@ a.mdl-button.mdl-js-button.mdl-button--raised.btn-white:hover {
   margin: auto;
 }
 h3.topic-title {
-    font-size: 1.6em;
-    line-height: 100%;
+  font-size: 2.3rem;
+  line-height: 2.8rem;
     text-align: center;
     color: #2980b9;
 }
@@ -97,4 +97,11 @@ footer.mdl-mega-footer {
 h2.section-title{
   font-size: 2em;
   text-align: center;
+}
+
+.mdl-card.mdl-shadow--2dp {
+    margin: 20px auto;
+    max-width: 320px;
+    height: 320px;
+    width: 100%;
 }

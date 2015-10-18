@@ -2,15 +2,15 @@ $primaryColor: #3498db;
 $dark-blue: #2c3e50;
 
 .section-page-title{
-  background: url("../../dist/images/background_image.jpg") 50% 25% no-repeat #2c3e50 fixed;
+  background: url("../../dist/images/background_image.jpg") 50% 100% no-repeat #2c3e50 fixed;
   min-height: 400px;
   width: 100%;
-  padding: 20px 0px;
   position: relative;
   .fixed-page-title-content{
     position: fixed;
     width: 100%;
     min-height: 400px;
+    padding: 20px 0px;
     .container{
       h1.page-title{
         color: #fff;
@@ -25,7 +25,7 @@ $dark-blue: #2c3e50;
 
 }
 .intro-info-bar{
-  background: rgba(44, 62, 80, 0.9);
+  background: rgba(41, 128, 185,0.65);
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -42,25 +42,36 @@ $dark-blue: #2c3e50;
   position: relative;
   z-index: 1;
 }
-.mdl-card {
-  width: 320px;
-  height: 320px;
+.product-card-01 > .mdl-card__title,
+.product-card-02 > .mdl-card__title,
+.product-card-03 > .mdl-card__title {
+  background-size: cover;
+  padding: 20px 0px;
+  color:#fff;
+  h2.mdl-card__title-text{
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    color: #fff;
+    width: 100%;
+    text-shadow: 1px 1px 2px #000;
+  }
 }
+
 .product-card-01 > .mdl-card__title {
-    background: url('../../dist/images/card_code_presentation_image.jpg') center 20% no-repeat #46B6AC;
-    background-size: 100% auto;
+    background: url('../../dist/images/card_code_presentation_image.jpg') center 20% no-repeat;
 }
 .product-card-02 > .mdl-card__title {
-    background: url('../../dist/images/card_business_presentation_image.jpg') center 20% no-repeat #46B6AC;
-    background-size: 100% auto;
-    color:#fff;
+    background: url('../../dist/images/card_business_presentation_image.jpg') center 20% no-repeat;
 }
 .product-card-03 > .mdl-card__title {
-    background: url('../../dist/images/card_grafic_bar_illustration.jpg') center 20% no-repeat #46B6AC;
-    background-size: 100% auto;
+    background: url('../../dist/images/card_grafic_bar_illustration.jpg') center 20% no-repeat;
 }
-.mdl-card.mdl-shadow--2dp{
-  margin:20px 0px;
+
+.mdl-card__actions{
+  a.card-button{
+    width: 100%;
+    text-decoration: none !important
+  }
 }
 .section-cards-product-info{
   padding: 20px 0px;

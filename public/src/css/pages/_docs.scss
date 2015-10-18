@@ -13,8 +13,23 @@
 	.event-card{
 		background: url("../images/event-keyboard-small.jpg");
 	}
+	.home-card{
+		background: url("../images/shore-house-homepage-small.jpg");
+	}
+	.search-card{
+		background: url("../images/shore-house-homepage-small.jpg");
+	}
+	.category-card{
+		background: url("../images/event-keyboard-small.jpg");
+	}
+	.product-card{
+		background: url("../images/event-keyboard-small.jpg");
+	}
+	.checkout-card{
+		background: url("../images/shore-house-homepage-small.jpg");
+	}
 	.mdl-card__supporting-text {
-		min-height: 210px;
+		min-height: 240px;
 	}
 	.mdl-card__menu {
 	  color: #fff;
@@ -36,6 +51,9 @@
 	margin-bottom: 30px;
 	&.section-events{
 		background: url("../images/event-keyboard-small-fullband.png") right no-repeat #eee;
+	}
+	&.section-homepage{
+		background: url("../images/shore-house-homepage-small-fullband.png") right no-repeat #eee;
 	}
 		h2.title {
 	    color: #000;
