@@ -1,21 +1,31 @@
 .card-docs {
-
-	.mdl-card__title {
-	  color: #fff;
-	  background: bottom right 15% no-repeat #46B6AC;
+	&.mdl-card {
+    max-width: 320px;
+    height: auto;
+    width: 100%;
+    margin: 20px auto;
 	}
-
+	.mdl-card__title {
+	  color: #2c3e50;
+	  background: bottom right 15% no-repeat #46B6AC;
+		min-height: 120px;
+	}
+	.event-card{
+		background: url("../images/event-keyboard-small.jpg");
+	}
 	.mdl-card__supporting-text {
 		min-height: 210px;
 	}
-
 	.mdl-card__menu {
 	  color: #fff;
 	}
-
 	.fa-ellipsis-v {
 		font-size: 18px;
 		color: #46B6AC;
+	}
+	.mdl-card__actions a{
+		width: 100%;
+    text-decoration: none;
 	}
 }
 
@@ -24,8 +34,11 @@
 	background: #34495e;
 	padding: 25px 50px;
 	margin-bottom: 30px;
+	&.section-events{
+		background: url("../images/event-keyboard-small-fullband.png") right no-repeat #eee;
+	}
 		h2.title {
-	    color: #fff;
+	    color: #000;
 	    margin: 0px;
 	    font-size: 3rem;
 	    line-height: 50px;
