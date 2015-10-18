@@ -12,10 +12,16 @@ module.exports = function(app) {
 		    failureRedirect: '#!/signin',
 		    failureFlash : true
 		}));
+    
+    app.get('/signout', function (req, res){
+      req.session.destroy(function (err) {
+        res.redirect('/#!/'); //Inside a callback… bulletproof!
+      });
+    });
 };
 
 var isAuthenticated = function (req, res, next) {
   if (req.isAuthenticated())
     return next();
-  res.redirect('#!/signin');
+  res.redirect('/signin');
 }
