@@ -8,9 +8,9 @@ angular.module('sitedetails').controller('SiteDetailsController', ['$scope', '$h
     $scope.status = {};
         
     function getWebsite() {
-        if($stateParams.websiteId) {
-            $scope.websiteId = $stateParams.websiteId;
-            $http.get('/websites/' + $stateParams.websiteId)
+        if($stateParams.harpyid) {
+            $scope.harpyid = $stateParams.harpyid;
+            $http.get('/websites/' + $scope.harpyid)
             .success(function(website) {
                 $scope.website = website;
                 getStatus(website);

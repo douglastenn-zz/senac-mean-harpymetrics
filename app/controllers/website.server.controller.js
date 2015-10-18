@@ -19,9 +19,9 @@ exports.list = function(req, res) {
 };
 
 exports.getWebsite = function(req, res) {
-    var _id = req.params.id;
+    var harpyid = req.params.harpyid;
     
-    Website.findById(_id).exec()
+    Website.findOne({harpyid: harpyid}).exec()
         .then(
             function(website) {
                 if(!website) throw new Error('Website não encontrado.');

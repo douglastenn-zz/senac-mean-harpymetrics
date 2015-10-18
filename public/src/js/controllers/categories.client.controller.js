@@ -2,24 +2,11 @@
 
 angular.module('categories').controller('CategoriesController', ['$scope', '$http', '$stateParams','Website', 'Category',
     function($scope, $http, $stateParams, Website, Category) {
-
-    		$scope.getWebsite = function() {
-		        if($stateParams.websiteId) {
-		            $http.get('/websites/' + $stateParams.websiteId)
-		            .success(function(website) {
-		                $scope.getMostAcessed(website);
-		            })
-		            .error(function(err) {
-		                console.log('Error: ' + err);
-		                $scope.message = {
-		                   texto: 'Não foi possível obter a lista.'
-		                };
-		            });
-		        }
-		    };
-
-		    $scope.getMostAcessed = function(website) {
-		    	Category.getMostAcessed( website.harpyid ).then(
+            
+		    $scope.getMostAcessed = function() {
+                if($stateParams.harpyid) {
+                    $scope.harpyid = $stateParams.harpyid;
+                    Category.getMostAcessed( $stateParams.harpyid ).then(
 		    		function success(result) {
 		    			console.log('result', result);
 	    				$scope.categories = result.data;
@@ -27,8 +14,9 @@ angular.module('categories').controller('CategoriesController', ['$scope', '$htt
 		    		function failed(err) {
 		    			console.log('Error: ' + err);
 		    		})
+                }
 		    };
 
-		    $scope.getWebsite();
+		    $scope.getMostAcessed();
   	}
 ]);
