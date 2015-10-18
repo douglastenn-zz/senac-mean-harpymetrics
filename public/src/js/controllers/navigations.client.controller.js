@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('navigation').controller('NavigationController', ['$scope', '$http', '$stateParams',
+angular.module('navigations').controller('NavigationsController', ['$scope', '$http', '$stateParams',
     function($scope, $http, $stateParams) {
 
 	$scope._ = _;

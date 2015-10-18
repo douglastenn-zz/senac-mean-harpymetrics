@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('navigation').config(['$stateProvider', '$urlRouterProvider',
+angular.module('navigations').config(['$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
 	    $stateProvider
 
-        .state('navigation', {
-            url: '/admin/reports/navigation',
+        .state('navigations', {
+            url: '/admin/reports/navigations',
             templateProvider: function($templateCache){
-				return $templateCache.get('navigation.client.view.html');
+				return $templateCache.get('navigations.client.view.html');
 			}
         });
 	}

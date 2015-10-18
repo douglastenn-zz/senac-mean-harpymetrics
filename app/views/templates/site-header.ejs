@@ -1,4 +1,5 @@
 <body>
+<<<<<<< HEAD
 	<header>
 		<nav class="home-top-navigation">
 			<div class="container">
@@ -27,3 +28,33 @@
 						</nav>
 						<input type="hidden" class="loggedUser" value="<%=loggedUser()%>"/>
 					</header>
+=======
+<header>
+	<nav class="home-top-navigation">
+		<div class="container-fluid">
+			<div class="row">
+				  <div class="col-xs-12 col-sm-4 col-md-4"><a href="/#!/" class="logo-top-menu">HarpyMetrics</a></div>
+				  <div class="col-xs-12 col-sm-8 col-md-8">
+				  	<div class="main-menu">
+				  			<ul class="top-nav-links">
+                                <% if(!loggedUser()){ %>
+				  				<li><a href="/#!/" title="Página Principal"><strong>Início</strong></a></li>
+                                <% } else { %>
+                                <li><a href="/#!/admin" title="Dashboard"><strong>Dashboard</strong></a></li>
+                                <% } %>
+				  				<li><a href="/#!/documents" title="Documentação"><strong>Documentação</strong></a></li>
+                                <% if(!loggedUser()){ %>
+                                <li><a href="/#!/signin" title="Acessar"><strong>Login</strong></a></li>
+                                <li><a href="/#!/signup" title="Criar Conta"><strong>Nova Conta</strong></a></li>
+                                <% } else { %>
+                                <li><a href="/signout" title="Sair"><strong>Logout</strong></a></li>
+                                <% } %>
+				  		</ul>
+				  	</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+    <input type="hidden" class="loggedUser" value="<%=loggedUser()%>"/>
+</header>
+>>>>>>> 2bd63d6d25b3e7754e3a7bb717fe940d0ce35986
