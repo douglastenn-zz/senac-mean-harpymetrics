@@ -56,17 +56,15 @@
 													<thead>
 														<tr>
 															<th class="list-num">N</th>
-															<th>Categoria</th>
-															<th>Modelo</th>
+															<th>Nome da categoria</th>
 															<th>Visualizações</th>
 														</tr>
 													</thead>
 													<tbody>
-														<tr ng-repeat="website in websites">
-															<td scope="row">{{$index+1}}</td>
-															<td>{{product.name}}</td>
-															<td>{{product.model.name}}</td>
-															<td>{{product.views}}</td>
+														<tr ng-repeat="cat in categories">
+															<td scope="row">{{cat.category.id}}</td>
+															<td>{{cat.category.name}}</td>
+															<td>{{cat.quantity}}</td>
 														</tr>
 													</tbody>
 												</table>

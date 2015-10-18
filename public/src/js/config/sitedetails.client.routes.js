@@ -4,18 +4,26 @@ angular.module('sitedetails').config(['$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
 	    $stateProvider
 
-        .state('sitedetails', {
-            url: '/admin/details/:websiteId',
+        .state('details', {
+            url: '/admin/details/:harpyid',
             templateProvider: function($templateCache) {
 				return $templateCache.get('sitedetails.client.view.html');
 			}
 		})
-
-		.state('sitedetails.leftnav', {
-				templateProvider: function($templateCache){
-		return $templateCache.get('admin-left-nav.html');
-		}
-	});
+		
+		.state('categories', {
+            url: '/admin/details/:harpyid/reports/categories',
+            templateProvider: function($templateCache){
+				return $templateCache.get('categories.client.view.html');
+			}
+        })
+        
+        .state('products', {
+            url: '/admin/details/:harpyid/reports/products',
+            templateProvider: function($templateCache){
+				return $templateCache.get('products.client.view.html');
+			}
+        });
 
 	}
 ]);

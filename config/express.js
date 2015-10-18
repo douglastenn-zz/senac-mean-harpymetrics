@@ -82,6 +82,19 @@ module.exports = function(db) {
 	
 	// Configure static file serving
 	app.use(express.static('./public'));
+    
+    require('express-dynamic-helpers-patch')(app);
+    app.dynamicHelpers({
+      loggedUser: function(req, res){
+        return function () {
+            var user = '';
+            if(req.isAuthenticated()) {
+                user = req.user.username;
+            }
+            return user;
+        };
+      }
+    });
 
 	// Return the Server instance
 	return server;

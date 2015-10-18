@@ -28,6 +28,9 @@ var config = require.context('config', true, /\.js$/);
 var controllers = require.context('controllers', true, /\.js$/);
 	controllers.keys().forEach(controllers);
 
+var services = require.context('services', true, /\.js$/);
+	services.keys().forEach(services);
+
 // Manually bootstrap the AngularJS application
 angular.element(document).ready(function() {
 	angular.bootstrap(document, [mainApplicationModuleName]);
