@@ -5,11 +5,11 @@ angular.module('sitedetails').controller('SiteDetailsController', ['$scope', '$h
 
     $scope._ = _;
     $scope.formData = {};
-    $scope.variable = 'Variavél do controller do sitedetails.client.controller.js';
     $scope.status = {};
         
     function getWebsite() {
         if($stateParams.websiteId) {
+            $scope.websiteId = $stateParams.websiteId;
             $http.get('/websites/' + $stateParams.websiteId)
             .success(function(website) {
                 $scope.website = website;

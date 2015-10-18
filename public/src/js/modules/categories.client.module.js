@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('categories', []);
+angular.module('categories', ['harpyid']);

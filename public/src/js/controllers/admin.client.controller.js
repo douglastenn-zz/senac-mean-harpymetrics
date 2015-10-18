@@ -5,7 +5,6 @@ angular.module('admin').controller('AdminController', ['$scope', '$http',
 
     $scope._ = _;
     $scope.formData = {};
-    $scope.variable = 'Variavél do controller do admin.client.controller.js';
         
     function getWebsites() {
         $http.get('/websites')
@@ -20,6 +19,7 @@ angular.module('admin').controller('AdminController', ['$scope', '$http',
                 };
             });
     }
+    
     getWebsites();
   }
 ]);
