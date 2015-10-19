@@ -31,16 +31,21 @@ a.cta-btn{
   }
 }
 .mdl-button.mdl-button--raised.btn-white {
-    background: rgba(255, 255, 255, 0.8);
-    min-width: 200px;
-    color: #2980b9;
-    font-weight: bold;
+  background: white;
+  min-width: 200px;
+  color: #2980b9;
+  font-weight: bold;
+  /* border-radius: 10px; */
+  padding: 2px 20px;
+  height: auto;
+  box-shadow: none;
+    &:hover{
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
 }
-a.mdl-button.mdl-js-button.mdl-button--raised.btn-white:hover {
-    text-decoration: none;
-    background: #ccc;
-    color: #34495e;
-}
+
 .center{
   text-align: center;
   margin: auto;
