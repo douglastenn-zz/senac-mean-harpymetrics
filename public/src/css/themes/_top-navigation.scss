@@ -18,9 +18,10 @@ header{
           padding-left: 60px;
           max-width: 240px;
           margin: auto;
-          font-family: "caviar-dreams", arial;
-          background: url(../images/harpyMetrics_logo.png) left no-repeat;
-          background-size: auto 100%;
+          font-family: "caviar-dreams-regular", arial;
+          background: url("../images/harpyMetrics_logo_v03.png") left no-repeat;
+          background-size: 50px 50px;
+          text-decoration: none !important;
           display: inline-block;
           vertical-align: middle;
           line-height: 50px;
@@ -30,7 +31,12 @@ header{
           &:hover, &:active{
             text-decoration: none !important;
             color:#34495e;
+            background: url("../images/harpyMetrics_logo.png") left no-repeat;
+            background-size: 50px 50px;
             transition: all 0.5s ease;
+          }
+          span{
+            font-family: "caviar-dreams-bold", arial;
           }
         }
     }
@@ -48,11 +54,11 @@ header{
         display: inline-block;
         vertical-align: middle;
         padding: 13px 10px;
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         height: 50px;
         box-sizing: border-box;
         color: #555;
-        font-family: "caviar-dreams", arial;
+        font-family: "quicksandregular", arial;
       }
       li.mdl-menu__item {
         display: block;
