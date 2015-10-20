@@ -5,12 +5,12 @@ angular.module('sitedetails').controller('SiteDetailsController', ['$scope', '$h
 
     $scope._ = _;
     $scope.formData = {};
-    $scope.variable = 'Variavél do controller do sitedetails.client.controller.js';
     $scope.status = {};
         
     function getWebsite() {
-        if($stateParams.websiteId) {
-            $http.get('/websites/' + $stateParams.websiteId)
+        if($stateParams.harpyid) {
+            $scope.harpyid = $stateParams.harpyid;
+            $http.get('/websites/' + $scope.harpyid)
             .success(function(website) {
                 $scope.website = website;
                 getStatus(website);

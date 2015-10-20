@@ -7,18 +7,17 @@
 				</div>
 				<ul class="left-nav-list">
 					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
-					<li><a href="/#!/admin/details/{{website.harpyid}}"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
+					<li><a href="/#!/admin/details/{{harpyid}}"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
 					<li class="left-nav-submenu">
 						<a href="/#!/admin/reports"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
 						<ul class="left-nav-submenu-list">
-							<li><a href="/#!/admin/reports/products">Produtos (Geral)</a></li>
-							<li><a href="/#!/admin/reports/{{website.harpyid}}">Relatório 002</a></li>
-							<li><a href="/#!/admin/reports/{{website.harpyid}}">Relatório 003</a></li>
-						  <li><a href="/#!/admin/report/{{website.harpyid}}/product/most-acessed">Mais acessados</a></li>
+							<li><a href="/#!/admin/details/{{harpyid}}/reports/categories">Categorias</a></li>
+							<li><a href="/#!/admin/details/{{harpyid}}/reports/products">Produtos</a></li>
+                            <li><a href="/#!/admin/details/{{harpyid}}/reports/searches">Buscas</a></li>
+							<li><a href="/#!/admin/details/{{harpyid}}/reports/navigations">Navegação</a></li>
 						</ul>
 					</li>
 					<li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
-					<li><a href="/#!/admin"><i class="fa fa-question"></i> Suporte</a></li>
 				</ul>
 			</section>
 			<section class="admin-content">
@@ -26,7 +25,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<h4 class="pull-left page-title">Meus Produtos</h4>
+								<h4 class="pull-left page-title">Relatório de Produtos - {{website.name}}</h4>
 								<ol class="breadcrumb pull-right">
 									<li><a href="/#!/">HarpyMetrics Site</a></li>
 									<li class="active"><a href="/#!/admin">Dashboard</a></li>
@@ -37,33 +36,80 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="admin-top-tool-bar">
-									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/report/{{website.harpyid}}/product/most-acessed">
-										Mais acessados
-									</a>
-									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/reports">
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/categories">
 										Categorias
+									</a>
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/products">
+										Produtos
 									</a>
 								</div>
 								<div class="admin-intro-site-info">
 									<div class="row">
-										<div class="col-sm-12">
-
+										<div class="col-sm-12 col-md-8">
+											<h3 class="report-title">Produtos ordenados por acesso - ranking</h3>
+										</div>
+										<div class="col-sm-12 col-md-4">
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
-										</div>
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
-										</div>
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
-										</div>
-										<div class="col-md-6 col-sm-6 col-lg-3">
-
+										<div class="col-sm-12">
+											<div class="table-responsive">
+												<table class="table">
+													<thead>
+														<tr>
+															<th class="list-num">N</th>
+                                                            <th>Id</th>
+															<th>Produto</th>
+															<th>Acessos</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr ng-repeat="item in productsMostAcessed">
+															<td scope="row">{{$index+1}}</td>
+                                                            <td>{{item.product.id}}</td>
+															<td>{{item.product.name}}</td>
+															<td>{{item.quantity}}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
 										</div>
 									</div>
+
+								</div>
+                                <div class="admin-intro-site-info">
+									<div class="row">
+										<div class="col-sm-12 col-md-8">
+											<h3 class="report-title">Produtos ordenados por visualizações - ranking</h3>
+										</div>
+										<div class="col-sm-12 col-md-4">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="table-responsive">
+												<table class="table">
+													<thead>
+														<tr>
+															<th class="list-num">N</th>
+                                                            <th>Id</th>
+															<th>Produto</th>
+															<th>Acessos</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr ng-repeat="item in productsMostViewed">
+															<td scope="row">{{$index+1}}</td>
+                                                            <td>{{item.product.id}}</td>
+															<td>{{item.product.name}}</td>
+															<td>{{item.quantity}}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+
 								</div>
 							</div>
 						</div>

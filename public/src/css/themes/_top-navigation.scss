@@ -4,7 +4,7 @@ header{
   position: fixed;
   width: 100%;
   height: 70px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 5px solid #ccc;
   box-sizing: border-box;
   padding: 10px 0px;
   box-shadow: 0px -2px 10px 0px #000;
@@ -18,9 +18,10 @@ header{
           padding-left: 60px;
           max-width: 240px;
           margin: auto;
-          font-family: "caviar-dreams", arial;
-          background: url(../images/harpyMetrics_logo.png) left no-repeat;
-          background-size: auto 100%;
+          font-family: "caviar-dreams-regular", arial;
+          background: url("../images/harpyMetrics_logo_v03.png") left no-repeat;
+          background-size: 50px 50px;
+          text-decoration: none !important;
           display: inline-block;
           vertical-align: middle;
           line-height: 50px;
@@ -30,7 +31,12 @@ header{
           &:hover, &:active{
             text-decoration: none !important;
             color:#34495e;
+            background: url("../images/harpyMetrics_logo.png") left no-repeat;
+            background-size: 50px 50px;
             transition: all 0.5s ease;
+          }
+          span{
+            font-family: "caviar-dreams-bold", arial;
           }
         }
     }
@@ -43,16 +49,17 @@ header{
       min-width: 120px;
       text-align: center;
       padding: 0px;
+      background: #fff;
       a{
         width: 100%;
         display: inline-block;
         vertical-align: middle;
         padding: 13px 10px;
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         height: 50px;
         box-sizing: border-box;
         color: #555;
-        font-family: "caviar-dreams", arial;
+        font-family: "quicksandregular", arial;
       }
       li.mdl-menu__item {
         display: block;
@@ -104,4 +111,55 @@ header{
     font-family: "caviar-dreams", arial;
     border-radius: 0px;
     text-transform: none;
+}
+@media all and (min-width:996px){
+  div.mobile-menu-icon{
+    display: none;
+  }
+}
+@media all and (min-width:0px) and (max-width:995px){
+  div.mobile-menu-icon {
+    display: block;
+    float: right;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  .main-menu {
+    float: right;
+    max-width: 300px;
+      ul.top-nav-links {
+      text-align: right;
+      min-width: 230px;
+      &.active{
+        li {
+            display: block;
+            max-width: 300px;
+        }
+      }
+      li {
+          display: none;
+          max-width: 300px;
+      }
+    }
+  }
+}
+
+@media all and (min-width:0px) and (max-width:539px){
+  .section-page-title {
+      min-height: 520px;
+  }
+  .section-page-title .fixed-page-title-content .container h1.page-title {
+    font-size: 2em;
+    text-align: center;
+  }
+  .section-page-title .fixed-page-title-content div.container .row div a {
+    margin: auto;
+    display: block;
+    max-width: 300px;
+  }
+  .intro-info-bar {
+    background: rgba(41, 128, 185, 0.85);
+  }
 }

@@ -14,9 +14,9 @@ var gulp		= require('gulp'),
 //require('dotenv').load();
 	
 var paths = {
-	scripts: 'public/src/js/*.js',
+	scripts: ['public/src/js/**/*.js', 'public/src/js/*.js'],
 	templates: 'public/src/js/views/*.html',
-	styles: 'public/src/css/*.scss',
+	styles: ['public/src/css/**/*.scss', 'public/src/css/*.scss'],
 	images: 'public/src/images/**/*.{png,jpeg,jpg,svg,gif}',
 	extras: ['public/src/*.*', 'public/src/fonts/**/*'],
 	dest: {
@@ -85,7 +85,7 @@ gulp.task('html', function() {
     conditionals: true,
     spare:true
   };
- 
+  console.log('HTML TASK RUNNED');
   return gulp.src(paths.templates)
     .pipe(minifyHTML(opts))
     .pipe(html2js({
@@ -108,7 +108,7 @@ gulp.task('clean', function () {
 
 gulp.task('serve', ['watch'], function () {
 	browserSync({
-		files: [ 'app/**/*.html', 'public/dist/**', '!dist/**/*.map' ],
+		files: [ 'app/**/*.html', 'public/dist/**', '!public/dist/**/*.map'],
 		proxy: 'localhost:8080',
 		port: 3000,
 		open: !$.util.env.no
@@ -130,7 +130,7 @@ gulp.task('express', function () {
 gulp.task('watch', ['scripts', 'styles', 'html', 'images', 'extras'], function() {
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.styles, ['styles']);
-	gulp.watch(paths.scripts, ['html']);
+	gulp.watch(paths.templates, ['html']);
 	gulp.watch(paths.images, ['images']);
 	gulp.watch(paths.extras, ['extras']);
 });
