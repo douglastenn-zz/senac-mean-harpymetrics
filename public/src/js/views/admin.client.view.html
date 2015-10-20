@@ -1,61 +1,48 @@
 <div ng-controller="AdminController" class="main-content-view admin-portal-site">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<!-- <section class="admin-left-nav">
-				<div class="portal-user-loged">
-					<p class="display-user"><i class="fa fa-user"></i> User Name</p>
-					<p class="welcome">Bem vindo!</p>
-				</div>
-				<ul class="left-nav-list">
-				  <li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
-				</ul>
-			</section> -->
-			<section class="admin-content">
+			<div class="col-sm-12">
 				<div class="admin-painel-content">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12">
-								<h4 class="pull-left page-title"></h4>
-								<ol class="breadcrumb pull-right">
-									<li><a href="/#!/">HarpyMetrics</a></li>
-								</ol>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="admin-top-tool-bar">
-									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/harpyid">
-										Gerenciar HarpyID
-									</a>
-								</div>
-								<div class="admin-intro-site-info">
-									<h3>Meus Sites</h3>
-									<div class="table-responsive">
-										<table class="table">
-											<thead>
-												<tr>
-													<th class="list-num">#</th>
-													<th>Nome</th>
-													<th>Detalhes</th>
-												</tr>
-											</thead>
-											<tbody>
-                        <tr ng-repeat="website in websites">
-													<td scope="row">{{$index+1}}</td>
-													<td>{{website.name}}</td>
-													<td class="details">
-														<a href='/#!/admin/details/{{website.harpyid}}'><i class="fa fa-plus-square"></i></a>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
+
+					<h4 class="pull-left page-title">Bem Vindo!</h4>
+					<ol class="breadcrumb pull-right">
+						<li><a href="/#!/">HarpyMetrics</a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="admin-top-tool-bar">
+						<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/harpyid">
+							Gerenciar HarpyID
+						</a>
+					</div>
+					<div class="admin-intro-site-info">
+						<h3>Meus Sites</h3>
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th class="list-num">#</th>
+										<th>Nome</th>
+										<th>Detalhes</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="website in websites">
+										<td scope="row">{{$index+1}}</td>
+										<td>{{website.name}}</td>
+										<td class="details">
+											<a href='/#!/admin/details/{{website.harpyid}}'><i class="fa fa-plus-square"></i></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+
 		</div>
 	</div>
 </div>

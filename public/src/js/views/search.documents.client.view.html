@@ -1,0 +1,100 @@
+<div class="main-content-view">
+	<div class="section-related-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="documents-title section-events">
+						<h2 class="title">Search - Busca</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="description-band">
+							<p>Para adicionar o código de acompanhamento na busca, será necessário adicionar algumas informações básicas no código.</p>
+							<br>
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>Nome do campo</th>
+											<th>Valor do campo</th>
+											<th>Tipo do campo</th>
+											<th>Obrigatório</th>
+											<th>Descrição</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td scope="row">window._appHarpy.harpyId</td>
+											<td>[Seu HarpyID]</td>
+											<td>String</td>
+											<td>Sim</td>
+											<td>harpyId é o código de acompanhamento do e-commerce, que pode ser gerado no cadastro do site.</td>
+										</tr>
+										<tr>
+											<td scope="row">window._appHarpy.event</td>
+											<td>Search</td>
+											<td>String</td>
+											<td>Sim</td>
+											<td>Tipo do módulo que será inicializado</td>
+										</tr>
+										<tr>
+											<td scope="row">window._appHarpy.harpyId</td>
+											<td>[Seu HarpyID]</td>
+											<td>String</td>
+											<td>Sim</td>
+											<td>harpyId é o código de acompanhamento do e-commerce, que pode ser gerado no cadastro do site.</td>
+										</tr>
+
+										<tr>
+											<td scope="row">window._propsHarpy.search</td>
+											<td>[Ver tabela de propriedades]</td>
+											<td>Array</td>
+											<td>Sim</td>
+											<td>_propsHarpy são as propriedades que serão enviadas para cada evento acionado</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="description-band">
+							<h5>Tabela de propriedades para o evento [Search]</h5>
+							<br>
+							<p>Como o campo _propsHarpy.search é um array, então será necessário adicionar um objeto javascript com as informações de busca.</p>
+							<br>
+							<div class="table-responsive">
+								<table class="table">
+									<caption>window._propsHarpy.search</caption>
+									<thead>
+										<tr>
+											<th>Nome da chave do objeto</th>
+											<th>Tipo do campo</th>
+											<th>Obrigatório</th>
+											<th>Descrição</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td scope="row">searchTerm</td>
+											<td>String</td>
+											<td>Sim</td>
+											<td>Campo que será adicionado o termo buscado pelo usuário.</td>
+										</tr>
+										<tr>
+											<td scope="row">totalResult</td>
+											<td>Integer</td>
+											<td>Sim</td>
+											<td>Total de itens encontrados pela busca do usuário</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="description-band highlight-topic-example">
+							<h5>Exemplo de implementação:</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
