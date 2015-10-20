@@ -49,6 +49,7 @@ header{
       min-width: 120px;
       text-align: center;
       padding: 0px;
+      background: #fff;
       a{
         width: 100%;
         display: inline-block;
@@ -110,4 +111,55 @@ header{
     font-family: "caviar-dreams", arial;
     border-radius: 0px;
     text-transform: none;
+}
+@media all and (min-width:996px){
+  div.mobile-menu-icon{
+    display: none;
+  }
+}
+@media all and (min-width:0px) and (max-width:995px){
+  div.mobile-menu-icon {
+    display: block;
+    float: right;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  .main-menu {
+    float: right;
+    max-width: 300px;
+      ul.top-nav-links {
+      text-align: right;
+      min-width: 230px;
+      &.active{
+        li {
+            display: block;
+            max-width: 300px;
+        }
+      }
+      li {
+          display: none;
+          max-width: 300px;
+      }
+    }
+  }
+}
+
+@media all and (min-width:0px) and (max-width:539px){
+  .section-page-title {
+      min-height: 520px;
+  }
+  .section-page-title .fixed-page-title-content .container h1.page-title {
+    font-size: 2em;
+    text-align: center;
+  }
+  .section-page-title .fixed-page-title-content div.container .row div a {
+    margin: auto;
+    display: block;
+    max-width: 300px;
+  }
+  .intro-info-bar {
+    background: rgba(41, 128, 185, 0.85);
+  }
 }
