@@ -9,7 +9,7 @@ module.exports = function(app) {
 	   .get(access.renderSignin)
        .post(passport.authenticate('login', {
 		    successRedirect: '#!/admin',
-		    failureRedirect: '#!/signin',
+		    failureRedirect: '/#!/signin',
 		    failureFlash : true
 		}));
     
