@@ -13,7 +13,7 @@
 						<ul class="left-nav-submenu-list">
 							<li><a href="/#!/admin/details/{{harpyid}}/reports/categories">Categorias</a></li>
 							<li><a href="/#!/admin/details/{{harpyid}}/reports/products">Produtos</a></li>
-                            <li><a href="/#!/admin/details/{{harpyid}}/reports/searches">Buscas</a></li>
+							<li><a href="/#!/admin/details/{{harpyid}}/reports/searches">Buscas</a></li>
 							<li><a href="/#!/admin/details/{{harpyid}}/reports/navigations">Navegações</a></li>
 						</ul>
 					</li>
@@ -42,10 +42,10 @@
 									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/products">
 										Produtos
 									</a>
-                                    <a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/searches">
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/searches">
 										Buscas
 									</a>
-                                    <a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/navigations">
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/navigations">
 										Navegações
 									</a>
 								</div>
@@ -60,59 +60,59 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="table-responsive">
-												<table class="table">
+												<table class="table show-hide">
 													<thead>
-														<tr>
+														<tr class="title">
 															<th class="list-num">N</th>
 															<th>Sessão</th>
 															<th>Qtd. páginas</th>
-                                                            <th>Média de duração por página</th>
-                                                            <th>Duração mínima</th>
-                                                            <th>Duração máxima</th>
-                                                            <th></th>
+															<th>Média de duração por página</th>
+															<th>Duração mínima</th>
+															<th>Duração máxima</th>
+															<th></th>
 														</tr>
 													</thead>
 													<tbody>
-														<tr ng-repeat-start="details in navigationsDetails">
+														<tr ng-repeat-start="details in navigationsDetails" class="show-hide-line">
 															<td scope="row">{{$index+1}}</td>
 															<td>{{details._id}}</td>
 															<td>{{details.count}}</td>
-                                                            <td>{{details.avgDuration}}</td>
-                                                            <td>{{details.minDuration}}</td>
-                                                            <td>{{details.maxDuration}}</td>
-                                                            <td>
-                                                            <button ng-if="details.expanded" ng-click="details.expanded = false">-</button>
-                                                            <button ng-if="!details.expanded" ng-click="details.expanded = true">+</button>
-                                                            </td>
+															<td>{{details.avgDuration}}</td>
+															<td>{{details.minDuration}}</td>
+															<td>{{details.maxDuration}}</td>
+															<td>
+																<button class="cicle-btn minus-cta" ng-if="details.expanded" ng-click="details.expanded = false"><i class="fa fa-minus"></i></button>
+																<button class="cicle-btn plus-cta" ng-if="!details.expanded" ng-click="details.expanded = true"><i class="fa fa-plus"></i></button>
+															</td>
 														</tr>
-                                                        <tr ng-if="details.expanded" ng-repeat-end="">
-                                                            <td colspan="7">
-                                                                <div class="table-responsive">
-                                                                    <table class="table" style="font-size:8pt;">
-                                                                        <thead>
-                                                                          <tr>
-                                                                            <td>Página</td>
-                                                                            <td width="8%">URL</td>
-                                                                            <td width="8%">URL anterior</td>
-                                                                            <td>Duração (s)</td>
-                                                                            <td>Entrada</td>
-                                                                            <td>Saída</td>
-                                                                            <td>Tipo</td>
-                                                                          </tr>
-                                                                          <tr ng-repeat="navigation in details.navigations">
-                                                                            <td>{{navigation.title}}</td>
-                                                                            <td>{{navigation.url}}</td>
-                                                                            <td>{{navigation.referrerURL}}</td>
-                                                                            <td>{{navigation.duration}}</td>
-                                                                            <td>{{navigation.startTimestamp | date:"MM/dd/yyyy h:mm:sa"}}</td>
-                                                                            <td>{{navigation.timestamp | date:"MM/dd/yyyy h:mm:sa"}}</td>
-                                                                            <td>{{navigation.pageType}}</td>
-                                                                          </tr>
-                                                                        </thead>
-                                                                      </table>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
+														<tr ng-if="details.expanded" ng-repeat-end="" class="sub-table-container">
+															<td colspan="7" class="sub-table">
+																<div class="table-responsive">
+																	<table class="table" style="font-size:8pt;">
+																		<thead>
+																			<tr>
+																				<td>Página</td>
+																				<td width="8%">URL</td>
+																				<td width="8%">URL anterior</td>
+																				<td>Duração (s)</td>
+																				<td>Entrada</td>
+																				<td>Saída</td>
+																				<td>Tipo</td>
+																			</tr>
+																			<tr ng-repeat="navigation in details.navigations">
+																				<td>{{navigation.title}}</td>
+																				<td>{{navigation.url}}</td>
+																				<td>{{navigation.referrerURL}}</td>
+																				<td>{{navigation.duration}}</td>
+																				<td>{{navigation.startTimestamp | date:"MM/dd/yyyy h:mm:sa"}}</td>
+																				<td>{{navigation.timestamp | date:"MM/dd/yyyy h:mm:sa"}}</td>
+																				<td>{{navigation.pageType}}</td>
+																			</tr>
+																		</thead>
+																	</table>
+																</div>
+															</td>
+														</tr>
 													</tbody>
 												</table>
 											</div>

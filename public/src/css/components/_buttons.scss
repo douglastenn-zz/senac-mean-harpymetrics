@@ -1,0 +1,24 @@
+button.cicle-btn {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    &.plus-cta{
+      background: #2980b9;
+      border-color: #3498db;
+      color: #fff;
+    }
+    &.minus-cta{
+      background: #7f8c8d;
+      border-color: #95a5a6;
+      color: #fff;
+    }
+    &:hover{
+      background: #2c3e50;
+      border-color: #34495e;
+    }
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+}
