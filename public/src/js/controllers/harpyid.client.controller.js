@@ -1,28 +1,14 @@
 'use strict';
 
-angular.module('harpyid').controller('HarpyidController', ['$scope', '$window', '$http',
-    function($scope, $window, $http, Website) {
+angular.module('harpyid').controller('HarpyidController', ['$scope', '$window', '$http', 'Harpyid',
+    function($scope, $window, $http, Harpyid) {
 
-	  $scope._ = _;
+    $scope._ = _;
+    $scope.username = $('.loggedUser').val();
     $scope.formData = {};
-    $scope.variable = 'Variavél do controller do harpyid.client.controller.js';
     $scope.websites = [];
     $scope.success = false;
     $scope.filterWebsite = '';
-        
-    function getMostAcessed() {
-        $http.get('HID15b2330/product/most-acessed/')
-            .success(function(products) {
-                console.log(products);
-            })
-            .error(function(err) {
-                console.log('Error: ' + err);
-                $scope.message = {
-                   texto: 'Não foi possível obter a lista.'
-                };
-            });
-    }
-    getMostAcessed();
 
     function getWebsites() {
         $http.get('/websites')
@@ -48,7 +34,7 @@ angular.module('harpyid').controller('HarpyidController', ['$scope', '$window', 
               $scope.formData = {};
               $scope.adminForm.$setPristine();
               getWebsites();
-              $window.location.href = '/admin/harpyid'
+              $window.location.href = '/#!/admin/harpyid';
           })
           .error(function(data) {
               console.log('Error: ' + data);
@@ -56,9 +42,10 @@ angular.module('harpyid').controller('HarpyidController', ['$scope', '$window', 
     }
 
    $scope.removeWebsite = function(website) {
-       Website.delete(website._id)
+       Harpyid.deleteWebsite(website._id)
           .success(function(data) {
               getWebsites();
+              $window.location.href = '/#!/admin/harpyid';
           })
           .error(function(err) {
               $scope.mensagem = {

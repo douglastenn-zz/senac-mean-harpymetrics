@@ -52,7 +52,7 @@ exports.save = function(req, res) {
 
 exports.delete = function(req, res) {
     var _id = sanitize(req.params.id);
-    website.remove({'_id' : _id}).exec()
+    Website.remove({'_id' : _id}).exec()
         .then(
             function() {
                 res.end();

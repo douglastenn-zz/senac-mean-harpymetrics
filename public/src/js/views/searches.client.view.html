@@ -3,19 +3,19 @@
 		<div class="row">
 			<section class="admin-left-nav">
 				<div class="portal-user-loged">
-					<p class="display-user"><i class="fa fa-user"></i> User Name</p>
+					<p class="display-user"><i class="fa fa-user"></i> <span>{{username}}</span></p>
 				</div>
 				<ul class="left-nav-list">
 					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
 					<li><a href="/#!/admin/details/{{harpyid}}"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
 					<li class="left-nav-submenu">
-						<a href="/#!/admin/reports"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
+						<a href="#"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
 						<ul class="left-nav-submenu-list">
 							<li><a href="/#!/admin/details/{{harpyid}}/reports/categories">Categorias</a></li>
 							<li><a href="/#!/admin/details/{{harpyid}}/reports/products">Produtos</a></li>
                             <li><a href="/#!/admin/details/{{harpyid}}/reports/searches">Buscas</a></li>
+                            <li><a href="/#!/admin/details/{{harpyid}}/reports/pages">Páginas</a></li>
 							<li><a href="/#!/admin/details/{{harpyid}}/reports/navigations">Navegações</a></li>
-							<li><a href="/#!/admin/details/{{harpyid}}/reports/pages">Páginas</a></li>
 						</ul>
 					</li>
 					<li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
@@ -30,7 +30,6 @@
 								<ol class="breadcrumb pull-right">
 									<li><a href="/#!/">HarpyMetrics Site</a></li>
 									<li class="active"><a href="/#!/admin">Dashboard</a></li>
-									<li class="active"><a href="/#!/admin/reports">Relatórios</a></li>
 								</ol>
 							</div>
 						</div>

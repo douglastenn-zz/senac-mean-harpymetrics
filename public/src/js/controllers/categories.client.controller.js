@@ -3,6 +3,25 @@
 angular.module('categories').controller('CategoriesController', ['$scope', '$http', '$stateParams','Website', 'Category',
     function($scope, $http, $stateParams, Website, Category) {
             
+        $scope.username = $('.loggedUser').val();
+        
+            function getWebsite() {
+                if($stateParams.harpyid) {
+                    $scope.harpyid = $stateParams.harpyid;
+                    $http.get('/websites/' + $scope.harpyid)
+                    .success(function(website) {
+                        $scope.website = website;
+                    })
+                    .error(function(err) {
+                        console.log('Error: ' + err);
+                        $scope.message = {
+                           texto: 'Não foi possível obter a lista.'
+                        };
+                    });
+                }
+            }
+            getWebsite();
+        
 		    $scope.getMostAcessed = function() {
                 if($stateParams.harpyid) {
                     $scope.harpyid = $stateParams.harpyid;

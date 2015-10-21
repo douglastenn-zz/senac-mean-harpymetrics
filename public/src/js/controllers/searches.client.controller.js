@@ -2,7 +2,26 @@
 
 angular.module('searches').controller('SearchesController', ['$scope', '$http', '$stateParams', 'Search',
     function($scope, $http, $stateParams, Search) {
+    
+    $scope.username = $('.loggedUser').val();
         
+    function getWebsite() {
+        if($stateParams.harpyid) {
+            $scope.harpyid = $stateParams.harpyid;
+            $http.get('/websites/' + $scope.harpyid)
+            .success(function(website) {
+                $scope.website = website;
+            })
+            .error(function(err) {
+                console.log('Error: ' + err);
+                $scope.message = {
+                   texto: 'Não foi possível obter a lista.'
+                };
+            });
+        }
+    }
+    getWebsite();
+    
     $scope.getMostSearched = function() {
         if($stateParams.harpyid) {
             $scope.harpyid = $stateParams.harpyid;
