@@ -17,6 +17,13 @@ angular.module('sitedetails').config(['$stateProvider', '$urlRouterProvider',
 				return $templateCache.get('categories.client.view.html');
 			}
         })
+
+        .state('pages', {
+            url: '/admin/details/:harpyid/reports/pages',
+            templateProvider: function($templateCache){
+                return $templateCache.get('pages.client.view.html');
+            }
+        })
         
         .state('products', {
             url: '/admin/details/:harpyid/reports/products',

@@ -1,4 +1,4 @@
-<div ng-controller="SearchesController" class="main-content-view admin-portal-site">
+<div ng-controller="PagesController" class="main-content-view admin-portal-site">
 	<div class="container-fluid">
 		<div class="row">
 			<section class="admin-left-nav">
@@ -7,7 +7,7 @@
 				</div>
 				<ul class="left-nav-list">
 					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
-					<li><a href="/#!/admin/details/{{harpyid}}"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
+					<li><a href="/#!/admin/details"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
 					<li class="left-nav-submenu">
 						<a href="/#!/admin/reports"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
 						<ul class="left-nav-submenu-list">
@@ -26,11 +26,10 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<h4 class="pull-left page-title">Relatório de Buscas - {{website.name}}</h4>
+								<h4 class="pull-left page-title">Relatório de Páginas - {{website.name}}</h4>
 								<ol class="breadcrumb pull-right">
 									<li><a href="/#!/">HarpyMetrics Site</a></li>
 									<li class="active"><a href="/#!/admin">Dashboard</a></li>
-									<li class="active"><a href="/#!/admin/reports">Relatórios</a></li>
 								</ol>
 							</div>
 						</div>
@@ -56,7 +55,7 @@
 								<div class="admin-intro-site-info">
 									<div class="row">
 										<div class="col-sm-12 col-md-8">
-											<h3 class="report-title">Termos ordenados por busca - ranking</h3>
+											<h3 class="report-title">Páginas ordenadas por acesso</h3>
 										</div>
 										<div class="col-sm-12 col-md-4">
 										</div>
@@ -64,20 +63,20 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="table-responsive">
-												<div google-chart chart="chartSearch" style="height:300px; width:100%;"></div>
+												<div google-chart chart="chartPages" style="height:300px; width:100%;"></div>
 												<table class="table">
 													<thead>
 														<tr>
 															<th class="list-num">N</th>
-															<th>Termo</th>
-															<th>Buscas</th>
+															<th>Nome da página</th>
+															<th>Acessos</th>
 														</tr>
 													</thead>
 													<tbody>
-														<tr ng-repeat="item in searchesMostSearched">
-															<td scope="row">{{$index+1}}</td>
-															<td>{{item.search}}</td>
-															<td>{{item.quantity}}</td>
+														<tr ng-repeat="pag in pages">
+															<td scope="row"></td>
+															<td>{{pag.page}}</td>
+															<td>{{pag.quantity}}</td>
 														</tr>
 													</tbody>
 												</table>
