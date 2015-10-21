@@ -10,6 +10,7 @@ angular.module('products').controller('ProductsController', ['$scope', '$http', 
             function success(result) {
                 console.log('result', result);
                 $scope.productsMostAcessed = result.data;
+                $scope.drawChart( result.data );
             }, 
             function failed(err) {
                 console.log('Error: ' + err);
@@ -26,6 +27,7 @@ angular.module('products').controller('ProductsController', ['$scope', '$http', 
             function success(result) {
                 console.log('result', result);
                 $scope.productsMostViewed = result.data;
+                $scope.drawChartViewed( result.data );
             }, 
             function failed(err) {
                 console.log('Error: ' + err);
@@ -34,6 +36,52 @@ angular.module('products').controller('ProductsController', ['$scope', '$http', 
     };
 
     $scope.getMostViewed();
+
+    $scope.drawChart = function( data ) {
+        $scope.chartProductMostAcessed = {};
+        $scope.chartProductMostAcessed.type = "ColumnChart";
+
+        var arrChart = [];
+        $(data).each(function(i,e) { 
+           var chart = {};
+           chart.c = [];
+            
+           chart.c.push({ v: e.product.name });
+           chart.c.push({ v: e.quantity });
+
+           arrChart.push( chart );
+        });
+
+
+        $scope.chartProductMostAcessed.data = {"cols": [
+            {id: "t", label: "Produto", type: "string"},
+            {id: "s", label: "Acessos", type: "number"}
+        ], "rows": arrChart };
+
+    };
+
+    $scope.drawChartViewed = function( data ) {
+        $scope.chartProductMostViewed = {};
+        $scope.chartProductMostViewed.type = "ColumnChart";
+
+        var arrChart = [];
+        $(data).each(function(i,e) { 
+           var chart = {};
+           chart.c = [];
+            
+           chart.c.push({ v: e.product.name });
+           chart.c.push({ v: e.quantity });
+
+           arrChart.push( chart );
+        });
+
+
+        $scope.chartProductMostViewed.data = {"cols": [
+            {id: "t", label: "Produto", type: "string"},
+            {id: "s", label: "Visualizações", type: "number"}
+        ], "rows": arrChart };
+
+    };
 
   }
 ]);
