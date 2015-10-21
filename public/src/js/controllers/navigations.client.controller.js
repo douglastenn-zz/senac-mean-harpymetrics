@@ -1,11 +1,23 @@
 'use strict';
 
-angular.module('navigations').controller('NavigationsController', ['$scope', '$http', '$stateParams',
-    function($scope, $http, $stateParams) {
+angular.module('navigations').controller('NavigationsController', ['$scope', '$http', '$stateParams', 'Navigation',
+    function($scope, $http, $stateParams, Navigation) {
 
-	$scope._ = _;
-    $scope.formData = {};
-    $scope.variable = 'Variavél do controller do navigation.client.controller.js';
+	$scope.getNavigationsDetails = function() {
+        if($stateParams.harpyid) {
+            $scope.harpyid = $stateParams.harpyid;
+            Navigation.getNavigationsDetails($stateParams.harpyid).then(
+            function success(result) {
+                console.log('result', result);
+                $scope.navigationsDetails = result.data;
+            }, 
+            function failed(err) {
+                console.log('Error: ' + err);
+            })
+        }
+    };
+
+    $scope.getNavigationsDetails();
 
   }
 ]);
