@@ -32,6 +32,13 @@ angular.module('documents').config(['$stateProvider', '$urlRouterProvider',
 				}
 			})
 
+			.state('overview', {
+					url: '/documents/overview',
+					templateProvider: function($templateCache){
+					return $templateCache.get('overview.documents.client.view.html');
+				}
+			})
+
 			.state('checkout', {
 					url: '/documents/checkout',
 					templateProvider: function($templateCache){
