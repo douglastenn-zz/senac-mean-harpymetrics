@@ -4,7 +4,10 @@ angular.module('navigations').controller('NavigationsController', ['$scope', '$h
     function($scope, $http, $stateParams, Navigation) {
         $scope.username = $('.loggedUser').val();
         
-        function getWebsite() {
+        $scope.danger = {'background-color': '#f2d6d6'};
+        $scope.warning = {'background-color': '#F4EAAC'};
+        
+        $scope.getWebsite = function () {
             if($stateParams.harpyid) {
                 $scope.harpyid = $stateParams.harpyid;
                 $http.get('/websites/' + $scope.harpyid)
@@ -19,7 +22,7 @@ angular.module('navigations').controller('NavigationsController', ['$scope', '$h
                 });
             }
         }
-        getWebsite();
+        $scope.getWebsite();
 
         $scope.getNavigationsDetails = function() {
             if($stateParams.harpyid) {
