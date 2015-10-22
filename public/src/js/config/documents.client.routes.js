@@ -18,10 +18,38 @@ angular.module('documents').config(['$stateProvider', '$urlRouterProvider',
 				}
       })
 
-			.state('home', {
-					url: '/documents/home',
+			.state('category', {
+					url: '/documents/category',
 					templateProvider: function($templateCache){
-					return $templateCache.get('home.documents.client.view.html');
+					return $templateCache.get('category.documents.client.view.html');
+				}
+			})
+
+			.state('product', {
+					url: '/documents/product',
+					templateProvider: function($templateCache){
+					return $templateCache.get('product.documents.client.view.html');
+				}
+			})
+
+			.state('overview', {
+					url: '/documents/overview',
+					templateProvider: function($templateCache){
+					return $templateCache.get('overview.documents.client.view.html');
+				}
+			})
+
+			.state('checkout', {
+					url: '/documents/checkout',
+					templateProvider: function($templateCache){
+					return $templateCache.get('checkout.documents.client.view.html');
+				}
+			})
+
+			.state('search', {
+					url: '/documents/search',
+					templateProvider: function($templateCache){
+					return $templateCache.get('search.documents.client.view.html');
 			}
 		});
 

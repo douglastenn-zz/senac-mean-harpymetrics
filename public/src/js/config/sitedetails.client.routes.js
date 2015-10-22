@@ -17,6 +17,13 @@ angular.module('sitedetails').config(['$stateProvider', '$urlRouterProvider',
 				return $templateCache.get('categories.client.view.html');
 			}
         })
+
+        .state('pages', {
+            url: '/admin/details/:harpyid/reports/pages',
+            templateProvider: function($templateCache){
+                return $templateCache.get('pages.client.view.html');
+            }
+        })
         
         .state('products', {
             url: '/admin/details/:harpyid/reports/products',
@@ -29,6 +36,13 @@ angular.module('sitedetails').config(['$stateProvider', '$urlRouterProvider',
             url: '/admin/details/:harpyid/reports/searches',
             templateProvider: function($templateCache){
 				return $templateCache.get('searches.client.view.html');
+			}
+        })
+        
+        .state('navigations', {
+            url: '/admin/details/:harpyid/reports/navigations',
+            templateProvider: function($templateCache){
+				return $templateCache.get('navigations.client.view.html');
 			}
         });
 

@@ -8,7 +8,9 @@ module.exports = function(app) {
         .post(isAuthenticated, controller.save);
     
     app.route('/websites/:harpyid')
-        .get(isAuthenticated, controller.getWebsite)
+        .get(isAuthenticated, controller.getWebsite);
+    
+    app.route('/websites/:id')
         .delete(isAuthenticated, controller.delete);
 };
 

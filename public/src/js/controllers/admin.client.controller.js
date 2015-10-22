@@ -4,6 +4,7 @@ angular.module('admin').controller('AdminController', ['$scope', '$http',
     function($scope, $http) {
 
     $scope._ = _;
+    $scope.username = $('.loggedUser').val();
     $scope.formData = {};
         
     function getWebsites() {

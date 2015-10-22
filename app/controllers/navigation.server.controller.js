@@ -18,15 +18,13 @@ exports.navigationsDetails = function(req, res) {
             avgDuration: {$avg: "$duration"},
             minDuration: {$min: "$duration"},
             maxDuration: {$max: "$duration"},
-            navigation: {$push: {_id: "$_id", title: "$title", url: "$url", referrerURL: "$referrerURL", startTimestamp: "$startTimestamp", timestamp: "$timestamp", duration: "$duration", harpyId: "$harpyId", pageType: "$pageType", userStep: "$userStep"}}
+            navigations: {$push: {_id: "$_id", title: "$title", url: "$url", referrerURL: "$referrerURL", startTimestamp: "$startTimestamp", timestamp: "$timestamp", duration: "$duration", harpyId: "$harpyId", pageType: "$pageType", userStep: "$userStep"}}
         }}
-    ], function (err, navigations) {
+    ], function (err, navigationsDetails) {
         if (err) {
             console.log(err);
             return;
         }
-        console.log('navigations', navigations);
-        console.log('navigation1', navigations[0].navigation);
-        res.json(navigations);
+        res.json(navigationsDetails);
     })
 };

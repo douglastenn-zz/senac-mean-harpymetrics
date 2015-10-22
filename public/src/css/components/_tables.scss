@@ -1,0 +1,61 @@
+.table-responsive table tbody{
+  tr.sub-table-container{
+    td.sub-table{
+      padding: 0px !important;
+      width: auto;
+      div.table-responsive{
+        padding: 0px;
+        table{
+            box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+div.table-responsive {
+    width: 100%;
+    padding: 15px 0px;
+    table.show-hide{
+      box-shadow: none;
+      border: 1px solid #fff;
+      tr.show-hide-line{
+        background: #ecf0f1;
+        
+      }
+    }
+    tr.title{
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 2px solid #3498db !important;
+    }
+}
+.table-responsive table {
+    width: 100%;
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.12);
+    position: relative;
+    box-shadow: 0 2px 2px 0
+    rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+.table-responsive table tr {
+    line-height: 45px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.12);
+    td.details{
+      width: 120px;
+      text-align: center;
+    }
+    td, th{
+      padding: 5px 10px;
+      height: 50px;
+      line-height: 2.2rem;
+    }
+    th.list-num{
+      width: 100px;
+    }
+}
+.table-responsive table tbody tr:hover {
+
+}

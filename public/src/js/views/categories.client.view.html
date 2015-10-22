@@ -3,18 +3,19 @@
 		<div class="row">
 			<section class="admin-left-nav">
 				<div class="portal-user-loged">
-					<p class="display-user"><i class="fa fa-user"></i> User Name</p>
+					<p class="display-user"><i class="fa fa-user"></i> <span>{{username}}</span></p>
 				</div>
 				<ul class="left-nav-list">
 					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
-					<li><a href="/#!/admin/details"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
+					<li><a href="/#!/admin/details/{{harpyid}}"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
 					<li class="left-nav-submenu">
-						<a href="/#!/admin/reports"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
+						<a href="#"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
 						<ul class="left-nav-submenu-list">
-							<li><a href="/#!/admin/reports/categories">Categorias</a></li>
-							<li><a href="/#!/admin/reports/products">Produtos</a></li>
+							<li><a href="/#!/admin/details/{{harpyid}}/reports/categories">Categorias</a></li>
+							<li><a href="/#!/admin/details/{{harpyid}}/reports/products">Produtos</a></li>
                             <li><a href="/#!/admin/details/{{harpyid}}/reports/searches">Buscas</a></li>
-							<li><a href="/#!/admin/reports/navigation">Navegação</a></li>
+                            <li><a href="/#!/admin/details/{{harpyid}}/reports/pages">Páginas</a></li>
+							<li><a href="/#!/admin/details/{{harpyid}}/reports/navigations">Navegações</a></li>
 						</ul>
 					</li>
 					<li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
@@ -25,7 +26,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<h4 class="pull-left page-title">Categorias - {{website.name}}</h4>
+								<h4 class="pull-left page-title">Relatório de Categorias - {{website.name}}</h4>
 								<ol class="breadcrumb pull-right">
 									<li><a href="/#!/">HarpyMetrics Site</a></li>
 									<li class="active"><a href="/#!/admin">Dashboard</a></li>
@@ -35,11 +36,20 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="admin-top-tool-bar">
-									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/report/{{website.harpyid}}/product/most-acessed">
-										Mais acessados
-									</a>
-									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/reports">
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/categories">
 										Categorias
+									</a>
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/products">
+										Produtos
+									</a>
+                                    <a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/searches">
+										Buscas
+									</a>
+                                    <a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/navigations">
+										Navegações
+									</a>
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/pages">
+										Páginas
 									</a>
 								</div>
 								<div class="admin-intro-site-info">
@@ -53,6 +63,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="table-responsive">
+												<div google-chart chart="chartCategories" style="height:300px; width:100%;"></div>
 												<table class="table">
 													<thead>
 														<tr>

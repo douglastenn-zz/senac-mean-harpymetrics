@@ -1,11 +1,41 @@
 'use strict';
 
-angular.module('navigations').controller('NavigationsController', ['$scope', '$http', '$stateParams',
-    function($scope, $http, $stateParams) {
+angular.module('navigations').controller('NavigationsController', ['$scope', '$http', '$stateParams', 'Navigation',
+    function($scope, $http, $stateParams, Navigation) {
+        $scope.username = $('.loggedUser').val();
+        
+        function getWebsite() {
+            if($stateParams.harpyid) {
+                $scope.harpyid = $stateParams.harpyid;
+                $http.get('/websites/' + $scope.harpyid)
+                .success(function(website) {
+                    $scope.website = website;
+                })
+                .error(function(err) {
+                    console.log('Error: ' + err);
+                    $scope.message = {
+                       texto: 'Não foi possível obter a lista.'
+                    };
+                });
+            }
+        }
+        getWebsite();
 
-	$scope._ = _;
-    $scope.formData = {};
-    $scope.variable = 'Variavél do controller do navigation.client.controller.js';
+        $scope.getNavigationsDetails = function() {
+            if($stateParams.harpyid) {
+                $scope.harpyid = $stateParams.harpyid;
+                Navigation.getNavigationsDetails($stateParams.harpyid).then(
+                function success(result) {
+                    console.log('result', result);
+                    $scope.navigationsDetails = result.data;
+                }, 
+                function failed(err) {
+                    console.log('Error: ' + err);
+                })
+            }
+        };
+
+        $scope.getNavigationsDetails();
 
   }
 ]);

@@ -3,19 +3,11 @@
 		<div class="row">
 			<section class="admin-left-nav">
 				<div class="portal-user-loged">
-					<p class="display-user"><i class="fa fa-user"></i> User Name</p>
+					<p class="display-user"><i class="fa fa-user"></i> <span>{{username}}</span></p>
 				</div>
 				<ul class="left-nav-list">
 					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
-					<li><a href="/#!/admin/details"><i class="fa fa-binoculars"></i>Visão Geral</a></li>
-					<li class="left-nav-submenu">
-						<a href="/#!/admin/reports"><i class="fa fa-bar-chart"></i>Relatórios <i class="fa fa-sort-desc"></i></a>
-						<ul class="left-nav-submenu-list">
-							<li><a href="/#!/admin/reports/categories">Categorias</a></li>
-							<li><a href="/#!/admin/reports/products">Produtos</a></li>
-							<li><a href="/#!/admin/reports">Relatório 003</a></li>
-						</ul>
-					</li>
+					
 					<li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
 				</ul>
 			</section>
@@ -24,7 +16,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<h4 class="pull-left page-title">Gerenciar HarpyID</h4>
+								<h4 class="pull-left page-title">Gerenciar Sites</h4>
 								<ol class="breadcrumb pull-right">
 									<li><a href="/#!/">HarpyMetrics Site</a></li>
 									<li class="active"><a href="/#!/admin">Dashboard</a></li>
@@ -34,8 +26,8 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="admin-top-tool-bar">
-									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details">
-										Visão Geral
+									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin">
+										Dashboard
 									</a>
 								</div>
 							</div>
@@ -97,7 +89,7 @@
 														<td>  {{website.url}}</td>
 														<td>  {{website.harpyid}}</td>
 														<td class="text-center">
-															<button ng-click="remove(website)" class="btn btn-warning">Remover</button>
+															<button ng-click="removeWebsite(website)" class="btn btn-warning">Remover</button>
 														</td>
 													</tr>
 													<tr>

@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "angular": "^1.4.7",
+    "angular-google-chart": "http://registry.npmjs.org/angular-google-chart/-/angular-google-chart-0.0.11.tgz",
     "angular-resource": "^1.4.7",
     "angular-ui-router": "^0.2.15",
     "browser-sync": "^2.9.11",

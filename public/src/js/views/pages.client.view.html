@@ -1,4 +1,4 @@
-<div ng-controller="ProductsController" class="main-content-view admin-portal-site">
+<div ng-controller="PagesController" class="main-content-view admin-portal-site">
 	<div class="container-fluid">
 		<div class="row">
 			<section class="admin-left-nav">
@@ -26,7 +26,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<h4 class="pull-left page-title">Relatório de Produtos - {{website.name}}</h4>
+								<h4 class="pull-left page-title">Relatório de Páginas - {{website.name}}</h4>
 								<ol class="breadcrumb pull-right">
 									<li><a href="/#!/">HarpyMetrics Site</a></li>
 									<li class="active"><a href="/#!/admin">Dashboard</a></li>
@@ -35,7 +35,7 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-				                <div class="admin-top-tool-bar">
+								<div class="admin-top-tool-bar">
 									<a class="cta-btn mdl-button mdl-js-button mdl-button--primary" href="/#!/admin/details/{{harpyid}}/reports/categories">
 										Categorias
 									</a>
@@ -55,7 +55,7 @@
 								<div class="admin-intro-site-info">
 									<div class="row">
 										<div class="col-sm-12 col-md-8">
-											<h3 class="report-title">Produtos ordenados por acesso - ranking</h3>
+											<h3 class="report-title">Páginas ordenadas por acesso</h3>
 										</div>
 										<div class="col-sm-12 col-md-4">
 										</div>
@@ -63,57 +63,20 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="table-responsive">
-												<div google-chart chart="chartProductMostAcessed" style="height:300px; width:100%;"></div>
+												<div google-chart chart="chartPages" style="height:300px; width:100%;"></div>
 												<table class="table">
 													<thead>
 														<tr>
 															<th class="list-num">N</th>
-                                                            <th>Id</th>
-															<th>Produto</th>
+															<th>Nome da página</th>
 															<th>Acessos</th>
 														</tr>
 													</thead>
 													<tbody>
-														<tr ng-repeat="item in productsMostAcessed">
-															<td scope="row">{{$index+1}}</td>
-                                                            <td>{{item.product.id}}</td>
-															<td>{{item.product.name}}</td>
-															<td>{{item.quantity}}</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-
-								</div>
-                                <div class="admin-intro-site-info">
-									<div class="row">
-										<div class="col-sm-12 col-md-8">
-											<h3 class="report-title">Produtos ordenados por visualizações - ranking</h3>
-										</div>
-										<div class="col-sm-12 col-md-4">
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="table-responsive">
-												<div google-chart chart="chartProductMostViewed" style="height:300px; width:100%;"></div>
-												<table class="table">
-													<thead>
-														<tr>
-															<th class="list-num">N</th>
-                                                            <th>Id</th>
-															<th>Produto</th>
-															<th>Acessos</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr ng-repeat="item in productsMostViewed">
-															<td scope="row">{{$index+1}}</td>
-                                                            <td>{{item.product.id}}</td>
-															<td>{{item.product.name}}</td>
-															<td>{{item.quantity}}</td>
+														<tr ng-repeat="pag in pages">
+															<td scope="row"></td>
+															<td>{{pag.page}}</td>
+															<td>{{pag.quantity}}</td>
 														</tr>
 													</tbody>
 												</table>
