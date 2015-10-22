@@ -76,7 +76,7 @@
 														</tr>
 													</thead>
 													<tbody>
-														<tr ng-repeat-start="details in navigationsDetails" class="show-hide-line">
+														<tr ng-repeat-start="details in navigationsDetails" class="show-hide-line" ng-style="details.avgDuration > 10 ? danger : (details.count > 10 ? warning : '')">
 															<td scope="row">{{$index+1}}</td>
 															<td>{{details._id}}</td>
 															<td>{{details.count}}</td>
@@ -93,14 +93,14 @@
 																<div class="table-responsive">
 																	<table class="table" style="font-size:8pt;">
 																		<thead>
-																			<tr>
-																				<td>Página</td>
-																				<td width="8%">URL</td>
-																				<td width="8%">URL anterior</td>
-																				<td>Duração (s)</td>
-																				<td>Entrada</td>
-																				<td>Saída</td>
-																				<td>Tipo</td>
+																			<tr class="title">
+																				<th>Página</th>
+																				<th width="8%">URL</th>
+																				<th width="8%">URL anterior</th>
+																				<th>Duração (s)</th>
+																				<th>Entrada</th>
+																				<th>Saída</th>
+																				<th>Tipo</th>
 																			</tr>
 																			<tr ng-repeat="navigation in details.navigations">
 																				<td>{{navigation.title}}</td>
@@ -121,7 +121,14 @@
 											</div>
 										</div>
 									</div>
-
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <dl>
+                                                <dt><div style="background: #f2d6d6; width: 10pt; height: 10pt; float: left;"></div><div>Média de duração por página > 10 segundos.</div></dt>
+                                                <dt><div style="background: #F4EAAC; width: 10pt; height: 10pt; float: left;"></div><div>Qtd. páginas > 10.</div></dt>
+                                            </dl>
+                                        </div>
+                                    </div>
 								</div>
 							</div>
 						</div>
