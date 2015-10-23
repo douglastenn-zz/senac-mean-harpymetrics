@@ -13,6 +13,108 @@
 							<p>Para adicionar o código de acompanhamento de página de categoria, será necessário adicionar algumas informações, essas que serão enviadas para analise. </p>
 							<br>
 						</div>
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Nome do campo</th>
+										<th>Valor do campo</th>
+										<th>Tipo do campo</th>
+										<th>Obrigatório</th>
+										<th>Descrição</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td scope="row">window._appHarpy.harpyId</td>
+										<td>[Seu HarpyID]</td>
+										<td>String</td>
+										<td>Sim</td>
+										<td>harpyId é o código de acompanhamento do e-commerce, que pode ser gerado no cadastro do site.</td>
+									</tr>
+									<tr>
+										<td scope="row">window._appHarpy.event</td>
+										<td>Category</td>
+										<td>String</td>
+										<td>Sim</td>
+										<td>Tipo do módulo que será inicializado</td>
+									</tr>
+									<tr>
+										<td scope="row">window._appHarpy.hitType</td>
+										<td>detail</td>
+										<td>String</td>
+										<td>Sim</td>
+										<td>Tipo de evento que será acionado para a captura das informações</td>
+									</tr>
+									<tr>
+										<td scope="row">window._propsHarpy.category</td>
+										<td>[Ver tabela de propriedades]</td>
+										<td>Array</td>
+										<td>Sim</td>
+										<td>_propsHarpy são as propriedades que serão enviadas para cada evento acionado</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="description-band">
+							<h3>Tabela de propriedades para o evento [Category]</h3>
+							<p>Como o campo _propsHarpy.category é um array, então será necessário adicionar um objeto javascript com as informações da categoria.</p>
+						</div>
+
+						<div class="table-responsive">
+							<table class="table">
+								<caption>window._propsHarpy.category</caption>
+								<thead>
+									<tr>
+										<th>Nome do campo</th>
+										<th>Tipo do campo</th>
+										<th>Obrigatório</th>
+										<th>Descrição</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td scope="row">id</td>
+										<td>String</td>
+										<td>Sim</td>
+										<td>ID da categoria de produtos</td>
+									</tr>
+									<tr>
+										<td scope="row">name</td>
+										<td>String</td>
+										<td>Não</td>
+										<td>Nome da categoria de produtos</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="description-band highlight-topic-example">
+							<h5>Exemplo de implementação:</h5>
+							<p>// Category</br>
+							<<span>script src="//52.11.59.146/harpymetrics.min.js"</span>><<span>/script</span>></br>
+							<<span>script</span>></br>
+							  window._appHarpy.event = 'Category'; // Tipo do módulo</br>
+							  window._appHarpy.harpyId = 'HID15b2330'; // HarpyId</br>
+							  window._appHarpy.hitType = 'Detail'; // Tipo de evento</br>
+								</br>
+							  var category = [];</br>
+							  $(myCategories).each(function(i,e) {</br>
+									</br>
+							    if(e.pageCategory) {</br>
+							      var cat 	= {};</br>
+							      cat.id	= e.siteSearchResults;</br>
+							      cat.name	= e.siteSearchTerm;</br>
+							      category.push(cat);</br>
+							    }</br>
+									</br>
+							  });</br>
+								</br>
+							  window._propsHarpy.category = category; // Onde será enviado as propriedades</br>
+							  Harpy.module('category'); // Onde será inicializado o módulo de categoria</br>
+							  <<span>/script</span>>
+							</p>
+						</div>
+
 					</div>
 				</div>
 			</div>

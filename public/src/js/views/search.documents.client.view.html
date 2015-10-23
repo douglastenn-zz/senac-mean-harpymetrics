@@ -92,6 +92,29 @@
 						</div>
 						<div class="description-band highlight-topic-example">
 							<h5>Exemplo de implementação:</h5>
+							<p>							// Search<br>
+							<<span>script src="//52.11.59.146/harpymetrics.min.js"</span>><<span>/script</span>><br>
+							<<span>script</span>><br>
+							  window._appHarpy.event = 'Search'; // Tipo do módulo<br>
+							  window._appHarpy.harpyId = 'HID15b2330'; // HarpyId<br>
+							  window._appHarpy.hitType = 'Detail'; // Tipo de evento<br>
+							  <br>
+							  var searchArr = [];<br>
+							  $(mySearch).each(function(i,e) {<br>
+							    <br>
+							    if(e.siteSearchResults) {<br>
+							      var search 	= {};<br>
+							      search.searchTerm	= e.siteSearchTerm;<br>
+							      search.totalResult = e.siteSearchResults;<br>
+							      searchArr.push(search);<br>
+							    }<br>
+							    <br>
+							  });<br>
+							  <br>
+							  window._propsHarpy.search = searchArr; // Onde será enviado as propriedades<br>
+							  Harpy.module('search'); // Onde será inicializado o módulo para a busca<br>
+							  <<span>/script</span>>
+							</p>
 						</div>
 					</div>
 				</div>

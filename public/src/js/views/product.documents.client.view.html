@@ -10,9 +10,152 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="description-band">
-							<p>Para adicionar o código de acompanhamento de página de categoria, será necessário adicionar algumas informações, essas que serão enviadas para analise. </p>
+							<p>Para adicionar o código de acompanhamento de produto, será necessário adicionar algumas informações, essas que serão enviadas para analise. O código de acompanhamento de produto pode ser adicionado em vitrines de produtos, páginas de detalhe de produto, entre outras páginas onde podem conter produtos. </p>
 							<br>
 						</div>
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Nome do campo</th>
+										<th>Valor do campo</th>
+										<th>Tipo do campo</th>
+										<th>Obrigatório</th>
+										<th>Descrição</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td scope="row">window._appHarpy.harpyId</td>
+										<td>[Seu HarpyID]</td>
+										<td>String</td>
+										<td>Sim</td>
+										<td>harpyId é o código de acompanhamento do e-commerce, que pode ser gerado no cadastro do site.</td>
+									</tr>
+									<tr>
+										<td scope="row">window._appHarpy.event</td>
+										<td>Product</td>
+										<td>String</td>
+										<td>Sim</td>
+										<td>Tipo do módulo que será inicializado</td>
+									</tr>
+									<tr>
+										<td scope="row">window._appHarpy.hitType</td>
+										<td>view ou click</td>
+										<td>String</td>
+										<td>Sim</td>
+										<td>Tipo de evento que será acionado para a captura das informações</td>
+									</tr>
+									<tr>
+										<td scope="row">window._propsHarpy.product</td>
+										<td>[Ver tabela de propriedades]</td>
+										<td>Array</td>
+										<td>Sim</td>
+										<td>_propsHarpy são as propriedades que serão enviadas para cada evento acionado</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="description-band">
+							<h3>Tabela de propriedades para o evento [Product]</h3>
+							<p>Como o campo _propsHarpy.product é um array, então será necessário adicionar um objeto javascript com as informações do produto.</p>
+						</div>
+
+						<div class="table-responsive">
+							<table class="table">
+								<caption>window._propsHarpy.product</caption>
+								<thead>
+									<tr>
+										<th>Nome da chave do objeto</th>
+										<th>Tipo do campo</th>
+										<th>Obrigatório</th>
+										<th>Descrição</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td scope="row">id</td>
+										<td>String</td>
+										<td>Sim</td>
+										<td>ID do produto</td>
+									</tr>
+									<tr>
+										<td scope="row">name</td>
+										<td>String</td>
+										<td>sim</td>
+										<td>Nome do produto</td>
+									</tr>
+									<tr>
+										<td scope="row">price</td>
+										<td>Currency</td>
+										<td>Não</td>
+										<td>Preço do produto</td>
+									</tr>
+									<tr>
+										<td scope="row">list</td>
+										<td>String</td>
+										<td>Não</td>
+										<td>Nome da vitrine ou lista em que o produto se encontra</td>
+									</tr>
+									<tr>
+										<td scope="row">category</td>
+										<td>String</td>
+										<td>Não</td>
+										<td>Nome da categoria do produto</td>
+									</tr>
+									<tr>
+										<td scope="row">variant</td>
+										<td>String</td>
+										<td>Não</td>
+										<td>Variação do produto, como cor, voltagem, ou outra função.</td>
+									</tr>
+									<tr>
+										<td scope="row">brand</td>
+										<td>String</td>
+										<td>Não</td>
+										<td>Marca do produto</td>
+									</tr>
+									<tr>
+										<td scope="row">position</td>
+										<td>Integer</td>
+										<td>Não</td>
+										<td>Posição em que o produto se encontra na lista/vitrine</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="description-band highlight-topic-example">
+							<h5>Exemplo de implementação:</h5>
+							<p>// Product<br>
+								<<span>script src="//52.11.59.146/harpymetrics.min.js"</span>><<span>/script<span/>><br>
+								<<span>script</span>><br>
+								  window._appHarpy.event = 'Product';  // Tipo do módulo<br>
+								  window._appHarpy.harpyId = 'HID15b2330';  // HarpyId<br>
+								  window._appHarpy.hitType = 'Detail';   // Tipo de eventos<br>
+								   <br>
+								  var products = [];<br>
+								  $(myProducts).each(function(i,e) { <br>
+								     if(e.pageCategory) {<br>
+								        var prod = {};<br>
+								        prod.id = e.productId;<br>
+								        prod.name = e.productName;<br>
+								        prod.price = e.productPriceTo;<br>
+								        prod.list = e.list;<br>
+								        prod.category = e.productCategoryName;<br>
+								        prod.brand = e.brand;<br>
+								        prod.variant = e.skuName;<br>
+								        prod.position = '0';<br>
+								        products.push(prod);<br>
+								     }<br>
+								  });<br>
+								  <br>
+								  window._propsHarpy.product = products; // Onde será enviado as propriedades<br>
+								  Harpy.module('product'); // Onde será inicializado o módulo de produto<br>
+									<br>
+								<<span>/script</span>>
+							</p>
+						</div>
+
 					</div>
 				</div>
 			</div>
