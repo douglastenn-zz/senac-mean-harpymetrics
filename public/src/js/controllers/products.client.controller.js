@@ -5,22 +5,22 @@ angular.module('products').controller('ProductsController', ['$scope', '$http', 
     
     $scope.username = $('.loggedUser').val();
         
-    function getWebsite() {
-        if($stateParams.harpyid) {
-            $scope.harpyid = $stateParams.harpyid;
-            $http.get('/websites/' + $scope.harpyid)
-            .success(function(website) {
-                $scope.website = website;
-            })
-            .error(function(err) {
-                console.log('Error: ' + err);
-                $scope.message = {
-                   texto: 'Não foi possível obter a lista.'
-                };
-            });
+    $scope.getWebsite = function() {
+            if($stateParams.harpyid) {
+                $scope.harpyid = $stateParams.harpyid;
+                $http.get('/websites/' + $scope.harpyid)
+                .success(function(website) {
+                    $scope.website = website;
+                })
+                .error(function(err) {
+                    console.log('Error: ' + err);
+                    $scope.message = {
+                       texto: 'Não foi possível obter a lista.'
+                    };
+                });
+            }
         }
-    }
-    getWebsite();
+    $scope.getWebsite();
     
     $scope.getMostAcessed = function() {
         if($stateParams.harpyid) {
