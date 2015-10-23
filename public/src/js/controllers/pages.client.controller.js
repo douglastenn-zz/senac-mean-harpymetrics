@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('pages').controller('PagesController', ['$scope', '$http', '$stateParams','Website', 'Page',
-    function($scope, $http, $stateParams, Website, Page) {
+angular.module('pages').controller('PagesController', ['$scope', '$http', '$stateParams','Harpyid', 'Page',
+    function($scope, $http, $stateParams, Harpyid, Page) {
             
         $scope.username = $('.loggedUser').val();
         
-        function getWebsite() {
+        $scope.getWebsite = function() {
             if($stateParams.harpyid) {
                 $scope.harpyid = $stateParams.harpyid;
                 $http.get('/websites/' + $scope.harpyid)
@@ -20,7 +20,7 @@ angular.module('pages').controller('PagesController', ['$scope', '$http', '$stat
                 });
             }
         }
-        getWebsite();
+        $scope.getWebsite();
         
 		    $scope.getMostAcessed = function() {
                 if($stateParams.harpyid) {

@@ -5,7 +5,7 @@ angular.module('searches').controller('SearchesController', ['$scope', '$http', 
     
     $scope.username = $('.loggedUser').val();
         
-    function getWebsite() {
+    $scope.getWebsite = function() {
         if($stateParams.harpyid) {
             $scope.harpyid = $stateParams.harpyid;
             $http.get('/websites/' + $scope.harpyid)
@@ -20,7 +20,7 @@ angular.module('searches').controller('SearchesController', ['$scope', '$http', 
             });
         }
     }
-    getWebsite();
+    $scope.getWebsite();
     
     $scope.getMostSearched = function() {
         if($stateParams.harpyid) {
