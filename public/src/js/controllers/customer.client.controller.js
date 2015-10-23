@@ -14,6 +14,7 @@ angular.module('customer').controller('CustomerController', ['$scope', '$http',
           .success(function(data) {
           	  $scope.success = true;
               $scope.formData = {};
+              $scope.customerForm.$setPristine();
           })
           .error(function(data) {
               console.log('Error: ' + data);
