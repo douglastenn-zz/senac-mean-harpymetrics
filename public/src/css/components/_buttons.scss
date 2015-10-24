@@ -1,4 +1,4 @@
-button.cicle-btn {
+button.cicle-btn, .cicle-btn {
     border-radius: 50%;
     width: 35px;
     height: 35px;
@@ -43,3 +43,9 @@ i.material-icons.fa.fa-search{
   width: 85%;
   float: left;
 }
+  a.cicle-btn.plus-cta {
+      display: inline-block;
+      line-height: 35px;
+      background: #337ab7;
+      color: #fff;
+  }
