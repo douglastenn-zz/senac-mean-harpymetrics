@@ -39,18 +39,15 @@
 									<form name="adminForm" ng-submit="saveWebsite(this)" novalidate>
 										<div class="form-admin-content-group">
 											<div class="mdl-textfield mdl-js-textfield form-textfield">
-												<input class="mdl-textfield__input" type="text" name="siteName" ng-model="formData.name" required/>
-												<label class="mdl-textfield__label" for="siteName">Nome do site</label>
+												<input placeholder="Nome do site" class="mdl-textfield__input" type="text" name="siteName" ng-model="formData.name" required/>
 												<span ng-class="error" ng-show="adminForm.siteName.$dirty && adminForm.siteName.$error.required">Campo é obrigatório</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield form-textfield">
-												<input class="mdl-textfield__input" type="text" name="siteURL" ng-model="formData.url" required/>
-												<label class="mdl-textfield__label" for="siteURL">URL</label>
+												<input placeholder="URL" class="mdl-textfield__input" type="text" name="siteURL" ng-model="formData.url" required/>
 												<span ng-class="error" ng-show="customerForm.lastName.$dirty && customerForm.lastName.$error.required">Campo é obrigatório</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield form-textfield">
-												<input class="mdl-textfield__input" type="text" name="timeZone" ng-model="formData.timezone" required/>
-												<label class="mdl-textfield__label" for="timeZone">Time Zone</label>
+												<input placeholder="Time Zone" class="mdl-textfield__input" type="text" name="timeZone" ng-model="formData.timezone" required/>
 												<span ng-class="error" ng-show="adminForm.timeZone.$dirty && adminForm.timeZone.$error.required">Campo é obrigatório</span>
 											</div>
 										</div>
