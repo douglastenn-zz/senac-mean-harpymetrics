@@ -22,3 +22,24 @@ button.cicle-btn {
     transition: all 0.5s ease;
 
 }
+
+button.btn.btn-warning {
+    border: 1px solid #c0392b;
+    background: #fff;
+    color: #c0392b;
+    min-width: 100px !important;
+    padding: 0px 20px;
+    &:hover{
+      background: #c0392b;
+      color: #fff;
+    }
+}
+i.material-icons.fa.fa-search{
+  float: left;
+  line-height: 30px;
+  margin-right: 10px;
+}
+.mdl-textfield__input.search-input{
+  width: 85%;
+  float: left;
+}
