@@ -7,6 +7,23 @@
         padding: 0px;
         table{
             box-shadow: none;
+            tr{
+              width: 100%;
+              float: left;
+              td{
+                overflow: hidden;
+                min-width: 120px;
+              }
+              td:nth-child(1){
+                width: 120px;
+              }
+              td:nth-child(2),
+              td:nth-child(3){
+                word-break: break-all;
+                max-width: 300px;
+                min-width: 240px;
+              }
+            }
         }
       }
     }
@@ -21,7 +38,7 @@ div.table-responsive {
       border: 1px solid #fff;
       tr.show-hide-line{
         background: #ecf0f1;
-        
+
       }
     }
     tr.title{
