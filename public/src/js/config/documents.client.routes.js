@@ -53,5 +53,7 @@ angular.module('documents').config(['$stateProvider', '$urlRouterProvider',
 			}
 		});
 
+		$urlRouterProvider.otherwise('/');
+
 	}
 ]);
