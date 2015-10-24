@@ -46,5 +46,7 @@ angular.module('sitedetails').config(['$stateProvider', '$urlRouterProvider',
 			}
         });
 
+        $urlRouterProvider.otherwise('/');
+
 	}
 ]);

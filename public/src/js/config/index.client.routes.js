@@ -10,5 +10,7 @@ angular.module('index').config(['$stateProvider', '$urlRouterProvider',
 				return $templateCache.get('index.client.view.html'); 
 			}
         });
+
+        $urlRouterProvider.otherwise('/');
 	}
 ]);

@@ -17,6 +17,8 @@ angular.module('admin').config(['$stateProvider', '$urlRouterProvider',
 			}
 		});
 
+		$urlRouterProvider.otherwise('/');
+
 
 	}
 ]);

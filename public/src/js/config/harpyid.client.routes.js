@@ -10,5 +10,7 @@ angular.module('harpyid').config(['$stateProvider', '$urlRouterProvider',
 				return $templateCache.get('harpyid.client.view.html'); 
 			}
         });
+
+        $urlRouterProvider.otherwise('/');
 	}
 ]);
