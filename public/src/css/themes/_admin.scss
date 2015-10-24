@@ -1,7 +1,7 @@
 section.admin-left-nav {
     position: absolute;
     background-color: #34495e;
-    width: 260px;
+    width: 220px;
     z-index: 2;
     min-height: 100%;
     height: auto;
@@ -36,7 +36,7 @@ section.admin-left-nav {
     }
 }
 section.admin-content{
-  margin-left: 260px;
+  margin-left: 220px;
   overflow: hidden;
   min-height: 500px;
 }
