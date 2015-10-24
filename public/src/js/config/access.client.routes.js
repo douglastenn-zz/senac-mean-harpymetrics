@@ -10,5 +10,7 @@ angular.module('access').config(['$stateProvider', '$urlRouterProvider',
 				return $templateCache.get('access.client.view.html'); 
 			}
         });
+
+        $urlRouterProvider.otherwise('/');
 	}
 ]);
