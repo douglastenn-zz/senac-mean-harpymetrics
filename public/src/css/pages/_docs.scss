@@ -10,23 +10,28 @@
 	  background: bottom right 15% no-repeat #46B6AC;
 		min-height: 120px;
 	}
+	.mdl-card__title-text{
+		&.white-topic{
+			color:#fff;
+		}
+	}
 	.event-card{
 		background: url("../images/event-keyboard-small.jpg");
 	}
-	.home-card{
-		background: url("../images/shore-house-homepage-small.jpg");
+	.presentation-card{
+		background: url("../images/show-image-doc.jpg");
 	}
 	.search-card{
-		background: url("../images/shore-house-homepage-small.jpg");
+		background: url("../images/looking-for.jpg");
 	}
 	.category-card{
-		background: url("../images/event-keyboard-small.jpg");
+		background: url("../images/categorias-library-items.jpg");
 	}
 	.product-card{
-		background: url("../images/event-keyboard-small.jpg");
+		background: url("../images/produtcs-images.jpg");
 	}
 	.checkout-card{
-		background: url("../images/shore-house-homepage-small.jpg");
+		background: url("../images/bag_checkout.jpg");
 	}
 	.mdl-card__supporting-text {
 		min-height: 240px;

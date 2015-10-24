@@ -108,6 +108,7 @@ h2.section-title{
 .mdl-card.mdl-shadow--2dp {
     margin: 20px auto;
     max-width: 320px;
-    height: 320px;
+    height: auto;
+    min-height: 345px;
     width: 100%;
 }
