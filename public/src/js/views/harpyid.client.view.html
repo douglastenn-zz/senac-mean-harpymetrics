@@ -7,7 +7,7 @@
 				</div>
 				<ul class="left-nav-list">
 					<li><a href="/#!/admin"><i class="fa fa-home"></i> Dashboard</a></li>
-					
+
 					<li><a href="/#!/admin/harpyid"><i class="fa fa-pencil-square-o"></i>Gerenciar Sites</a></li>
 				</ul>
 			</section>
@@ -67,10 +67,7 @@
 									<h4>Editar / Excluir Sites - Gerenciar HarpyID</h4>
 									<form action="#">
 										<div class="mdl-textfield mdl-js-textfield">
-											<label class="mdl-button mdl-js-button mdl-button--icon" for="admin-search-site">
-												<i class="material-icons fa fa-search"></i>
-											</label>
-											<input class="mdl-textfield__input" id="admin-search-site" ng-model="filterWebsite" type="search" placeholder=""/>
+											<i class="material-icons fa fa-search"></i><input class="mdl-textfield__input search-input" id="admin-search-site" ng-model="filterWebsite" type="search" placeholder=""/>
 										</div>
 
 										<div class="table-responsive">
@@ -89,7 +86,7 @@
 														<td>  {{website.url}}</td>
 														<td>  {{website.harpyid}}</td>
 														<td class="text-center">
-															<button ng-click="removeWebsite(website)" class="btn btn-warning">Remover</button>
+															<button ng-click="removeWebsite(website)" class="btn btn-warning"><i class="fa fa-trash"></i> Remover</button>
 														</td>
 													</tr>
 													<tr>
