@@ -18,7 +18,7 @@ var paths = {
 	templates: 'public/src/js/views/*.html',
 	styles: ['public/src/css/**/*.scss', 'public/src/css/*.scss'],
 	images: 'public/src/images/**/*.{png,jpeg,jpg,svg,gif}',
-	extras: ['public/src/*.*', 'public/src/fonts/**/*'],
+	extras: ['public/src/*.*', 'public/src/fonts/**/*', 'public/src/videos/**/*'],
 	dest: {
 		scripts : 'public/dist/js',
 		styles: 'public/dist/css',
@@ -85,7 +85,7 @@ gulp.task('html', function() {
     conditionals: true,
     spare:true
   };
-  console.log('HTML TASK RUNNED');
+  
   return gulp.src(paths.templates)
     .pipe(minifyHTML(opts))
     .pipe(html2js({
