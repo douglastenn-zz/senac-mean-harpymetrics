@@ -33,3 +33,5 @@ node_modules
 
 #dist
 public/dist
+public/dist/**
+public/dist/**/*
